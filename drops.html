@@ -84,7 +84,7 @@
                 • <b>z:[zone number]</b> : Filter by zone.<br>
                 • <b>r:[rarity]</b> : Filter by rarity.<br>
                 <small style="opacity: 0.6;">Rarity: uncommon, rare, epic, mythic, legendary</small><br>
-                • <b>t:[type]</b> You can type <b>z:1 r:epic</b> !<br>
+                • <b>t:[type]</b> You can type <b>z:1 r:epic</b><br>
                 <small style="opacity: 0.6;">Type: statue, head, fragment</small><br>
             </div>
         </div>
@@ -116,23 +116,23 @@
                 const data = await res.json();
                 const grid = document.getElementById('mobsGrid');
                 
+                // On utilise les variables définies dans ton :root CSS
                 const rarityColors = {
-                    "uncommon": "#1eff00",
-                    "rare": "#00a9dd",
-                    "epic": "#a335ee",
-                    "mythic": "#e41453",
-                    "legendary": "#fcc40d"
+                    "uncommon": "var(--rarity-uncommon)",
+                    "rare": "var(--rarity-rare)",
+                    "epic": "var(--rarity-epic)",
+                    "mythic": "var(--rarity-mythic)",
+                    "legendary": "var(--rarity-legendary)"
                 };
 
                 const render = (list, searchTerms = []) => {
-                    // On récupère les filtres de rareté ET de type
                     const rarityFilter = searchTerms.find(t => t.startsWith('r:'))?.split('r:')[1];
                     const typeFilter = searchTerms.find(t => t.startsWith('t:'))?.split('t:')[1];
 
                     grid.innerHTML = list.map(m => {
                         let dropItems = m.drops ? Object.values(m.drops) : [];
 
-                        // Filtrage visuel des items dans la carte
+                        // Filtrage des items
                         if (rarityFilter || typeFilter) {
                             dropItems = dropItems.filter(item => {
                                 const matchRarity = rarityFilter ? (item.rarity && item.rarity.toLowerCase() === rarityFilter) : true;
@@ -141,8 +141,11 @@
                             });
                         }
 
+                        // Si on filtre par type/rareté et que le mob n'a rien, on ne l'affiche pas
+                        if ((rarityFilter || typeFilter) && dropItems.length === 0) return '';
+
                         return `
-                            <div class="card" style="display: flex; align-items: center; gap: 30px; padding: 25px; margin-bottom: 20px; background: #1a222b; border-radius: 12px; border: 1px solid #2d3748;">
+                            <div class="card" style="display: flex; align-items: center; gap: 30px;">
                                 <div style="background: rgba(0,0,0,0.3); padding: 10px; border-radius: 8px; width: 100px; height: 100px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
                                     <img src="${m.image}" alt="${m.name}" style="max-width: 100%; max-height: 100%; object-fit: contain;">
                                 </div>
@@ -153,24 +156,22 @@
                                     
                                     <div style="display: flex; gap: 15px; flex-wrap: wrap;">
                                         ${dropItems.map(item => {
-                                            const color = rarityColors[item.rarity?.toLowerCase()] || "#2d3748";
-                                            const bgGradient = `linear-gradient(135deg, ${color}15 0%, rgba(26, 34, 43, 1) 100%)`;
+                                            const color = rarityColors[item.rarity?.toLowerCase()] || "var(--rarity-default)";
+                                            // On utilise une version transparente de la couleur pour le fond
+                                            const bgGradient = `linear-gradient(135deg, rgba(255,255,255,0.05) 0%, rgba(0,0,0,0.2) 100%)`;
                                             
                                             return `
-                                                <div class="item-card" style="background: ${bgGradient}; border: 1px solid ${color}88; box-shadow: inset 0 0 10px ${color}11; padding: 10px 14px; border-radius: 8px; display: flex; align-items: center; gap: 12px; min-width: 175px; transition: 0.2s; position: relative;">
-                                                    
+                                                <div class="item-card" style="background: ${bgGradient}; border: 1px solid ${color}; padding: 10px 14px; border-radius: 8px; display: flex; align-items: center; gap: 12px; min-width: 175px;">
                                                     <div style="position: absolute; top: 4px; right: 6px; font-size: 0.55rem; opacity: 0.4; font-family: monospace; color: #fff;">
-                                                        ${item.addedVersion || '0.1'}
+                                                        ${item.addedVersion || 'v0.1'}
                                                     </div>
-
-                                                    <img src="${item.img}" alt="${item.name}" style="width: 32px; height: 32px; object-fit: contain; filter: drop-shadow(0 0 5px ${color}66);">
-                                                    
+                                                    <img src="${item.img}" alt="${item.name}" style="width: 32px; height: 32px; object-fit: contain;">
                                                     <div>
-                                                        <div style="font-size: 0.85rem; font-weight: bold; color: #e2e8f0; margin-bottom: 4px; padding-right: 20px;">${item.name}</div>
+                                                        <div style="font-size: 0.85rem; font-weight: bold; color: var(--text-main); margin-bottom: 4px;">${item.name}</div>
                                                         <div style="font-size: 0.75rem; font-weight: 600;">
-                                                            <span style="color: #cbd5e0;">${item.drops}%</span> 
+                                                            <span style="color: var(--text-muted);">${item.drops}%</span> 
                                                             <span style="color: #4a5568; margin: 0 3px;">•</span> 
-                                                            <span style="color: ${color}; text-transform: uppercase; font-size: 0.65rem; letter-spacing: 0.5px;">${item.rarity || 'Common'}</span>
+                                                            <span style="color: ${color}; text-transform: uppercase; font-size: 0.65rem;">${item.rarity || 'Common'}</span>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -185,6 +186,7 @@
 
                 render(data);
 
+                // Système de recherche
                 document.getElementById('searchInput').addEventListener('input', e => {
                     const rawValue = e.target.value.toLowerCase().trim();
                     const terms = rawValue.split(/\s+/).filter(t => t.length > 0);
@@ -197,18 +199,15 @@
                     const filtered = data.filter(m => {
                         return terms.every(term => {
                             if (term.startsWith('z:')) {
-                                const zoneValue = term.split('z:')[1];
-                                return m.zone.toString() === zoneValue;
+                                return m.zone.toString() === term.split('z:')[1];
                             } 
                             else if (term.startsWith('r:')) {
-                                const rarityValue = term.split('r:')[1];
-                                const items = m.drops ? Object.values(m.drops) : [];
-                                return items.some(item => item.rarity && item.rarity.toLowerCase() === rarityValue);
+                                const rVal = term.split('r:')[1];
+                                return Object.values(m.drops || {}).some(i => i.rarity?.toLowerCase() === rVal);
                             } 
                             else if (term.startsWith('t:')) {
-                                const typeValue = term.split('t:')[1];
-                                const items = m.drops ? Object.values(m.drops) : [];
-                                return items.some(item => item.type && item.type.toLowerCase() === typeValue);
+                                const tVal = term.split('t:')[1];
+                                return Object.values(m.drops || {}).some(i => i.type?.toLowerCase() === tVal);
                             }
                             else {
                                 return m.name.toLowerCase().includes(term) || (m.id && m.id.toLowerCase().includes(term));
@@ -220,12 +219,10 @@
                 });
 
             } catch (err) {
-                console.error("Erreur chargement JSON:", err);
-                document.getElementById('mobsGrid').innerHTML = "<p style='color:red;'>Erreur lors du chargement des données.</p>";
+                console.error("Erreur:", err);
             }
         }
         load();
     </script>
 </body>
 </html>
-
