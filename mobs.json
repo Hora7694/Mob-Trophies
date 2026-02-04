@@ -2,18 +2,20 @@
   {
     "name": "Fox",
     "id": "Fox",
-    "image": "img/icons/Fox/Fox_Icon.png",
+    "image": "img/icons/Fox/Fox_Icon",
     "zone": 1,
     "drops": {
       "stataue": {
         "name": "Fox Statue",
         "img": "img/icons/Fox/Fox_Statue_Trophy_Icon.png",
-        "drops": 0.75
+        "drops": 0.75,
+        "rarity": "Epic"
       },
       "head": {
         "name": "Fox Head",
         "img": "img/icons/Fox/Fox_Head_Trophy_Icon.png",
-        "drops": 2.25
+        "drops": 2.25,
+        "rarity": "uncommon"
       }
     }
   },
@@ -26,34 +28,35 @@
       "stataue": {
         "name": "Duck Statue",
         "img": "img/icons/Duck/Duck_Statue_Trophy_Icon.png",
-        "drops": 1.25
+        "drops": 1.25,
+        "rarity": "epic"
       },
       "head": {
         "name": "Duck Head",
         "img": "img/icons/Duck/Duck_Head_Trophy_Icon.png",
-        "drops": 3.5
+        "drops": 3.5,
+        "rarity": "uncommon"
       }
     }
   },
   {
     "name": "Grizzly",
     "id": "Grizzly",
-    "image": "img/icons/Bears/Grizzly/Bear_Grizzly_Icon.png",
+    "image": "img/icons/Grizzly/Bear_Grizzly_Icon.png",
     "zone": 1,
     "drops": {
       "stataue": {
         "name": "Grizzly Statue",
-        "img": "img/icons/Bears/Grizzly/Bear_Grizzly_Statue_Trophy_Icon.png",
-        "drops": 0.89
+        "img": "img/icons/Grizzly/Grizzly_Statue_Trophy_Icon.png",
+        "drops": 0.89,
+        "rarity": "epic"
       },
       "head": {
         "name": "Grizzly Head",
-        "img": "img/icons/Bears/Grizzly/Bear_Grizzly_Head_Trophy_Icon.png",
-        "drops": 2.11
+        "img": "img/icons/Grizzly/Grizzly_Head_Trophy_Icon.png",
+        "drops": 2.11,
+        "rarity": "rare"
       }
     }
   }
 ]
-
-
-
