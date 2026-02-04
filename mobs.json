@@ -247,7 +247,7 @@
       },
       "fragment": {
         "name": "Scorpion skull",
-        "img": "img/icons/Beast/Scorpion/Scorpion_Fang_Trophy_Icon.png",
+        "img": "img/icons/Beast/Scorpion/Scorpion_Skull_Trophy_Block_Icon.png",
         "drops": 4.55,
         "rarity": "uncommon",
         "type":"fragment",
@@ -259,12 +259,12 @@
     "name": "Camel",
     "id": "Camel",
     "image": [
-      "img/icons/Livestock/Camel/Camel_Statue_Trophy_Icon.png",
-      "img/icons/Livestock/Camel/Camel_Statue_Trophy_Icon.png",
-      "img/icons/Livestock/Camel/Camel_Statue_Trophy_Icon.png",
-      "img/icons/Livestock/Camel/Camel_Statue_Trophy_Icon.png",
-      "img/icons/Livestock/Camel/Camel_Statue_Trophy_Icon.png",
-      "img/icons/Livestock/Camel/Camel_Statue_Trophy_Icon.png"
+      "img/icons/Livestock/Camel/Camel_Statue_Trophy_Yellow_Icon.png",
+      "img/icons/Livestock/Camel/Camel_Statue_Trophy_Yellow_Icon.png",
+      "img/icons/Livestock/Camel/Camel_Statue_Trophy_Yellow_Icon.png",
+      "img/icons/Livestock/Camel/Camel_Statue_Trophy_Yellow_Icon.png",
+      "img/icons/Livestock/Camel/Camel_Statue_Trophy_Yellow_Icon.png",
+      "img/icons/Livestock/Camel/Camel_Statue_Trophy_Yellow_Icon.png"
     ],
     "zone": 2,
     "drops": {
