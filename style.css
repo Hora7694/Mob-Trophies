@@ -1,0 +1,121 @@
+/* Couleurs Hytale */
+:root {
+    --bg-dark: #0b0f13;
+    --card-bg: #12181f;
+    --border-color: #1f2937;
+    --accent: #d4af37;
+    --text-main: #e2e8f0;
+    --text-muted: #a0aec0;
+}
+
+/* On force le HTML et le BODY à prendre toute la hauteur */
+html {
+    height: 100%;
+}
+
+body {
+    background-color: var(--bg-dark);
+    color: var(--text-main);
+    font-family: 'Inter', sans-serif;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh; /* Sécurité pour occuper tout l'écran */
+}
+
+/* Navigation */
+nav {
+    background-color: var(--card-bg);
+    padding: 1rem 2rem;
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    border-bottom: 1px solid var(--border-color);
+    flex-shrink: 0;
+}
+
+nav a {
+    color: var(--text-muted);
+    text-decoration: none;
+    text-transform: uppercase;
+    font-weight: bold;
+    font-size: 0.9rem;
+    transition: 0.3s;
+}
+
+nav a:hover, nav a.active {
+    color: var(--accent);
+}
+
+/* Layout - C'est cette partie qui pousse le footer */
+.container {
+    max-width: 1000px;
+    margin: 40px auto;
+    padding: 0 20px;
+    flex: 1 0 auto; /* Indispensable : il "mange" l'espace vide */
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.card {
+    background-color: var(--card-bg);
+    border: 1px solid var(--border-color);
+    border-radius: 12px;
+    padding: 20px;
+    margin-bottom: 1rem;
+}
+
+.accent-text { color: var(--accent); }
+
+/* Boutons */
+.btn-download {
+    background-color: var(--accent);
+    color: #000;
+    padding: 12px 24px;
+    border-radius: 6px;
+    text-decoration: none;
+    font-weight: bold;
+    display: inline-block;
+}
+
+/* Footer Styles */
+footer {
+    flex-shrink: 0; /* Empêche le footer de se ratatiner */
+    background-color: var(--card-bg);
+    border-top: 1px solid var(--border-color);
+    padding: 30px 0;
+    margin-top: 60px;
+}
+
+.footer-content {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 0 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+}
+
+.footer-links {
+    display: flex;
+    gap: 20px;
+}
+
+.footer-links a {
+    color: var(--text-muted);
+    font-size: 0.85rem;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.footer-links a:hover {
+    color: var(--accent);
+}
+
+.copyright {
+    color: var(--text-muted);
+    font-size: 0.8rem;
+    opacity: 0.7;
+    text-align: center;
+}

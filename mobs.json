@@ -1,0 +1,68 @@
+[
+  {
+    "name": "Trilobite",
+    "id": "Trilobite",
+    "image": "https://path-to-your-image/trilobite.png",
+    "drops": {
+      "stataue": {
+        "name": "Trilobite Statue",
+        "img": "https://path-to-your-image/trilobite_statue.png",
+        "drops": 0.54
+      },
+      "head": {
+        "name": "Trilobite Head",
+        "img": "https://path-to-your-image/trilobite_head.png",
+        "drops": 1.45
+      },
+      "fragments": {
+        "name": "Trilobite Fragments",
+        "img": "https://path-to-your-image/trilobite_fragments.png",
+        "drops": 5.28
+      }
+    }
+  },
+  {
+    "name": "Black Trilobite",
+    "id": "Trilobite_Black",
+    "image": "https://path-to-your-image/black_trilobite.png",
+    "drops": {
+      "stataue": {
+        "name": "Trilobite Statue",
+        "img": "https://path-to-your-image/trilobite_statue.png",
+        "drops": 0.54
+      },
+      "head": {
+        "name": "Trilobite Head",
+        "img": "https://path-to-your-image/trilobite_head.png",
+        "drops": 1.45
+      },
+      "fragments": {
+        "name": "Trilobite Fragments",
+        "img": "https://path-to-your-image/trilobite_fragments.png",
+        "drops": 5.28
+      }
+    }
+  },
+  {
+    "name": "Moray Eel",
+    "id": "Eel_Moray",
+    "image": "https://path-to-your-image/eel.png",
+    "drops": {
+      "stataue": {
+        "name": "Trilobite Statue",
+        "img": "https://path-to-your-image/trilobite_statue.png",
+        "drops": 0.54
+      },
+      "head": {
+        "name": "Trilobite Head",
+        "img": "https://path-to-your-image/trilobite_head.png",
+        "drops": 1.45
+      },
+      "fragments": {
+        "name": "Trilobite Fragments",
+        "img": "https://path-to-your-image/trilobite_fragments.png",
+        "drops": 5.28
+      }
+    }
+  }
+]

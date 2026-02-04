@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="style.css">
+    <title>Drops des Mobs</title>
+</head>
+<body>
+    <nav>
+        <a href="index.html">Accueil</a>
+        <a href="drops.html" class="active">Drops</a>
+        <a href="download.html">Télécharger</a>
+    </nav>
+
+    <div class="container">
+        <h1 class="accent-text">Liste des Drops</h1>
+        <input type="text" id="searchInput" placeholder="Rechercher un mob..." 
+               style="width: 100%; padding: 15px; border-radius: 8px; background: #12181f; border: 1px solid #2d3748; color: white; margin-bottom: 20px; box-sizing: border-box;">
+        
+        <div id="mobsGrid">
+            </div>
+    </div>
+
+    <footer>
+      <div class="footer-content">
+          <div class="footer-links">
+              <a href="index.html">Accueil</a>
+              <a href="drops.html">Drops</a>
+              <a href="download.html">Télécharger</a>
+              <a href="legal.html">Mentions Légales</a>
+          </div>
+          <div class="copyright">
+              &copy; 2026 Projet Hytale Mod - Tous droits réservés.
+          </div>
+          <div class="text-xs opacity-30 text-center" style="font-size: 0.7rem; color: var(--text-muted);">
+              Ce site est un projet de fan non-affilié à Hypixel Studios ou Hytale.
+          </div>
+      </div>
+    </footer>
+
+    <script>
+        async function load() {
+            try {
+                const res = await fetch('mobs.json');
+                const data = await res.json();
+                const grid = document.getElementById('mobsGrid');
+                
+                const render = (list) => {
+                    grid.innerHTML = list.map(m => {
+                        // On transforme l'objet drops en tableau pour boucler dessus
+                        // Si m.drops n'existe pas, on prend un tableau vide []
+                        const dropItems = m.drops ? Object.values(m.drops) : [];
+
+                        return `
+                            <div class="card" style="display: flex; align-items: center; gap: 30px; padding: 25px;">
+                                <div style="background: rgba(0,0,0,0.3); padding: 10px; border-radius: 8px; width: 100px; height: 100px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
+                                    <img src="${m.image}" alt="${m.name}" style="max-width: 100%; max-height: 100%; object-fit: contain;">
+                                </div>
+
+                                <div style="flex-grow: 1;">
+                                    <h3 style="margin: 0; font-size: 1.4rem; color: #fff;">${m.name}</h3>
+                                    <p style="font-size: 0.75rem; opacity: 0.5; margin: 4px 0 15px 0; font-family: monospace;">ID: ${m.id}</p>
+                                    
+                                    <div style="display: flex; gap: 15px; flex-wrap: wrap;">
+                                        ${dropItems.map(item => `
+                                            <div style="background: #1a222b; border: 1px solid #2d3748; padding: 8px 12px; border-radius: 8px; display: flex; align-items: center; gap: 10px; min-width: 150px;">
+                                                <img src="${item.img}" alt="${item.name}" style="width: 32px; height: 32px; object-fit: contain;">
+                                                <div>
+                                                    <div style="font-size: 0.85rem; font-weight: bold; color: #e2e8f0;">${item.name}</div>
+                                                    <div style="font-size: 0.75rem; color: var(--accent);">${item.drops}%</div>
+                                                </div>
+                                            </div>
+                                        `).join('')}
+                                    </div>
+                                </div>
+                            </div>
+                        `;
+                    }).join('');
+                };
+
+                render(data);
+                document.getElementById('searchInput').addEventListener('input', e => {
+                    const term = e.target.value.toLowerCase();
+                    render(data.filter(m => 
+                        m.name.toLowerCase().includes(term) || 
+                        m.id.toLowerCase().includes(term)
+                    ));
+                });
+            } catch (err) {
+                console.error("Erreur chargement JSON:", err);
+            }
+        }
+        load();
+    </script>
+</body>
+</html>
