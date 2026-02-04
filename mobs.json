@@ -472,5 +472,53 @@
         "addedVersion": "v0.3"
       }
     }
+  },
+  {
+    "name": "Outlander Cultisit",
+    "id": "Outlander_Cultisit ",
+    "image": "img/icons/Outlander/Cultisit Outlander_Cultisit_Statue_Trophy_Icon.png",
+    "zone": 3,
+    "drops": {
+      "stataue": {
+        "name": "Outlander Cultisit Statue",
+        "img": "img/icons/Outlander/Cultisit/Outlander_Cultisit_Statue_Trophy_Icon.png",
+        "drops": 0.85,
+        "rarity": "epic",
+        "type":"statue",
+        "addedVersion": "v0.3"
+      },
+      "head": {
+        "name": "Outlander Cultisit Head",
+        "img": "img/icons/Outlander/Cultisit/Outlander_Cultisit_Head_Trophy_Icon.png",
+        "drops": 1.55,
+        "rarity": "rare",
+        "type":"head",
+        "addedVersion": "v0.3"
+      }
+    }
+  },
+  {
+    "name": "Outlander Peon",
+    "id": "Outlander_Peon ",
+    "image": "img/icons/Outlander/Peon Outlander_Peon_Statue_Trophy_Icon.png",
+    "zone": 3,
+    "drops": {
+      "stataue": {
+        "name": "Outlander Peon Statue",
+        "img": "img/icons/Outlander/Peon/Outlander_Peon_Statue_Trophy_Icon.png",
+        "drops": 0.85,
+        "rarity": "epic",
+        "type":"statue",
+        "addedVersion": "v0.3"
+      },
+      "head": {
+        "name": "Outlander Peon Head",
+        "img": "img/icons/Outlander/Peon/Outlander_Peon_Head_Trophy_Icon.png",
+        "drops": 1.55,
+        "rarity": "rare",
+        "type":"head",
+        "addedVersion": "v0.3"
+      }
+    }
   }
 ]
