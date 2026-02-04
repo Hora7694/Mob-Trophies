@@ -198,6 +198,100 @@
         "addedVersion": "v0.2"
       }
     }
+  },
+  {
+    "name": "Sand Lizard",
+    "id": "Lizard_Sand",
+    "image": "img/icons/Beast/Lizard_Sand/Lizard_Sand_Statue_Trophy_Icon.png",
+    "zone": 2,
+    "drops": {
+      "stataue": {
+        "name": "Sand Lizard Statue",
+        "img": "img/icons/Beast/Lizard_Sand/Lizard_Sand_Statue_Trophy_Icon.png",
+        "drops": 0.70,
+        "rarity": "epic",
+        "type":"statue",
+        "addedVersion": "v0.2"
+      },
+      "head": {
+        "name": "Sand Lizard Head",
+        "img": "img/icons/Beast/Lizard_Sand/Lizard_Sand_Head_Trophy_Block_Icon.png",
+        "drops": 2.80,
+        "rarity": "rare",
+        "type":"head",
+        "addedVersion": "v0.2"
+      }
+    }
+  },
+  {
+    "name": "Scorpion",
+    "id": "Scorpion",
+    "image": "img/icons/Beast/Scorpion/Scorpion_Statue_Trophy_Icon.png",
+    "zone": 2,
+    "drops": {
+      "stataue": {
+        "name": "Scorpion Statue",
+        "img": "img/icons/Beast/Scorpion/Scorpion_Statue_Trophy_Icon.png",
+        "drops": 0.39,
+        "rarity": "epic",
+        "type":"statue",
+        "addedVersion": "v0.2"
+      },
+      "head": {
+        "name": "Scorpion Head",
+        "img": "img/icons/Beast/Scorpion/Scorpion_Head_Trophy_Block_Icon.png",
+        "drops": 1.56,
+        "rarity": "rare",
+        "type":"head",
+        "addedVersion": "v0.2"
+      },
+      "fragment": {
+        "name": "Scorpion skull",
+        "img": "img/icons/Beast/Scorpion/Scorpion_Fang_Trophy_Icon.png",
+        "drops": 4.55,
+        "rarity": "uncommon",
+        "type":"fragment",
+        "addedVersion": "v0.2"
+      }
+    }
+  },
+  {
+    "name": "Camel",
+    "id": "Camel",
+    "image": [
+      "img/icons/Livestock/Camel/Camel_Statue_Trophy_Icon.png",
+      "img/icons/Livestock/Camel/Camel_Statue_Trophy_Icon.png",
+      "img/icons/Livestock/Camel/Camel_Statue_Trophy_Icon.png",
+      "img/icons/Livestock/Camel/Camel_Statue_Trophy_Icon.png",
+      "img/icons/Livestock/Camel/Camel_Statue_Trophy_Icon.png",
+      "img/icons/Livestock/Camel/Camel_Statue_Trophy_Icon.png"
+    ],
+    "zone": 2,
+    "drops": {
+      "stataue": {
+        "name": "Camel Statue",
+        "img": [
+          "img/icons/Livestock/Camel/Camel_Statue_Trophy_Blue_Icon.png",
+          "img/icons/Livestock/Camel/Camel_Statue_Trophy_Green_Icon.png",
+          "img/icons/Livestock/Camel/Camel_Statue_Trophy_Orange_Icon.png",
+          "img/icons/Livestock/Camel/Camel_Statue_Trophy_Purple_Icon.png",
+          "img/icons/Livestock/Camel/Camel_Statue_Trophy_Red_Icon.png",
+          "img/icons/Livestock/Camel/Camel_Statue_Trophy_Yellow_Icon.png"
+        ],
+        "drops": 0.53,
+        "dropsHover": "0.088% per color",
+        "rarity": "epic",
+        "type":"statue",
+        "addedVersion": "v0.2"
+      },
+      "head": {
+        "name": "Camel Head",
+        "img": "img/icons/Livestock/Camel/Camel_Head_Trophy_Block_Icon.png",
+        "drops": 2.97,
+        "rarity": "rare",
+        "type":"head",
+        "addedVersion": "v0.2"
+      }
+    }
   }
-
 ]

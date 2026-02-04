@@ -109,7 +109,7 @@
       </div>
     </footer>
 
-    <script>
+<script>
         async function load() {
             try {
                 const res = await fetch('mobs.json');
@@ -122,6 +122,20 @@
                     "epic": "var(--rarity-epic)",
                     "mythic": "var(--rarity-mythic)",
                     "legendary": "var(--rarity-legendary)"
+                };
+
+                // Gère l'affichage d'une image simple ou d'un tableau d'images animées
+                const renderMedia = (mediaData, name) => {
+                    const isArray = Array.isArray(mediaData);
+                    const firstImg = isArray ? mediaData[0] : (mediaData || 'img/placeholder.png');
+                    
+                    if (isArray && mediaData.length > 1) {
+                        return `<img src="${firstImg}" class="cycling-img" 
+                                     data-sources='${JSON.stringify(mediaData)}' 
+                                     data-index="0" alt="${name}" 
+                                     style="max-width: 100%; max-height: 100%; object-fit: contain;">`;
+                    }
+                    return `<img src="${firstImg}" alt="${name}" style="max-width: 100%; max-height: 100%; object-fit: contain;">`;
                 };
 
                 const render = (list, searchTerms = []) => {
@@ -143,8 +157,8 @@
 
                         return `
                             <div class="card" style="display: flex; align-items: center; gap: 30px;">
-                                <div style="background: rgba(0,0,0,0.3); padding: 10px; border-radius: 8px; width: 100px; height: 100px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
-                                    <img src="${m.image}" alt="${m.name}" style="max-width: 100%; max-height: 100%; object-fit: contain;">
+                                <div style="background: rgba(0,0,0,0.3); padding: 10px; border-radius: 8px; width: 100px; height: 100px; display: flex; align-items: center; justify-content: center; flex-shrink: 0; overflow: hidden;">
+                                    ${renderMedia(m.image, m.name)}
                                 </div>
 
                                 <div style="flex-grow: 1;">
@@ -155,6 +169,7 @@
                                         ${dropItems.map(item => {
                                             const color = rarityColors[item.rarity?.toLowerCase()] || "var(--rarity-default)";
                                             const bgGradient = `linear-gradient(135deg, rgba(255,255,255,0.05) 0%, rgba(0,0,0,0.2) 100%)`;
+                                            const defaultDrop = `${item.drops}%`;
                                             
                                             return `
                                                 <div class="item-card" style="background: ${bgGradient}; border: 1px solid ${color}; padding: 10px 14px; border-radius: 8px; display: flex; align-items: center; gap: 12px; min-width: 190px; position: relative;">
@@ -162,14 +177,19 @@
                                                         ${item.addedVersion || 'v0.1'}
                                                     </div>
                                                     
-                                                    <img src="${item.img}" alt="${item.name}" style="width: 32px; height: 32px; object-fit: contain; flex-shrink: 0;">
+                                                    <div style="width: 32px; height: 32px; flex-shrink: 0; display: flex; align-items: center; justify-content: center; overflow: hidden;">
+                                                        ${renderMedia(item.img, item.name)}
+                                                    </div>
                                                     
                                                     <div style="flex-grow: 1; min-width: 0;">
                                                         <div style="font-size: 0.85rem; font-weight: bold; color: var(--text-main); margin-bottom: 2px; padding-right: 35px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;" title="${item.name}">
                                                             ${item.name}
                                                         </div>
                                                         <div style="font-size: 0.75rem; font-weight: 600; white-space: nowrap;">
-                                                            <span style="color: var(--text-muted);">${item.drops}%</span> 
+                                                            <span style="color: var(--text-muted); cursor: ${item.dropsHover ? 'help' : 'default'}; border-bottom: ${item.dropsHover ? '1px dotted rgba(255,255,255,0.3)' : 'none'};" 
+                                                                  ${item.dropsHover ? `onmouseover="this.innerText='${item.dropsHover}'" onmouseout="this.innerText='${defaultDrop}'"` : ''}>
+                                                                ${defaultDrop}
+                                                            </span> 
                                                             <span style="color: #4a5568; margin: 0 3px;">•</span> 
                                                             <span style="color: ${color}; text-transform: uppercase; font-size: 0.65rem;">${item.rarity || 'Common'}</span>
                                                         </div>
@@ -186,6 +206,7 @@
 
                 render(data);
 
+                // Système de recherche
                 document.getElementById('searchInput').addEventListener('input', e => {
                     const rawValue = e.target.value.toLowerCase().trim();
                     const terms = rawValue.split(/\s+/).filter(t => t.length > 0);
@@ -197,25 +218,26 @@
 
                     const filtered = data.filter(m => {
                         return terms.every(term => {
-                            if (term.startsWith('z:')) {
-                                return m.zone.toString() === term.split('z:')[1];
-                            } 
-                            else if (term.startsWith('r:')) {
-                                const rVal = term.split('r:')[1];
-                                return Object.values(m.drops || {}).some(i => i.rarity?.toLowerCase() === rVal);
-                            } 
-                            else if (term.startsWith('t:')) {
-                                const tVal = term.split('t:')[1];
-                                return Object.values(m.drops || {}).some(i => i.type?.toLowerCase() === tVal);
-                            }
-                            else {
-                                return m.name.toLowerCase().includes(term) || (m.id && m.id.toLowerCase().includes(term));
-                            }
+                            if (term.startsWith('z:')) return m.zone.toString() === term.split('z:')[1];
+                            if (term.startsWith('r:')) return Object.values(m.drops || {}).some(i => i.rarity?.toLowerCase() === term.split('r:')[1]);
+                            if (term.startsWith('t:')) return Object.values(m.drops || {}).some(i => i.type?.toLowerCase() === term.split('t:')[1]);
+                            return m.name.toLowerCase().includes(term) || (m.id && m.id.toLowerCase().includes(term));
                         });
                     });
 
                     render(filtered, terms);
                 });
+
+                // Boucle d'animation pour les images défilantes
+                setInterval(() => {
+                    document.querySelectorAll('.cycling-img').forEach(img => {
+                        const sources = JSON.parse(img.dataset.sources);
+                        let idx = parseInt(img.dataset.index);
+                        idx = (idx + 1) % sources.length;
+                        img.src = sources[idx];
+                        img.dataset.index = idx;
+                    });
+                }, 2000);
 
             } catch (err) {
                 console.error("Erreur:", err);
