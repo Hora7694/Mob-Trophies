@@ -113,21 +113,72 @@
     "name": "Rex Cave",
     "id": "Rex_Cave",
     "image": "img/icons/Beast/Rex_Cave/Rex_Cave_Statue_Trophy_Icon.png",
-    "zone": 1,
+    "zone": 4,
     "drops": {
       "stataue": {
         "name": "Rex Cave Statue",
         "img": "img/icons/Beast/Rex_Cave/Rex_Cave_Statue_Trophy_Icon.png",
-        "drops": 0.58,
-        "rarity": "epic",
+        "drops": 2,
+        "rarity": "legendary",
         "addedVersion": "v0.1"
       },
       "head": {
         "name": "Rex Cave Head",
         "img": "img/icons/Beast/Rex_Cave/Rex_Cave_Head_Trophy_Block_Icon.png",
-        "drops": 2.92,
-        "rarity": "rare",
+        "drops": 7.2,
+        "rarity": "epic",
         "addedVersion": "v0.1"
+      }
+    }
+  },
+  {
+    "name": "Black Wolf",
+    "id": "Wolf_Black",
+    "image": "img/icons/Beast/Wolf/Black/Wolf_Black_Statue_Trophy_Icon.png",
+    "zone": 1,
+    "drops": {
+      "stataue": {
+        "name": "Black Wolf Statue",
+        "img": "img/icons/Beast/Wolf/Black/Wolf_Black_Statue_Trophy_Icon.png",
+        "drops": 0.65,
+        "rarity": "epic",
+        "addedVersion": "v0.2"
+      },
+      "head": {
+        "name": "Black Wolf Head",
+        "img": "img/icons/Beast/Wolf/Black/Wolf_Black_Head_Trophy_Wall_Icon.png",
+        "drops": 2.11,
+        "rarity": "rare",
+        "addedVersion": "v0.2"
+      }
+    }
+  },
+  {
+    "name": "Tiger Sabertooth",
+    "id": "Wolf_Black",
+    "image": "img/icons/Beast/Tiger_Sabertooth/Tiger_Sabertooth_Statue_Trophy_Icon.png",
+    "zone": 1,
+    "drops": {
+      "stataue": {
+        "name": "Tiger Sabertooth Statue",
+        "img": "img/icons/Beast/Tiger_Sabertooth/Tiger_Sabertooth_Statue_Trophy_Icon.png",
+        "drops": 0.06,
+        "rarity": "mythic",
+        "addedVersion": "v0.2"
+      },
+      "head": {
+        "name": "Tiger Sabertooth Head",
+        "img": "img/icons/Beast/Tiger_Sabertooth/Tiger_Sabertooth_Head_Trophy_Block_Icon.png",
+        "drops": 0.29,
+        "rarity": "rare",
+        "addedVersion": "v0.2"
+      },
+      "fragment": {
+        "name": "Tiger Sabertooth's Fang",
+        "img": "img/icons/Beast/Tiger_Sabertooth/Tiger_Sabertooth_Fang_Trophy_Icon.png",
+        "drops": 1.35,
+        "rarity": "uncommon",
+        "addedVersion": "v0.2"
       }
     }
   }
