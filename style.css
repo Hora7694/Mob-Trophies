@@ -119,3 +119,25 @@ footer {
     opacity: 0.7;
     text-align: center;
 }
+
+
+:root {
+    /* ... tes autres variables ... */
+    --rarity-uncommon: #29c714c2; /* Vert */
+    --rarity-rare: #0070dd;     /* Bleu */
+    --rarity-epic: #a335ee;     /* Violet */
+    --rarity-mythic: #ff8000;   /* Orange */
+    --rarity-legendary: #e6cc80; /* Doré */
+    --rarity-default: #2d3748;  /* Gris par défaut */
+}
+
+/* On prépare une classe d'animation pour les items */
+.item-card {
+    transition: transform 0.2s, box-shadow 0.2s, background-color 0.2s;
+    cursor: default;
+}
+
+.item-card:hover {
+    transform: translateY(-2px);
+    background-color: rgba(255, 255, 255, 0.05) !important;
+}
