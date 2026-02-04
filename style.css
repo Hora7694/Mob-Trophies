@@ -234,7 +234,7 @@ footer {
 
 #backToTop:hover {
     background: #ff4757;
-    transform: translateY(-5px);
+    transform: translateY(0px);
     border-color: rgba(255, 255, 255, 0.3);
 }
 
@@ -267,4 +267,5 @@ footer {
 .item-card.has-hover:hover .drop-hover-text { 
     display: inline; 
 }
+
 
