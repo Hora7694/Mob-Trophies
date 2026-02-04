@@ -1,23 +1,18 @@
 [
   {
-    "name": "Trilobite",
-    "id": "Trilobite",
+    "name": "Fox",
+    "id": "Fox",
     "image": "https://path-to-your-image/trilobite.png",
     "drops": {
       "stataue": {
         "name": "Trilobite Statue",
-        "img": "https://path-to-your-image/trilobite_statue.png",
+        "img": "img/icons/Fox/Fox_Statue_Trophy_Icon.png",
         "drops": 0.54
       },
       "head": {
         "name": "Trilobite Head",
-        "img": "https://path-to-your-image/trilobite_head.png",
+        "img": "img/icons/Fox/Fox_Head_Trophy_Icon.png",
         "drops": 1.45
-      },
-      "fragments": {
-        "name": "Trilobite Fragments",
-        "img": "https://path-to-your-image/trilobite_fragments.png",
-        "drops": 5.28
       }
     }
   },
