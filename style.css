@@ -9,10 +9,10 @@
 
     /* Couleurs de Rareté */
     --rarity-uncommon: #29c714c2;
-    --rarity-rare: #0070dd;
+    --rarity-rare: #009edd;
     --rarity-epic: #a335ee;
-    --rarity-mythic: #ff8000;
-    --rarity-legendary: #e6cc80;
+    --rarity-mythic: #e41453;
+    --rarity-legendary: #fcc40d;
     --rarity-default: #2d3748;
 }
 

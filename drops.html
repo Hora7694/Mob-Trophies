@@ -124,15 +124,20 @@
                 };
 
                 const render = (list, searchTerms = []) => {
+                    // On récupère les filtres de rareté ET de type
                     const rarityFilter = searchTerms.find(t => t.startsWith('r:'))?.split('r:')[1];
+                    const typeFilter = searchTerms.find(t => t.startsWith('t:'))?.split('t:')[1];
 
                     grid.innerHTML = list.map(m => {
                         let dropItems = m.drops ? Object.values(m.drops) : [];
 
-                        if (rarityFilter) {
-                            dropItems = dropItems.filter(item => 
-                                item.rarity && item.rarity.toLowerCase() === rarityFilter
-                            );
+                        // Filtrage visuel des items dans la carte
+                        if (rarityFilter || typeFilter) {
+                            dropItems = dropItems.filter(item => {
+                                const matchRarity = rarityFilter ? (item.rarity && item.rarity.toLowerCase() === rarityFilter) : true;
+                                const matchType = typeFilter ? (item.type && item.type.toLowerCase() === typeFilter) : true;
+                                return matchRarity && matchType;
+                            });
                         }
 
                         return `
@@ -199,6 +204,11 @@
                                 const items = m.drops ? Object.values(m.drops) : [];
                                 return items.some(item => item.rarity && item.rarity.toLowerCase() === rarityValue);
                             } 
+                            else if (term.startsWith('t:')) {
+                                const typeValue = term.split('t:')[1];
+                                const items = m.drops ? Object.values(m.drops) : [];
+                                return items.some(item => item.type && item.type.toLowerCase() === typeValue);
+                            }
                             else {
                                 return m.name.toLowerCase().includes(term) || (m.id && m.id.toLowerCase().includes(term));
                             }
@@ -210,7 +220,7 @@
 
             } catch (err) {
                 console.error("Erreur chargement JSON:", err);
-                document.getElementById('mobsGrid').innerHTML = "<p style='color:red;'>Erreur lors du chargement des données. Vérifie ton fichier JSON.</p>";
+                document.getElementById('mobsGrid').innerHTML = "<p style='color:red;'>Erreur lors du chargement des données.</p>";
             }
         }
         load();

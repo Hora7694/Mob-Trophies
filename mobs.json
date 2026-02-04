@@ -10,6 +10,7 @@
         "img": "img/icons/Fox/Fox_Statue_Trophy_Icon.png",
         "drops": 0.75,
         "rarity": "Epic",
+        "type":"statue",
         "addedVersion": "v0.1"
       },
       "head": {
@@ -17,6 +18,7 @@
         "img": "img/icons/Fox/Fox_Head_Trophy_Icon.png",
         "drops": 2.25,
         "rarity": "uncommon",
+        "type":"head",
         "addedVersion": "v0.1"
       }
     }
@@ -32,6 +34,7 @@
         "img": "img/icons/Duck/Duck_Statue_Trophy_Icon.png",
         "drops": 1.25,
         "rarity": "epic",
+        "type":"statue",
         "addedVersion": "v0.1"
       },
       "head": {
@@ -39,6 +42,7 @@
         "img": "img/icons/Duck/Duck_Head_Trophy_Icon.png",
         "drops": 3.5,
         "rarity": "uncommon",
+        "type":"head",
         "addedVersion": "v0.1"
       }
     }
@@ -54,6 +58,7 @@
         "img": "img/icons/Bears/Grizzly/Bear_Grizzly_Statue_Trophy_Icon.png",
         "drops": 0.89,
         "rarity": "epic",
+        "type":"statue",
         "addedVersion": "v0.1"
       },
       "head": {
@@ -61,6 +66,7 @@
         "img": "img/icons/Bears/Grizzly/Bear_Grizzly_Head_Trophy_Icon.png",
         "drops": 2.11,
         "rarity": "rare",
+        "type":"head",
         "addedVersion": "v0.1"
       }
     }
@@ -76,6 +82,7 @@
         "img": "img/icons/Outlander/Berserker/Outlander_Berserker_Statue_Trophy_Icon.png",
         "drops": 0.75,
         "rarity": "epic",
+        "type":"statue",
         "addedVersion": "v0.1"
       },
       "head": {
@@ -83,6 +90,7 @@
         "img": "img/icons/Outlander/Berserker/Outlander_Berserker_Head_Trophy_Icon.png",
         "drops": 1.25,
         "rarity": "rare",
+        "type":"head",
         "addedVersion": "v0.1"
       }
     }
@@ -98,6 +106,7 @@
         "img": "img/icons/Undead/Skeleton/Fighter/Skeleton_Classic_Fighter_Statue_Trophy_Icon.png",
         "drops": 0.58,
         "rarity": "epic",
+        "type":"statue",
         "addedVersion": "v0.1"
       },
       "head": {
@@ -105,6 +114,7 @@
         "img": "img/icons/Undead/Skeleton/Fighter/Skeleton_Classic_Fighter_Head_Trophy_Icon.png",
         "drops": 2.92,
         "rarity": "rare",
+        "type":"head",
         "addedVersion": "v0.1"
       }
     }
@@ -120,6 +130,7 @@
         "img": "img/icons/Beast/Rex_Cave/Rex_Cave_Statue_Trophy_Icon.png",
         "drops": 2,
         "rarity": "legendary",
+        "type":"statue",
         "addedVersion": "v0.1"
       },
       "head": {
@@ -127,6 +138,7 @@
         "img": "img/icons/Beast/Rex_Cave/Rex_Cave_Head_Trophy_Block_Icon.png",
         "drops": 7.2,
         "rarity": "epic",
+        "type":"head",
         "addedVersion": "v0.1"
       }
     }
@@ -142,6 +154,7 @@
         "img": "img/icons/Beast/Wolf/Black/Wolf_Black_Statue_Trophy_Icon.png",
         "drops": 0.65,
         "rarity": "epic",
+        "type":"statue",
         "addedVersion": "v0.2"
       },
       "head": {
@@ -149,6 +162,7 @@
         "img": "img/icons/Beast/Wolf/Black/Wolf_Black_Head_Trophy_Wall_Icon.png",
         "drops": 2.11,
         "rarity": "rare",
+        "type":"head",
         "addedVersion": "v0.2"
       }
     }
@@ -164,6 +178,7 @@
         "img": "img/icons/Beast/Tiger_Sabertooth/Tiger_Sabertooth_Statue_Trophy_Icon.png",
         "drops": 0.06,
         "rarity": "mythic",
+        "type":"statue",
         "addedVersion": "v0.2"
       },
       "head": {
@@ -171,6 +186,7 @@
         "img": "img/icons/Beast/Tiger_Sabertooth/Tiger_Sabertooth_Head_Trophy_Block_Icon.png",
         "drops": 0.29,
         "rarity": "rare",
+        "type":"head",
         "addedVersion": "v0.2"
       },
       "fragment": {
@@ -178,6 +194,7 @@
         "img": "img/icons/Beast/Tiger_Sabertooth/Tiger_Sabertooth_Fang_Trophy_Icon.png",
         "drops": 1.35,
         "rarity": "uncommon",
+        "type":"fragment",
         "addedVersion": "v0.2"
       }
     }
