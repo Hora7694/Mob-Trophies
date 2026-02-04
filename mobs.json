@@ -110,7 +110,7 @@
         "addedVersion": "v0.1"
       },
       "head": {
-        "name": "Skeleton Fighter Head",
+        "name": "Skeleton Fighter Skull",
         "img": "img/icons/Undead/Skeleton/Fighter/Skeleton_Classic_Fighter_Head_Trophy_Icon.png",
         "drops": 2.92,
         "rarity": "rare",
@@ -422,6 +422,30 @@
         "rarity": "rare",
         "type":"head",
         "addedVersion": "v0.3"
+      }
+    }
+  },
+  {
+    "name": "Frost Skeleton Fighter",
+    "id": "Skeleton_Frost_Fighter",
+    "image": "img/icons/Undead/Skeleton/Fighter/Skeleton_Frost_Fighter_Statue_Trophy_Icon.png",
+    "zone": 1,
+    "drops": {
+      "stataue": {
+        "name": "Frost Skeleton Fighter Statue",
+        "img": "img/icons/Undead/Skeleton/Fighter/Skeleton_Frost_Fighter_Statue_Trophy_Icon.png",
+        "drops": 0.58,
+        "rarity": "epic",
+        "type":"statue",
+        "addedVersion": "v0.1"
+      },
+      "head": {
+        "name": "Frost Skeleton Fighter Skull",
+        "img": "img/icons/Undead/Skeleton/Fighter/Skeleton_Frost_Fighter_Head_Trophy_Icon.png",
+        "drops": 2.92,
+        "rarity": "rare",
+        "type":"head",
+        "addedVersion": "v0.1"
       }
     }
   }
