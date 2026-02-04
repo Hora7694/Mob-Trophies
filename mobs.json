@@ -520,5 +520,37 @@
         "addedVersion": "v0.3"
       }
     }
+  },
+  {
+    "name": "Snow Leopard",
+    "id": "Wolf_Black",
+    "image": "img/icons/Beast/Leopard_Snow/Leopard_Snow_Statue_Trophy_Icon.png",
+    "zone": 3,
+    "drops": {
+      "stataue": {
+        "name": "Snow Leopard Statue",
+        "img": "img/icons/Beast/Leopard_Snow/Leopard_Snow_Statue_Trophy_Icon.png",
+        "drops": 0.95,
+        "rarity": "mythic",
+        "type":"statue",
+        "addedVersion": "v0.3"
+      },
+      "head": {
+        "name": "Snow Leopard Head",
+        "img": "img/icons/Beast/Leopard_Snow/Leopard_Snow_Head_Trophy_Block_Icon.png",
+        "drops": 2.5,
+        "rarity": "rare",
+        "type":"head",
+        "addedVersion": "v0.3"
+      },
+      "fragment": {
+        "name": "Snow Leopard's Fang",
+        "img": "img/icons/Beast/Leopard_Snow/Leopard_Snow_Fang_Trophy_Icon.png",
+        "drops": 1.35,
+        "rarity": "uncommon",
+        "type":"fragment",
+        "addedVersion": "v0.3"
+      }
+    }
   }
 ]
