@@ -2,7 +2,7 @@
   {
     "name": "Fox",
     "id": "Fox",
-    "image": "img/icons/Fox/Fox_Icon",
+    "image": "img/icons/Fox/Fox_Icon.png",
     "zone": 1,
     "drops": {
       "stataue": {
@@ -42,18 +42,18 @@
   {
     "name": "Grizzly",
     "id": "Grizzly",
-    "image": "img/icons/Grizzly/Bear_Grizzly_Icon.png",
+    "image": "img/icons/Bears/Grizzly/Bear_Bear_Grizzly_Icon.png",
     "zone": 1,
     "drops": {
       "stataue": {
         "name": "Grizzly Statue",
-        "img": "img/icons/Grizzly/Grizzly_Statue_Trophy_Icon.png",
+        "img": "img/icons/Bears/Grizzly/Bear_Grizzly_Statue_Trophy_Icon.png",
         "drops": 0.89,
         "rarity": "epic"
       },
       "head": {
         "name": "Grizzly Head",
-        "img": "img/icons/Grizzly/Grizzly_Head_Trophy_Icon.png",
+        "img": "img/icons/Bears/Grizzly/Bear_Grizzly_Head_Trophy_Icon.png",
         "drops": 2.11,
         "rarity": "rare"
       }
