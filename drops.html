@@ -5,7 +5,6 @@
     <link rel="stylesheet" href="style.css">
     <title>Mob Trophies - Drops</title>
     <style>
-        /* Styles spécifiques pour la bulle d'aide */
         .search-container {
             position: relative;
             width: 100%;
@@ -37,7 +36,6 @@
             border-color: var(--accent);
         }
 
-        /* Le Tooltip (le message qui s'affiche) */
         .tooltip {
             visibility: hidden;
             position: absolute;
@@ -45,16 +43,17 @@
             top: 100%;
             background: #1a222b;
             color: var(--text-main);
-            padding: 10px 15px;
+            padding: 12px 15px;
             border-radius: 8px;
             border: 1px solid var(--accent);
-            width: 290px;
+            width: 320px;
             font-size: 0.8rem;
             z-index: 10;
             margin-top: 10px;
             box-shadow: 0 5px 15px rgba(0,0,0,0.5);
             opacity: 0;
             transition: opacity 0.3s;
+            line-height: 1.4;
         }
 
         .info-icon:hover + .tooltip {
@@ -69,22 +68,23 @@
     <nav>
         <a href="index.html">Home</a>
         <a href="drops.html" class="active">Drops</a>
-        <a href="download.html">Downlaod</a>
+        <a href="download.html">Download</a>
     </nav>
 
     <div class="container">
         <h1 class="accent-text">Drops list</h1>
         
         <div class="search-container">
-            <input type="text" id="searchInput" placeholder="Rechercher un mob..." 
+            <input type="text" id="searchInput" placeholder="Search a mob or use filters..." 
                    style="width: 100%; padding: 15px 45px 15px 15px; border-radius: 8px; background: #12181f; border: 1px solid #2d3748; color: white; box-sizing: border-box;">
             
             <div class="info-icon">?</div>
             <div class="tooltip">
                 <b>Search tips:</b><br>
-                • Type <b>z:[zone number]</b> to filter by zone (e.g., z:1).<br>
-                • Type <b>r:[rarity]</b> to filter by rarity.<br>
-                <small style="opacity: 0.6;">Rarity : uncommon, rare, epic, mythic, legendary</small>
+                • <b>z:1</b> : Filter by zone.<br>
+                • <b>r:epic</b> : Filter by rarity.<br>
+                • <b>Combine:</b> You can type <b>z:1 r:epic</b> !<br>
+                <small style="opacity: 0.6;">Rarity: uncommon, rare, epic, mythic, legendary</small>
             </div>
         </div>
         
@@ -123,14 +123,17 @@
                     "legendary": "#e6cc80"
                 };
 
-                const render = (list, searchTerm = "") => {
+                const render = (list, searchTerms = []) => {
+                    // On récupère la rareté ciblée si elle existe dans les termes
+                    const rarityFilter = searchTerms.find(t => t.startsWith('r:'))?.split('r:')[1];
+
                     grid.innerHTML = list.map(m => {
                         let dropItems = m.drops ? Object.values(m.drops) : [];
 
-                        if (searchTerm.startsWith('r:')) {
-                            const rarityTarget = searchTerm.split('r:')[1];
+                        // Si un filtre de rareté est présent, on ne montre que ces items là
+                        if (rarityFilter) {
                             dropItems = dropItems.filter(item => 
-                                item.rarity && item.rarity.toLowerCase() === rarityTarget
+                                item.rarity && item.rarity.toLowerCase() === rarityFilter
                             );
                         }
 
@@ -154,7 +157,6 @@
                                                     <img src="${item.img}" alt="${item.name}" style="width: 32px; height: 32px; object-fit: contain; filter: drop-shadow(0 0 5px ${color}66);">
                                                     <div>
                                                         <div style="font-size: 0.85rem; font-weight: bold; color: #e2e8f0; margin-bottom: 4px;">${item.name}</div>
-                                                        
                                                         <div style="font-size: 0.75rem; font-weight: 600;">
                                                             <span style="color: #cbd5e0;">${item.drops}%</span> 
                                                             <span style="color: #4a5568; margin: 0 3px;">•</span> 
@@ -174,27 +176,35 @@
                 render(data);
 
                 document.getElementById('searchInput').addEventListener('input', e => {
-                    const term = e.target.value.toLowerCase().trim();
-                    let filtered;
+                    const rawValue = e.target.value.toLowerCase().trim();
+                    // On sépare l'entrée par les espaces pour avoir chaque filtre (ex: ["z:1", "r:epic"])
+                    const terms = rawValue.split(/\s+/).filter(t => t.length > 0);
                     
-                    if (term.startsWith('z:')) {
-                        const zoneValue = term.split('z:')[1];
-                        filtered = data.filter(m => m.zone.toString() === zoneValue);
-                    } 
-                    else if (term.startsWith('r:')) {
-                        const rarityValue = term.split('r:')[1];
-                        filtered = data.filter(m => {
-                            const items = m.drops ? Object.values(m.drops) : [];
-                            return items.some(item => item.rarity && item.rarity.toLowerCase() === rarityValue);
-                        });
-                    } 
-                    else {
-                        filtered = data.filter(m => 
-                            m.name.toLowerCase().includes(term) || 
-                            (m.id && m.id.toLowerCase().includes(term))
-                        );
+                    if (terms.length === 0) {
+                        render(data, []);
+                        return;
                     }
-                    render(filtered, term);
+
+                    const filtered = data.filter(m => {
+                        // Pour chaque mob, il doit valider TOUS les termes de recherche
+                        return terms.every(term => {
+                            if (term.startsWith('z:')) {
+                                const zoneValue = term.split('z:')[1];
+                                return m.zone.toString() === zoneValue;
+                            } 
+                            else if (term.startsWith('r:')) {
+                                const rarityValue = term.split('r:')[1];
+                                const items = m.drops ? Object.values(m.drops) : [];
+                                return items.some(item => item.rarity && item.rarity.toLowerCase() === rarityValue);
+                            } 
+                            else {
+                                // Recherche par nom ou ID
+                                return m.name.toLowerCase().includes(term) || (m.id && m.id.toLowerCase().includes(term));
+                            }
+                        });
+                    });
+
+                    render(filtered, terms);
                 });
 
             } catch (err) {
