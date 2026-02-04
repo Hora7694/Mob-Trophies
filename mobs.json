@@ -116,14 +116,14 @@
     "zone": 1,
     "drops": {
       "stataue": {
-        "name": "Rex_Cave Statue",
+        "name": "Rex Cave Statue",
         "img": "img/icons/Beast/Rex_Cave/Rex_Cave_Statue_Trophy_Icon.png",
         "drops": 0.58,
         "rarity": "epic",
         "addedVersion": "v0.1"
       },
       "head": {
-        "name": "Rex_Cave Head",
+        "name": "Rex Cave Head",
         "img": "img/icons/Beast/Rex_Cave/Rex_Cave_Head_Trophy_Block_Icon.png",
         "drops": 2.92,
         "rarity": "rare",

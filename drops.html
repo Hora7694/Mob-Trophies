@@ -124,13 +124,11 @@
                 };
 
                 const render = (list, searchTerms = []) => {
-                    // On récupère la rareté ciblée si elle existe dans les termes
                     const rarityFilter = searchTerms.find(t => t.startsWith('r:'))?.split('r:')[1];
 
                     grid.innerHTML = list.map(m => {
                         let dropItems = m.drops ? Object.values(m.drops) : [];
 
-                        // Si un filtre de rareté est présent, on ne montre que ces items là
                         if (rarityFilter) {
                             dropItems = dropItems.filter(item => 
                                 item.rarity && item.rarity.toLowerCase() === rarityFilter
@@ -138,7 +136,7 @@
                         }
 
                         return `
-                            <div class="card" style="display: flex; align-items: center; gap: 30px; padding: 25px;">
+                            <div class="card" style="display: flex; align-items: center; gap: 30px; padding: 25px; margin-bottom: 20px; background: #1a222b; border-radius: 12px; border: 1px solid #2d3748;">
                                 <div style="background: rgba(0,0,0,0.3); padding: 10px; border-radius: 8px; width: 100px; height: 100px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
                                     <img src="${m.image}" alt="${m.name}" style="max-width: 100%; max-height: 100%; object-fit: contain;">
                                 </div>
@@ -153,10 +151,16 @@
                                             const bgGradient = `linear-gradient(135deg, ${color}15 0%, rgba(26, 34, 43, 1) 100%)`;
                                             
                                             return `
-                                                <div class="item-card" style="background: ${bgGradient}; border: 1px solid ${color}88; box-shadow: inset 0 0 10px ${color}11; padding: 10px 14px; border-radius: 8px; display: flex; align-items: center; gap: 12px; min-width: 170px; transition: 0.2s;">
+                                                <div class="item-card" style="background: ${bgGradient}; border: 1px solid ${color}88; box-shadow: inset 0 0 10px ${color}11; padding: 10px 14px; border-radius: 8px; display: flex; align-items: center; gap: 12px; min-width: 175px; transition: 0.2s; position: relative;">
+                                                    
+                                                    <div style="position: absolute; top: 4px; right: 6px; font-size: 0.55rem; opacity: 0.4; font-family: monospace; color: #fff;">
+                                                        ${item.addedVersion || '0.1'}
+                                                    </div>
+
                                                     <img src="${item.img}" alt="${item.name}" style="width: 32px; height: 32px; object-fit: contain; filter: drop-shadow(0 0 5px ${color}66);">
+                                                    
                                                     <div>
-                                                        <div style="font-size: 0.85rem; font-weight: bold; color: #e2e8f0; margin-bottom: 4px;">${item.name}</div>
+                                                        <div style="font-size: 0.85rem; font-weight: bold; color: #e2e8f0; margin-bottom: 4px; padding-right: 20px;">${item.name}</div>
                                                         <div style="font-size: 0.75rem; font-weight: 600;">
                                                             <span style="color: #cbd5e0;">${item.drops}%</span> 
                                                             <span style="color: #4a5568; margin: 0 3px;">•</span> 
@@ -177,7 +181,6 @@
 
                 document.getElementById('searchInput').addEventListener('input', e => {
                     const rawValue = e.target.value.toLowerCase().trim();
-                    // On sépare l'entrée par les espaces pour avoir chaque filtre (ex: ["z:1", "r:epic"])
                     const terms = rawValue.split(/\s+/).filter(t => t.length > 0);
                     
                     if (terms.length === 0) {
@@ -186,7 +189,6 @@
                     }
 
                     const filtered = data.filter(m => {
-                        // Pour chaque mob, il doit valider TOUS les termes de recherche
                         return terms.every(term => {
                             if (term.startsWith('z:')) {
                                 const zoneValue = term.split('z:')[1];
@@ -198,7 +200,6 @@
                                 return items.some(item => item.rarity && item.rarity.toLowerCase() === rarityValue);
                             } 
                             else {
-                                // Recherche par nom ou ID
                                 return m.name.toLowerCase().includes(term) || (m.id && m.id.toLowerCase().includes(term));
                             }
                         });
@@ -209,6 +210,7 @@
 
             } catch (err) {
                 console.error("Erreur chargement JSON:", err);
+                document.getElementById('mobsGrid').innerHTML = "<p style='color:red;'>Erreur lors du chargement des données. Vérifie ton fichier JSON.</p>";
             }
         }
         load();
