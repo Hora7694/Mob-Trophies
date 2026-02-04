@@ -61,106 +61,120 @@
     </footer>
 
     <script>
-        const btnTop = document.getElementById("backToTop");
-        const rarityColors = {
-            "uncommon": "var(--rarity-uncommon)",
-            "rare": "var(--rarity-rare)",
-            "epic": "var(--rarity-epic)",
-            "mythic": "var(--rarity-mythic)",
-            "legendary": "var(--rarity-legendary)"
-        };
+            const btnTop = document.getElementById("backToTop");
+            const rarityColors = {
+                "uncommon": "var(--rarity-uncommon)",
+                "rare": "var(--rarity-rare)",
+                "epic": "var(--rarity-epic)",
+                "mythic": "var(--rarity-mythic)",
+                "legendary": "var(--rarity-legendary)"
+            };
 
-        const renderMedia = (mediaData, name) => {
-            const isArray = Array.isArray(mediaData);
-            const firstImg = isArray ? mediaData[0] : (mediaData || 'img/placeholder.png');
-            if (isArray && mediaData.length > 1) {
-                return `<img src="${firstImg}" class="cycling-img" data-sources='${JSON.stringify(mediaData)}' data-index="0" alt="${name}" style="max-width: 100%; max-height: 100%; object-fit: contain;">`;
-            }
-            return `<img src="${firstImg}" alt="${name}" style="max-width: 100%; max-height: 100%; object-fit: contain;">`;
-        };
-
-        const render = (list, grid, searchTerms = []) => {
-            const rarityFilter = searchTerms.find(t => t.startsWith('r:'))?.split('r:')[1];
-            const typeFilter = searchTerms.find(t => t.startsWith('t:'))?.split('t:')[1];
-
-            grid.innerHTML = list.map(m => {
-                let dropItems = m.drops ? Object.values(m.drops) : [];
-                
-                if (rarityFilter || typeFilter) {
-                    dropItems = dropItems.filter(item => {
-                        const matchRarity = rarityFilter ? (item.rarity && item.rarity.toLowerCase() === rarityFilter) : true;
-                        const matchType = typeFilter ? (item.type && item.type.toLowerCase() === typeFilter) : true;
-                        return matchRarity && matchType;
-                    });
+            // --- CE QUI MANQUAIT DANS TON SCRIPT ---
+            window.addEventListener('scroll', () => {
+                if (window.pageYOffset > 400) {
+                    btnTop.style.display = "flex";
+                } else {
+                    btnTop.style.display = "none";
                 }
-                
-                if ((rarityFilter || typeFilter) && dropItems.length === 0) return '';
+            });
 
-                return `
-                    <div class="card" style="display: flex; align-items: center; gap: 30px;">
-                        <div style="background: rgba(0,0,0,0.3); padding: 10px; border-radius: 8px; width: 100px; height: 100px; display: flex; align-items: center; justify-content: center; flex-shrink: 0; overflow: hidden;">
-                            ${renderMedia(m.image, m.name)}
-                        </div>
-                        <div style="flex-grow: 1;">
-                            <h3 style="margin: 0; font-size: 1.4rem; color: #fff;">${m.name}</h3>
-                            <p style="font-size: 0.75rem; opacity: 0.5; margin: 4px 0 15px 0; font-family: monospace;">Zone: ${m.zone}</p>
-                            <div style="display: flex; gap: 15px; flex-wrap: wrap;">
-                                ${dropItems.map(item => {
-                                    const color = rarityColors[item.rarity?.toLowerCase()] || "var(--rarity-default)";
-                                    const hasHover = !!item.dropsHover;
-                                    
-                                    return `
-                                        <div class="item-card ${hasHover ? 'has-hover' : ''}" style="background: linear-gradient(135deg, rgba(255,255,255,0.05) 0%, rgba(0,0,0,0.2) 100%); border: 1px solid ${color}; padding: 12px 14px; border-radius: 8px; display: flex; align-items: center; gap: 12px; min-width: 200px; position: relative;">
-                                            <div style="position: absolute; top: 6px; right: 8px; font-size: 0.55rem; opacity: 0.5; color: #fff; font-family: monospace;">${item.addedVersion || 'v0.1'}</div>
-                                            <div style="width: 32px; height: 32px; flex-shrink: 0; display: flex; align-items: center; justify-content: center; overflow: hidden;">${renderMedia(item.img, item.name)}</div>
-                                            <div style="padding-right: 30px;">
-                                                <div style="font-size: 0.85rem; font-weight: bold; color: var(--text-main); line-height: 1.2;">${item.name}</div>
-                                                <div style="font-size: 0.75rem; margin-top: 2px;">
-                                                    <span class="drop-value" style="color: var(--text-muted);">${item.drops}%</span>
-                                                    ${hasHover ? `<span class="drop-hover-text">${item.dropsHover}</span>` : ''}
-                                                    <span style="color: ${color}; font-size: 0.65rem; text-transform: uppercase; font-weight: bold; margin-left: 4px;">${item.rarity}</span>
-                                                </div>
-                                            </div>
-                                        </div>`;
-                                }).join('')}
+            btnTop.addEventListener('click', () => {
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+            });
+            // ---------------------------------------
+
+            const renderMedia = (mediaData, name) => {
+                const isArray = Array.isArray(mediaData);
+                const firstImg = isArray ? mediaData[0] : (mediaData || 'img/placeholder.png');
+                if (isArray && mediaData.length > 1) {
+                    return `<img src="${firstImg}" class="cycling-img" data-sources='${JSON.stringify(mediaData)}' data-index="0" alt="${name}" style="max-width: 100%; max-height: 100%; object-fit: contain;">`;
+                }
+                return `<img src="${firstImg}" alt="${name}" style="max-width: 100%; max-height: 100%; object-fit: contain;">`;
+            };
+
+            const render = (list, grid, searchTerms = []) => {
+                const rarityFilter = searchTerms.find(t => t.startsWith('r:'))?.split('r:')[1];
+                const typeFilter = searchTerms.find(t => t.startsWith('t:'))?.split('t:')[1];
+
+                grid.innerHTML = list.map(m => {
+                    let dropItems = m.drops ? Object.values(m.drops) : [];
+                    
+                    if (rarityFilter || typeFilter) {
+                        dropItems = dropItems.filter(item => {
+                            const matchRarity = rarityFilter ? (item.rarity && item.rarity.toLowerCase() === rarityFilter) : true;
+                            const matchType = typeFilter ? (item.type && item.type.toLowerCase() === typeFilter) : true;
+                            return matchRarity && matchType;
+                        });
+                    }
+                    
+                    if ((rarityFilter || typeFilter) && dropItems.length === 0) return '';
+
+                    return `
+                        <div class="card" style="display: flex; align-items: center; gap: 30px;">
+                            <div style="background: rgba(0,0,0,0.3); padding: 10px; border-radius: 8px; width: 100px; height: 100px; display: flex; align-items: center; justify-content: center; flex-shrink: 0; overflow: hidden;">
+                                ${renderMedia(m.image, m.name)}
                             </div>
-                        </div>
-                    </div>`;
-            }).join('');
-        };
+                            <div style="flex-grow: 1;">
+                                <h3 style="margin: 0; font-size: 1.4rem; color: #fff;">${m.name}</h3>
+                                <p style="font-size: 0.75rem; opacity: 0.5; margin: 4px 0 15px 0; font-family: monospace;">Zone: ${m.zone}</p>
+                                <div style="display: flex; gap: 15px; flex-wrap: wrap;">
+                                    ${dropItems.map(item => {
+                                        const color = rarityColors[item.rarity?.toLowerCase()] || "var(--rarity-default)";
+                                        const hasHover = !!item.dropsHover;
+                                        
+                                        return `
+                                            <div class="item-card ${hasHover ? 'has-hover' : ''}" style="background: linear-gradient(135deg, rgba(255,255,255,0.05) 0%, rgba(0,0,0,0.2) 100%); border: 1px solid ${color}; padding: 12px 14px; border-radius: 8px; display: flex; align-items: center; gap: 12px; min-width: 200px; position: relative;">
+                                                <div style="position: absolute; top: 6px; right: 8px; font-size: 0.55rem; opacity: 0.5; color: #fff; font-family: monospace;">${item.addedVersion || 'v0.1'}</div>
+                                                <div style="width: 32px; height: 32px; flex-shrink: 0; display: flex; align-items: center; justify-content: center; overflow: hidden;">${renderMedia(item.img, item.name)}</div>
+                                                <div style="padding-right: 30px;">
+                                                    <div style="font-size: 0.85rem; font-weight: bold; color: var(--text-main); line-height: 1.2;">${item.name}</div>
+                                                    <div style="font-size: 0.75rem; margin-top: 2px;">
+                                                        <span class="drop-value" style="color: var(--text-muted);">${item.drops}%</span>
+                                                        ${hasHover ? `<span class="drop-hover-text">${item.dropsHover}</span>` : ''}
+                                                        <span style="color: ${color}; font-size: 0.65rem; text-transform: uppercase; font-weight: bold; margin-left: 4px;">${item.rarity}</span>
+                                                    </div>
+                                                </div>
+                                            </div>`;
+                                    }).join('')}
+                                </div>
+                            </div>
+                        </div>`;
+                }).join('');
+            };
 
-        async function load() {
-            try {
-                const res = await fetch('mobs.json');
-                const data = await res.json();
-                const grid = document.getElementById('mobsGrid');
-                render(data, grid);
+            async function load() {
+                try {
+                    const res = await fetch('mobs.json');
+                    const data = await res.json();
+                    const grid = document.getElementById('mobsGrid');
+                    render(data, grid);
 
-                document.getElementById('searchInput').addEventListener('input', e => {
-                    const terms = e.target.value.toLowerCase().trim().split(/\s+/).filter(t => t.length > 0);
-                    const filtered = data.filter(m => 
-                        terms.every(term => {
-                            if (term.startsWith('z:')) return m.zone.toString() === term.split('z:')[1];
-                            if (term.startsWith('r:')) return Object.values(m.drops || {}).some(i => i.rarity?.toLowerCase() === term.split('r:')[1]);
-                            if (term.startsWith('t:')) return Object.values(m.drops || {}).some(i => i.type?.toLowerCase() === term.split('t:')[1]);
-                            return m.name.toLowerCase().includes(term);
-                        })
-                    );
-                    render(filtered, grid, terms);
-                });
-
-                setInterval(() => {
-                    document.querySelectorAll('.cycling-img').forEach(img => {
-                        const sources = JSON.parse(img.dataset.sources);
-                        let idx = (parseInt(img.dataset.index) + 1) % sources.length;
-                        img.src = sources[idx];
-                        img.dataset.index = idx;
+                    document.getElementById('searchInput').addEventListener('input', e => {
+                        const terms = e.target.value.toLowerCase().trim().split(/\s+/).filter(t => t.length > 0);
+                        const filtered = data.filter(m => 
+                            terms.every(term => {
+                                if (term.startsWith('z:')) return m.zone.toString() === term.split('z:')[1];
+                                if (term.startsWith('r:')) return Object.values(m.drops || {}).some(i => i.rarity?.toLowerCase() === term.split('r:')[1]);
+                                if (term.startsWith('t:')) return Object.values(m.drops || {}).some(i => i.type?.toLowerCase() === term.split('t:')[1]);
+                                return m.name.toLowerCase().includes(term);
+                            })
+                        );
+                        render(filtered, grid, terms);
                     });
-                }, 2000);
 
-            } catch (err) { console.error(err); }
-        }
-        load();
-    </script>
+                    setInterval(() => {
+                        document.querySelectorAll('.cycling-img').forEach(img => {
+                            const sources = JSON.parse(img.dataset.sources);
+                            let idx = (parseInt(img.dataset.index) + 1) % sources.length;
+                            img.src = sources[idx];
+                            img.dataset.index = idx;
+                        });
+                    }, 2000);
+
+                } catch (err) { console.error(err); }
+            }
+            load();
+        </script>
 </body>
 </html>
