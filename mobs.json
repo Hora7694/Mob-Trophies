@@ -42,7 +42,7 @@
   {
     "name": "Grizzly",
     "id": "Grizzly",
-    "image": "img/icons/Bears/Grizzly/Bear_Bear_Grizzly_Icon.png",
+    "image": "img/icons/Bears/Grizzly/Bear_Grizzly_Icon.png",
     "zone": 1,
     "drops": {
       "stataue": {
