@@ -79,15 +79,26 @@
 
                 document.getElementById('searchInput').addEventListener('input', e => {
                     const term = e.target.value.toLowerCase().trim();
-                    
                     let filtered;
                     
-                    // Si l'utilisateur commence par "z:", on cherche par zone
                     if (term.startsWith('z:')) {
-                        const zoneValue = term.split('z:')[1]; // On récupère ce qu'il y a après le "z:"
+                        // Filtrage par Zone
+                        const zoneValue = term.split('z:')[1];
                         filtered = data.filter(m => m.zone.toString() === zoneValue);
-                    } else {
-                        // Sinon, recherche classique par nom ou ID
+                    } 
+                    else if (term.startsWith('r:')) {
+                        // Filtrage par Rareté
+                        const rarityValue = term.split('r:')[1];
+                        filtered = data.filter(m => {
+                            const dropItems = m.drops ? Object.values(m.drops) : [];
+                            // On vérifie si un des drops contient la rareté (insensible à la casse)
+                            return dropItems.some(item => 
+                                item.rarity && item.rarity.toLowerCase() === rarityValue
+                            );
+                        });
+                    } 
+                    else {
+                        // Recherche classique (Nom ou ID)
                         filtered = data.filter(m => 
                             m.name.toLowerCase().includes(term) || 
                             (m.id && m.id.toLowerCase().includes(term))
