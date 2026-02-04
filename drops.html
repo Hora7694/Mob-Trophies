@@ -109,7 +109,118 @@
       </div>
     </footer>
 
-<script>
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="style.css">
+    <title>Mob Trophies - Drops</title>
+    <style>
+        .search-container {
+            position: relative;
+            width: 100%;
+            margin-bottom: 20px;
+        }
+
+        .info-icon {
+            position: absolute;
+            right: 15px;
+            top: 50%;
+            transform: translateY(-50%);
+            background: var(--border-color);
+            color: var(--text-muted);
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 12px;
+            font-weight: bold;
+            cursor: help;
+            transition: 0.3s;
+            border: 1px solid var(--border-color);
+        }
+
+        .info-icon:hover {
+            color: var(--accent);
+            border-color: var(--accent);
+        }
+
+        .tooltip {
+            visibility: hidden;
+            position: absolute;
+            right: 0;
+            top: 100%;
+            background: #1a222b;
+            color: var(--text-main);
+            padding: 12px 15px;
+            border-radius: 8px;
+            border: 1px solid var(--accent);
+            width: 320px;
+            font-size: 0.8rem;
+            z-index: 10;
+            margin-top: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.5);
+            opacity: 0;
+            transition: opacity 0.3s;
+            line-height: 1.4;
+        }
+
+        .info-icon:hover + .tooltip {
+            visibility: visible;
+            opacity: 1;
+        }
+
+        .tooltip b { color: var(--accent); }
+    </style>
+</head>
+<body>
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="drops.html" class="active">Drops</a>
+        <a href="download.html">Download</a>
+    </nav>
+
+    <div class="container">
+        <h1 class="accent-text">Drops list</h1>
+        
+        <div class="search-container">
+            <input type="text" id="searchInput" placeholder="Search a mob or use filters..." 
+                   style="width: 100%; padding: 15px 45px 15px 15px; border-radius: 8px; background: #12181f; border: 1px solid #2d3748; color: white; box-sizing: border-box;">
+            
+            <div class="info-icon">?</div>
+            <div class="tooltip">
+                <b>Search tips:</b><br>
+                • <b>z:[zone number]</b> : Filter by zone.<br>
+                • <b>r:[rarity]</b> : Filter by rarity.<br>
+                <small style="opacity: 0.6;">Rarity: uncommon, rare, epic, mythic, legendary</small><br>
+                • <b>t:[type]</b> You can type <b>z:1 r:epic</b><br>
+                <small style="opacity: 0.6;">Type: statue, head, fragment</small><br>
+            </div>
+        </div>
+        
+        <div id="mobsGrid"></div>
+    </div>
+
+    <footer>
+      <div class="footer-content">
+          <div class="footer-links">
+              <a href="index.html">Home</a>
+              <a href="drops.html">Drops</a>
+              <a href="download.html">Download</a>
+              <a href="legal.html">Mentions Légales</a>
+          </div>
+          <div class="copyright">
+              &copy; 2026 Mob Trophies (by kHorah_) - All rights reserved.
+          </div>
+          <div class="text-xs opacity-30 text-center" style="font-size: 0.7rem; color: var(--text-muted);">
+              This site is a fan project not affiliated with Hypixel Studios or Hytale.
+          </div>
+      </div>
+    </footer>
+
+    <script>
         async function load() {
             try {
                 const res = await fetch('mobs.json');
@@ -170,9 +281,14 @@
                                             const color = rarityColors[item.rarity?.toLowerCase()] || "var(--rarity-default)";
                                             const bgGradient = `linear-gradient(135deg, rgba(255,255,255,0.05) 0%, rgba(0,0,0,0.2) 100%)`;
                                             const defaultDrop = `${item.drops}%`;
+                                            const hoverText = item.dropsHover || defaultDrop;
+                                            const textId = `drop-${Math.random().toString(36).substr(2, 9)}`;
                                             
                                             return `
-                                                <div class="item-card" style="background: ${bgGradient}; border: 1px solid ${color}; padding: 10px 14px; border-radius: 8px; display: flex; align-items: center; gap: 12px; min-width: 190px; position: relative;">
+                                                <div class="item-card" 
+                                                     style="background: ${bgGradient}; border: 1px solid ${color}; padding: 10px 14px; border-radius: 8px; display: flex; align-items: center; gap: 12px; min-width: 190px; position: relative; cursor: ${item.dropsHover ? 'help' : 'default'};"
+                                                     ${item.dropsHover ? `onmouseover="document.getElementById('${textId}').innerText='${hoverText}'" onmouseout="document.getElementById('${textId}').innerText='${defaultDrop}'"` : ''}>
+                                                    
                                                     <div style="position: absolute; top: 5px; right: 8px; font-size: 0.55rem; opacity: 0.4; font-family: monospace; color: #fff; z-index: 2;">
                                                         ${item.addedVersion || 'v0.1'}
                                                     </div>
@@ -186,8 +302,7 @@
                                                             ${item.name}
                                                         </div>
                                                         <div style="font-size: 0.75rem; font-weight: 600; white-space: nowrap;">
-                                                            <span style="color: var(--text-muted); cursor: ${item.dropsHover ? 'help' : 'default'}; border-bottom: ${item.dropsHover ? '1px dotted rgba(255,255,255,0.3)' : 'none'};" 
-                                                                  ${item.dropsHover ? `onmouseover="this.innerText='${item.dropsHover}'" onmouseout="this.innerText='${defaultDrop}'"` : ''}>
+                                                            <span id="${textId}" style="color: var(--text-muted); ${item.dropsHover ? 'border-bottom: 1px dotted rgba(255,255,255,0.3);' : ''}">
                                                                 ${defaultDrop}
                                                             </span> 
                                                             <span style="color: #4a5568; margin: 0 3px;">•</span> 
@@ -246,4 +361,5 @@
         load();
     </script>
 </body>
+
 </html>
