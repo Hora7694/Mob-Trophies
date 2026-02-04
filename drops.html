@@ -47,10 +47,7 @@
                 
                 const render = (list) => {
                     grid.innerHTML = list.map(m => {
-                        // On transforme l'objet drops en tableau pour boucler dessus
-                        // Si m.drops n'existe pas, on prend un tableau vide []
                         const dropItems = m.drops ? Object.values(m.drops) : [];
-
                         return `
                             <div class="card" style="display: flex; align-items: center; gap: 30px; padding: 25px;">
                                 <div style="background: rgba(0,0,0,0.3); padding: 10px; border-radius: 8px; width: 100px; height: 100px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
@@ -79,13 +76,27 @@
                 };
 
                 render(data);
+
                 document.getElementById('searchInput').addEventListener('input', e => {
-                    const term = e.target.value.toLowerCase();
-                    render(data.filter(m => 
-                        m.name.toLowerCase().includes(term) || 
-                        m.id.toLowerCase().includes(term)
-                    ));
+                    const term = e.target.value.toLowerCase().trim();
+                    
+                    let filtered;
+                    
+                    // Si l'utilisateur commence par "z:", on cherche par zone
+                    if (term.startsWith('z:')) {
+                        const zoneValue = term.split('z:')[1]; // On récupère ce qu'il y a après le "z:"
+                        filtered = data.filter(m => m.zone.toString() === zoneValue);
+                    } else {
+                        // Sinon, recherche classique par nom ou ID
+                        filtered = data.filter(m => 
+                            m.name.toLowerCase().includes(term) || 
+                            (m.id && m.id.toLowerCase().includes(term))
+                        );
+                    }
+                    
+                    render(filtered);
                 });
+
             } catch (err) {
                 console.error("Erreur chargement JSON:", err);
             }
@@ -93,5 +104,4 @@
         load();
     </script>
 </body>
-
 </html>
