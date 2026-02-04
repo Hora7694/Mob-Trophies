@@ -255,7 +255,7 @@ footer {
 /* Par défaut, on cache le texte de remplacement */
 .drop-hover-text { 
     display: none; 
-    color: var(--text-main);
+    color: var(--text-muted);
     font-weight: bold;
 }
 
@@ -267,5 +267,6 @@ footer {
 .item-card.has-hover:hover .drop-hover-text { 
     display: inline; 
 }
+
 
 
