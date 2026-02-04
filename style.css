@@ -154,3 +154,24 @@ footer {
     opacity: 0.7;
     text-align: center;
 }
+
+.support-button {
+    display: inline-flex;
+    align-items: center;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    color: #fff !important;
+    padding: 8px 20px;
+    border-radius: 50px;
+    text-decoration: none;
+    font-size: 0.85rem;
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+.support-button:hover {
+    background: #ff4757; /* Couleur rouge/corail au survol */
+    border-color: #ff4757;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 15px rgba(255, 71, 87, 0.3);
+}
