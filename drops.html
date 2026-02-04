@@ -84,118 +84,7 @@
                 • <b>z:[zone number]</b> : Filter by zone.<br>
                 • <b>r:[rarity]</b> : Filter by rarity.<br>
                 <small style="opacity: 0.6;">Rarity: uncommon, rare, epic, mythic, legendary</small><br>
-                • <b>t:[type]</b> You can type <b>z:1 r:epic</b><br>
-                <small style="opacity: 0.6;">Type: statue, head, fragment</small><br>
-            </div>
-        </div>
-        
-        <div id="mobsGrid"></div>
-    </div>
-
-    <footer>
-      <div class="footer-content">
-          <div class="footer-links">
-              <a href="index.html">Home</a>
-              <a href="drops.html">Drops</a>
-              <a href="download.html">Download</a>
-              <a href="legal.html">Mentions Légales</a>
-          </div>
-          <div class="copyright">
-              &copy; 2026 Mob Trophies (by kHorah_) - All rights reserved.
-          </div>
-          <div class="text-xs opacity-30 text-center" style="font-size: 0.7rem; color: var(--text-muted);">
-              This site is a fan project not affiliated with Hypixel Studios or Hytale.
-          </div>
-      </div>
-    </footer>
-
-<!DOCTYPE html>
-<html lang="fr">
-<head>
-    <meta charset="UTF-8">
-    <link rel="stylesheet" href="style.css">
-    <title>Mob Trophies - Drops</title>
-    <style>
-        .search-container {
-            position: relative;
-            width: 100%;
-            margin-bottom: 20px;
-        }
-
-        .info-icon {
-            position: absolute;
-            right: 15px;
-            top: 50%;
-            transform: translateY(-50%);
-            background: var(--border-color);
-            color: var(--text-muted);
-            width: 20px;
-            height: 20px;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 12px;
-            font-weight: bold;
-            cursor: help;
-            transition: 0.3s;
-            border: 1px solid var(--border-color);
-        }
-
-        .info-icon:hover {
-            color: var(--accent);
-            border-color: var(--accent);
-        }
-
-        .tooltip {
-            visibility: hidden;
-            position: absolute;
-            right: 0;
-            top: 100%;
-            background: #1a222b;
-            color: var(--text-main);
-            padding: 12px 15px;
-            border-radius: 8px;
-            border: 1px solid var(--accent);
-            width: 320px;
-            font-size: 0.8rem;
-            z-index: 10;
-            margin-top: 10px;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.5);
-            opacity: 0;
-            transition: opacity 0.3s;
-            line-height: 1.4;
-        }
-
-        .info-icon:hover + .tooltip {
-            visibility: visible;
-            opacity: 1;
-        }
-
-        .tooltip b { color: var(--accent); }
-    </style>
-</head>
-<body>
-    <nav>
-        <a href="index.html">Home</a>
-        <a href="drops.html" class="active">Drops</a>
-        <a href="download.html">Download</a>
-    </nav>
-
-    <div class="container">
-        <h1 class="accent-text">Drops list</h1>
-        
-        <div class="search-container">
-            <input type="text" id="searchInput" placeholder="Search a mob or use filters..." 
-                   style="width: 100%; padding: 15px 45px 15px 15px; border-radius: 8px; background: #12181f; border: 1px solid #2d3748; color: white; box-sizing: border-box;">
-            
-            <div class="info-icon">?</div>
-            <div class="tooltip">
-                <b>Search tips:</b><br>
-                • <b>z:[zone number]</b> : Filter by zone.<br>
-                • <b>r:[rarity]</b> : Filter by rarity.<br>
-                <small style="opacity: 0.6;">Rarity: uncommon, rare, epic, mythic, legendary</small><br>
-                • <b>t:[type]</b> You can type <b>z:1 r:epic</b><br>
+                • <b>t:[type]</b> Filter by type.<br>
                 <small style="opacity: 0.6;">Type: statue, head, fragment</small><br>
             </div>
         </div>
@@ -361,5 +250,4 @@
         load();
     </script>
 </body>
-
 </html>
