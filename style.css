@@ -251,3 +251,16 @@ footer {
     opacity: 1;
     filter: brightness(0) invert(1); /* Devient blanc au survol */
 }
+
+
+.item-card.has-hover:hover .drop-value { 
+    display: none; 
+}
+.item-card.has-hover .drop-hover-text { 
+    display: none; 
+    color: var(--text-main);
+    font-weight: bold;
+}
+.item-card.has-hover:hover .drop-hover-text { 
+    display: inline; 
+}
