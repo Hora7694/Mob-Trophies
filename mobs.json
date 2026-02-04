@@ -429,7 +429,7 @@
     "name": "Frost Skeleton Fighter",
     "id": "Skeleton_Frost_Fighter",
     "image": "img/icons/Undead/Skeleton/Fighter/Skeleton_Frost_Fighter_Statue_Trophy_Icon.png",
-    "zone": 1,
+    "zone": 3,
     "drops": {
       "stataue": {
         "name": "Frost Skeleton Fighter Statue",
@@ -437,7 +437,7 @@
         "drops": 0.58,
         "rarity": "epic",
         "type":"statue",
-        "addedVersion": "v0.1"
+        "addedVersion": "v0.3"
       },
       "head": {
         "name": "Frost Skeleton Fighter Skull",
@@ -445,7 +445,31 @@
         "drops": 2.92,
         "rarity": "rare",
         "type":"head",
-        "addedVersion": "v0.1"
+        "addedVersion": "v0.3"
+      }
+    }
+  },
+  {
+    "name": "Frost Skeleton Knight",
+    "id": "Skeleton_Frost_Knight",
+    "image": "img/icons/Undead/Skeleton/Knight/Skeleton_Frost_Knight_Statue_Trophy_Icon.png",
+    "zone": 3,
+    "drops": {
+      "stataue": {
+        "name": "Frost Skeleton Knight Statue",
+        "img": "img/icons/Undead/Skeleton/Knight/Skeleton_Frost_Knight_Statue_Trophy_Icon.png",
+        "drops": 0.45,
+        "rarity": "epic",
+        "type":"statue",
+        "addedVersion": "v0.3"
+      },
+      "head": {
+        "name": "Frost Skeleton Knight Skull",
+        "img": "img/icons/Undead/Skeleton/Knight/Skeleton_Frost_Knight_Head_Trophy_Icon.png",
+        "drops": 2.50,
+        "rarity": "rare",
+        "type":"head",
+        "addedVersion": "v0.3"
       }
     }
   }
