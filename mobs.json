@@ -43,15 +43,16 @@
     "drops": {
       "stataue": {
         "name": "Grizzly Statue",
-        "img": "img/icons/Grizzly/Grizzly_Statue_Trophy_Icon.png",
+        "img": "img/icons/Bears/Grizzly/Grizzly_Statue_Trophy_Icon.png",
         "drops": 0.89
       },
       "head": {
         "name": "Grizzly Head",
-        "img": "img/icons/Grizzly/Grizzly_Head_Trophy_Icon.png",
+        "img": "img/icons/Bears/Grizzly/Grizzly_Head_Trophy_Icon.png",
         "drops": 2.11
       }
     }
   }
 ]
+
 
