@@ -2,7 +2,7 @@
   {
     "name": "Fox",
     "id": "Fox",
-    "image": "img/icons/Fox/Fox_Icon",
+    "image": "img/icons/Fox/Fox_Icon.png",
     "zone": 1,
     "drops": {
       "stataue": {
@@ -38,7 +38,7 @@
   {
     "name": "Grizzly",
     "id": "Grizzly",
-    "image": "img/icons/Grizzly/Bear_Grizzly_Icon.png",
+    "image": "img/icons/Bears/Grizzly/Bear_Grizzly_Icon.png",
     "zone": 1,
     "drops": {
       "stataue": {
@@ -54,3 +54,4 @@
     }
   }
 ]
+
