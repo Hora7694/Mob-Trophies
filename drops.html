@@ -92,7 +92,9 @@
         <div id="mobsGrid"></div>
     </div>
 
-    <button id="backToTop" title="Back to top">↑</button>
+    <button id="backToTop" title="Back to top">
+        <img src="img/ui/arrow-up.png" alt="Top" style="width: 20px; height: 20px;">
+    </button>
 
     <footer>
       <div class="footer-content">
@@ -259,25 +261,22 @@
     </script>
 
     <script>
-      // On récupère le bouton
-      const btnTop = document.getElementById("backToTop");
+        const btnTop = document.getElementById("backToTop");
 
-      // Quand on scrolle, on vérifie la position
-      window.onscroll = function() {
-          if (document.body.scrollTop > 300 || document.documentElement.scrollTop > 300) {
-              btnTop.style.display = "block";
-          } else {
-              btnTop.style.display = "none";
-          }
-      };
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 400) {
+                btnTop.style.display = "flex"; // Utilise flex au lieu de block pour le centrage
+            } else {
+                btnTop.style.display = "none";
+            }
+        });
 
-      // Quand on clique, on remonte
-      btnTop.onclick = function() {
-          window.scrollTo({
-              top: 0,
-              behavior: 'smooth' // Remontée fluide
-          });
-      };
+        btnTop.addEventListener('click', () => {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
     </script>
 </body>
 </html>
