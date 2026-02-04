@@ -1,4 +1,4 @@
-/* Couleurs Hytale */
+/* Couleurs Hytale & Configuration */
 :root {
     --bg-dark: #0b0f13;
     --card-bg: #12181f;
@@ -6,9 +6,17 @@
     --accent: #d4af37;
     --text-main: #e2e8f0;
     --text-muted: #a0aec0;
+
+    /* Couleurs de Rareté */
+    --rarity-uncommon: #29c714c2;
+    --rarity-rare: #0070dd;
+    --rarity-epic: #a335ee;
+    --rarity-mythic: #ff8000;
+    --rarity-legendary: #e6cc80;
+    --rarity-default: #2d3748;
 }
 
-/* On force le HTML et le BODY à prendre toute la hauteur */
+/* Base */
 html {
     height: 100%;
 }
@@ -20,7 +28,7 @@ body {
     margin: 0;
     display: flex;
     flex-direction: column;
-    min-height: 100vh; /* Sécurité pour occuper tout l'écran */
+    min-height: 100vh;
 }
 
 /* Navigation */
@@ -47,12 +55,12 @@ nav a:hover, nav a.active {
     color: var(--accent);
 }
 
-/* Layout - C'est cette partie qui pousse le footer */
+/* Layout */
 .container {
     max-width: 1000px;
     margin: 40px auto;
     padding: 0 20px;
-    flex: 1 0 auto; /* Indispensable : il "mange" l'espace vide */
+    flex: 1 0 auto;
     width: 100%;
     box-sizing: border-box;
 }
@@ -63,9 +71,36 @@ nav a:hover, nav a.active {
     border-radius: 12px;
     padding: 20px;
     margin-bottom: 1rem;
+    transition: border-color 0.3s;
+}
+
+.card:hover {
+    border-color: rgba(212, 175, 55, 0.3);
 }
 
 .accent-text { color: var(--accent); }
+
+/* --- SYSTÈME DE DROPS (Items) --- */
+.item-card {
+    position: relative;
+    transition: transform 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275), filter 0.2s, box-shadow 0.2s;
+    cursor: default;
+    overflow: hidden;
+}
+
+.item-card:hover {
+    transform: translateY(-4px); /* Soulèvement fluide */
+    filter: brightness(1.25); /* Rend le dégradé et la bordure plus vifs */
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.4) !important;
+}
+
+.item-card img {
+    transition: transform 0.2s ease;
+}
+
+.item-card:hover img {
+    transform: scale(1.1); /* Petit zoom sur l'objet au survol */
+}
 
 /* Boutons */
 .btn-download {
@@ -80,7 +115,7 @@ nav a:hover, nav a.active {
 
 /* Footer Styles */
 footer {
-    flex-shrink: 0; /* Empêche le footer de se ratatiner */
+    flex-shrink: 0;
     background-color: var(--card-bg);
     border-top: 1px solid var(--border-color);
     padding: 30px 0;
@@ -118,26 +153,4 @@ footer {
     font-size: 0.8rem;
     opacity: 0.7;
     text-align: center;
-}
-
-
-:root {
-    /* ... tes autres variables ... */
-    --rarity-uncommon: #29c714c2; /* Vert */
-    --rarity-rare: #0070dd;     /* Bleu */
-    --rarity-epic: #a335ee;     /* Violet */
-    --rarity-mythic: #ff8000;   /* Orange */
-    --rarity-legendary: #e6cc80; /* Doré */
-    --rarity-default: #2d3748;  /* Gris par défaut */
-}
-
-/* On prépare une classe d'animation pour les items */
-.item-card {
-    transition: transform 0.2s, box-shadow 0.2s, background-color 0.2s;
-    cursor: default;
-}
-
-.item-card:hover {
-    transform: translateY(-2px);
-    background-color: rgba(255, 255, 255, 0.05) !important;
 }
