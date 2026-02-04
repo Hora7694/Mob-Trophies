@@ -45,9 +45,19 @@
                 const data = await res.json();
                 const grid = document.getElementById('mobsGrid');
                 
-                const render = (list) => {
+                const render = (list, searchTerm = "") => {
                     grid.innerHTML = list.map(m => {
-                        const dropItems = m.drops ? Object.values(m.drops) : [];
+                        let dropItems = m.drops ? Object.values(m.drops) : [];
+
+                        // LOGIQUE DE FILTRAGE DES ITEMS
+                        // Si on recherche par rareté (r:), on ne garde que les items concernés
+                        if (searchTerm.startsWith('r:')) {
+                            const rarityTarget = searchTerm.split('r:')[1];
+                            dropItems = dropItems.filter(item => 
+                                item.rarity && item.rarity.toLowerCase() === rarityTarget
+                            );
+                        }
+
                         return `
                             <div class="card" style="display: flex; align-items: center; gap: 30px; padding: 25px;">
                                 <div style="background: rgba(0,0,0,0.3); padding: 10px; border-radius: 8px; width: 100px; height: 100px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
@@ -75,6 +85,7 @@
                     }).join('');
                 };
 
+                // Premier affichage
                 render(data);
 
                 document.getElementById('searchInput').addEventListener('input', e => {
@@ -82,30 +93,26 @@
                     let filtered;
                     
                     if (term.startsWith('z:')) {
-                        // Filtrage par Zone
                         const zoneValue = term.split('z:')[1];
                         filtered = data.filter(m => m.zone.toString() === zoneValue);
                     } 
                     else if (term.startsWith('r:')) {
-                        // Filtrage par Rareté
                         const rarityValue = term.split('r:')[1];
+                        // On filtre les mobs qui possèdent AU MOINS un item de cette rareté
                         filtered = data.filter(m => {
-                            const dropItems = m.drops ? Object.values(m.drops) : [];
-                            // On vérifie si un des drops contient la rareté (insensible à la casse)
-                            return dropItems.some(item => 
-                                item.rarity && item.rarity.toLowerCase() === rarityValue
-                            );
+                            const items = m.drops ? Object.values(m.drops) : [];
+                            return items.some(item => item.rarity && item.rarity.toLowerCase() === rarityValue);
                         });
                     } 
                     else {
-                        // Recherche classique (Nom ou ID)
                         filtered = data.filter(m => 
                             m.name.toLowerCase().includes(term) || 
                             (m.id && m.id.toLowerCase().includes(term))
                         );
                     }
                     
-                    render(filtered);
+                    // On passe 'term' à render pour qu'il sache s'il doit cacher des items
+                    render(filtered, term);
                 });
 
             } catch (err) {
