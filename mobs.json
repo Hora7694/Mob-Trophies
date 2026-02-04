@@ -49,13 +49,13 @@
   },
   {
     "name": "Grizzly",
-    "id": "Grizzly",
-    "image": "img/icons/Bears/Grizzly/Bear_Grizzly_Icon.png",
+    "id": "Bear_Grizzly",
+    "image": "img/icons/Beast/Bears/Grizzly/Bear_Grizzly_Icon.png",
     "zone": 1,
     "drops": {
       "stataue": {
         "name": "Grizzly Statue",
-        "img": "img/icons/Bears/Grizzly/Bear_Grizzly_Statue_Trophy_Icon.png",
+        "img": "img/icons/Beast/Bears/Grizzly/Bear_Grizzly_Statue_Trophy_Icon.png",
         "drops": 0.89,
         "rarity": "epic",
         "type":"statue",
@@ -63,7 +63,7 @@
       },
       "head": {
         "name": "Grizzly Head",
-        "img": "img/icons/Bears/Grizzly/Bear_Grizzly_Head_Trophy_Icon.png",
+        "img": "img/icons/Beast/Bears/Grizzly/Bear_Grizzly_Head_Trophy_Icon.png",
         "drops": 2.11,
         "rarity": "rare",
         "type":"head",
@@ -350,6 +350,78 @@
         "rarity": "rare",
         "type":"head",
         "addedVersion": "v0.3"
+      }
+    }
+  },
+  {
+    "name": "Polar Bear",
+    "id": "Bear_Polar",
+    "image": "img/icons/Beast/Bears/Polar/Bear_Polar_Icon.png",
+    "zone": 3,
+    "drops": {
+      "stataue": {
+        "name": "Polar Statue",
+        "img": "img/icons/Beast/Bears/Polar/Bear_Polar_Statue_Trophy_Icon.png",
+        "drops": 0.89,
+        "rarity": "epic",
+        "type":"statue",
+        "addedVersion": "v0.3"
+      },
+      "head": {
+        "name": "Polar Head",
+        "img": "img/icons/Beast/Bears/Polar/Bear_Polar_Head_Trophy_Block_Icon.png",
+        "drops": 2.11,
+        "rarity": "rare",
+        "type":"head",
+        "addedVersion": "v0.3"
+      }
+    }
+  },
+  {
+    "name": "Moose (Male)",
+    "id": "Moose_Bull",
+    "image": "img/icons/Wildlife/Moose/Moose_Statue_Trophy_Bull_Icon.png",
+    "zone": 1,
+    "drops": {
+      "stataue": {
+        "name": "Moose (Male) Statue",
+        "img": "img/icons/Wildlife/Moose/Moose_Statue_Trophy_Bull_Icon.png",
+        "drops": 0.69,
+        "rarity": "epic",
+        "type":"statue",
+        "addedVersion": "v0.1"
+      },
+      "head": {
+        "name": "Moose (Male) Head",
+        "img": "img/icons/Wildlife/Moose/Moose_Head_Trophy_Bull_Block_Icon.png",
+        "drops": 3.02,
+        "rarity": "rare",
+        "type":"head",
+        "addedVersion": "v0.1"
+      }
+    }
+  },
+  {
+    "name": "Moose (Female)",
+    "id": "Moose_Cow",
+    "image": "img/icons/Wildlife/Moose/Moose_Statue_Trophy_Cow_Icon.png",
+    "zone": 1,
+    "drops": {
+      "stataue": {
+        "name": "Moose (Female) Statue",
+        "img": "img/icons/Wildlife/Moose/Moose_Statue_Trophy_Cow_Icon.png",
+        "drops": 0.50,
+        "rarity": "epic",
+        "type":"statue",
+        "addedVersion": "v0.1"
+      },
+      "head": {
+        "name": "Moose (Female) Head",
+        "img": "img/icons/Wildlife/Moose/Moose_Head_Trophy_Cow_Block_Icon.png",
+        "drops": 2.92,
+        "rarity": "rare",
+        "type":"head",
+        "addedVersion": "v0.1"
       }
     }
   }
