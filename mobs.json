@@ -474,22 +474,22 @@
     }
   },
   {
-    "name": "Outlander Cultisit",
-    "id": "Outlander_Cultisit ",
-    "image": "img/icons/Outlander/Cultisit Outlander_Cultisit_Statue_Trophy_Icon.png",
+    "name": "Outlander Cultist",
+    "id": "Outlander_Cultist ",
+    "image": "img/icons/Outlander/Cultist/Outlander_Cultist_Statue_Trophy_Icon.png",
     "zone": 3,
     "drops": {
       "stataue": {
-        "name": "Outlander Cultisit Statue",
-        "img": "img/icons/Outlander/Cultisit/Outlander_Cultisit_Statue_Trophy_Icon.png",
+        "name": "Outlander Cultist Statue",
+        "img": "img/icons/Outlander/Cultist/Outlander_Cultist_Statue_Trophy_Icon.png",
         "drops": 0.85,
         "rarity": "epic",
         "type":"statue",
         "addedVersion": "v0.3"
       },
       "head": {
-        "name": "Outlander Cultisit Head",
-        "img": "img/icons/Outlander/Cultisit/Outlander_Cultisit_Head_Trophy_Icon.png",
+        "name": "Outlander Cultist Head",
+        "img": "img/icons/Outlander/Cultist/Outlander_Cultist_Head_Trophy_Icon.png",
         "drops": 1.55,
         "rarity": "rare",
         "type":"head",
@@ -500,7 +500,7 @@
   {
     "name": "Outlander Peon",
     "id": "Outlander_Peon ",
-    "image": "img/icons/Outlander/Peon Outlander_Peon_Statue_Trophy_Icon.png",
+    "image": "img/icons/Outlander/Peon/Outlander_Peon_Statue_Trophy_Icon.png",
     "zone": 3,
     "drops": {
       "stataue": {
