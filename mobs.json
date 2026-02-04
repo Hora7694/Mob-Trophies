@@ -171,7 +171,7 @@
     "name": "Tiger Sabertooth",
     "id": "Wolf_Black",
     "image": "img/icons/Beast/Tiger_Sabertooth/Tiger_Sabertooth_Statue_Trophy_Icon.png",
-    "zone": 1,
+    "zone": 2,
     "drops": {
       "stataue": {
         "name": "Tiger Sabertooth Statue",
@@ -199,4 +199,5 @@
       }
     }
   }
+
 ]
