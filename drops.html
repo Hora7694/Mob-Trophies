@@ -4,6 +4,66 @@
     <meta charset="UTF-8">
     <link rel="stylesheet" href="style.css">
     <title>Drops des Mobs</title>
+    <style>
+        /* Styles spécifiques pour la bulle d'aide */
+        .search-container {
+            position: relative;
+            width: 100%;
+            margin-bottom: 20px;
+        }
+
+        .info-icon {
+            position: absolute;
+            right: 15px;
+            top: 50%;
+            transform: translateY(-50%);
+            background: var(--border-color);
+            color: var(--text-muted);
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 12px;
+            font-weight: bold;
+            cursor: help;
+            transition: 0.3s;
+            border: 1px solid var(--border-color);
+        }
+
+        .info-icon:hover {
+            color: var(--accent);
+            border-color: var(--accent);
+        }
+
+        /* Le Tooltip (le message qui s'affiche) */
+        .tooltip {
+            visibility: hidden;
+            position: absolute;
+            right: 0;
+            top: 100%;
+            background: #1a222b;
+            color: var(--text-main);
+            padding: 10px 15px;
+            border-radius: 8px;
+            border: 1px solid var(--accent);
+            width: 250px;
+            font-size: 0.8rem;
+            z-index: 10;
+            margin-top: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.5);
+            opacity: 0;
+            transition: opacity 0.3s;
+        }
+
+        .info-icon:hover + .tooltip {
+            visibility: visible;
+            opacity: 1;
+        }
+
+        .tooltip b { color: var(--accent); }
+    </style>
 </head>
 <body>
     <nav>
@@ -14,11 +74,21 @@
 
     <div class="container">
         <h1 class="accent-text">Liste des Drops</h1>
-        <input type="text" id="searchInput" placeholder="Rechercher un mob..." 
-               style="width: 100%; padding: 15px; border-radius: 8px; background: #12181f; border: 1px solid #2d3748; color: white; margin-bottom: 20px; box-sizing: border-box;">
         
-        <div id="mobsGrid">
+        <div class="search-container">
+            <input type="text" id="searchInput" placeholder="Rechercher un mob..." 
+                   style="width: 100%; padding: 15px 45px 15px 15px; border-radius: 8px; background: #12181f; border: 1px solid #2d3748; color: white; box-sizing: border-box;">
+            
+            <div class="info-icon">?</div>
+            <div class="tooltip">
+                <b>Astuces de recherche :</b><br>
+                • Tapez <b>z:1</b> pour filtrer par zone (ex: z:1).<br>
+                • Tapez <b>r:epic</b> pour filtrer par rareté.<br>
+                <small style="opacity: 0.6;">Raretés : uncommon, rare, epic, mythic, legendary</small>
             </div>
+        </div>
+        
+        <div id="mobsGrid"></div>
     </div>
 
     <footer>
@@ -45,20 +115,18 @@
                 const data = await res.json();
                 const grid = document.getElementById('mobsGrid');
                 
-                // Couleurs de rareté
                 const rarityColors = {
-                    "uncommon": "#1eff00", // Vert
-                    "rare": "#0070dd",     // Bleu
-                    "epic": "#a335ee",     // Violet
-                    "mythic": "#ff8000",   // Orange
-                    "legendary": "#e6cc80" // Doré
+                    "uncommon": "#1eff00",
+                    "rare": "#0070dd",
+                    "epic": "#a335ee",
+                    "mythic": "#ff8000",
+                    "legendary": "#e6cc80"
                 };
 
                 const render = (list, searchTerm = "") => {
                     grid.innerHTML = list.map(m => {
                         let dropItems = m.drops ? Object.values(m.drops) : [];
 
-                        // LOGIQUE DE FILTRAGE DES ITEMS (pour le r:)
                         if (searchTerm.startsWith('r:')) {
                             const rarityTarget = searchTerm.split('r:')[1];
                             dropItems = dropItems.filter(item => 
@@ -79,8 +147,6 @@
                                     <div style="display: flex; gap: 15px; flex-wrap: wrap;">
                                         ${dropItems.map(item => {
                                             const color = rarityColors[item.rarity?.toLowerCase()] || "#2d3748";
-                                            
-                                            // Création d'un dégradé discret qui part de la couleur de rareté
                                             const bgGradient = `linear-gradient(135deg, ${color}15 0%, rgba(26, 34, 43, 1) 100%)`;
                                             
                                             return `
@@ -102,7 +168,6 @@
                     }).join('');
                 };
 
-                // Premier affichage
                 render(data);
 
                 document.getElementById('searchInput').addEventListener('input', e => {
@@ -126,7 +191,6 @@
                             (m.id && m.id.toLowerCase().includes(term))
                         );
                     }
-                    
                     render(filtered, term);
                 });
 
