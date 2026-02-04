@@ -2,61 +2,54 @@
   {
     "name": "Fox",
     "id": "Fox",
-    "image": "https://path-to-your-image/trilobite.png",
+    "image": "img/icons/Fox/Fox_Icon",
+    "zone": 1,
     "drops": {
       "stataue": {
-        "name": "Trilobite Statue",
+        "name": "Fox Statue",
         "img": "img/icons/Fox/Fox_Statue_Trophy_Icon.png",
-        "drops": 0.54
+        "drops": 0.75
       },
       "head": {
-        "name": "Trilobite Head",
+        "name": "Fox Head",
         "img": "img/icons/Fox/Fox_Head_Trophy_Icon.png",
-        "drops": 1.45
+        "drops": 2.25
       }
     }
   },
   {
-    "name": "Black Trilobite",
-    "id": "Trilobite_Black",
-    "image": "https://path-to-your-image/black_trilobite.png",
+    "name": "Duck",
+    "id": "Duck",
+    "image": "img/icons/Duck/Duck_Statue_Trophy_Icon.png",
+    "zone": 1,
     "drops": {
       "stataue": {
-        "name": "Trilobite Statue",
-        "img": "https://path-to-your-image/trilobite_statue.png",
-        "drops": 0.54
+        "name": "Duck Statue",
+        "img": "img/icons/Duck/Duck_Statue_Trophy_Icon.png",
+        "drops": 1.25
       },
       "head": {
-        "name": "Trilobite Head",
-        "img": "https://path-to-your-image/trilobite_head.png",
-        "drops": 1.45
-      },
-      "fragments": {
-        "name": "Trilobite Fragments",
-        "img": "https://path-to-your-image/trilobite_fragments.png",
-        "drops": 5.28
+        "name": "Duck Head",
+        "img": "img/icons/Duck/Duck_Head_Trophy_Icon.png",
+        "drops": 3.5
       }
     }
   },
   {
-    "name": "Moray Eel",
-    "id": "Eel_Moray",
-    "image": "https://path-to-your-image/eel.png",
+    "name": "Grizzly",
+    "id": "Grizzly",
+    "image": "img/icons/Grizzly/Bear_Grizzly_Icon.png",
+    "zone": 1,
     "drops": {
       "stataue": {
-        "name": "Trilobite Statue",
-        "img": "https://path-to-your-image/trilobite_statue.png",
-        "drops": 0.54
+        "name": "Grizzly Statue",
+        "img": "img/icons/Grizzly/Grizzly_Statue_Trophy_Icon.png",
+        "drops": 0.89
       },
       "head": {
-        "name": "Trilobite Head",
-        "img": "https://path-to-your-image/trilobite_head.png",
-        "drops": 1.45
-      },
-      "fragments": {
-        "name": "Trilobite Fragments",
-        "img": "https://path-to-your-image/trilobite_fragments.png",
-        "drops": 5.28
+        "name": "Grizzly Head",
+        "img": "img/icons/Grizzly/Grizzly_Head_Trophy_Icon.png",
+        "drops": 2.11
       }
     }
   }
