@@ -293,5 +293,64 @@
         "addedVersion": "v0.2"
       }
     }
+  },
+  {
+    "name": "Rabbit",
+    "id": "Rabbit",
+    "image": "img/icons/Livestock/Rabbit/Rabbit_Statue_Trophy_Icon.png",
+    "zone": 1,
+    "drops": {
+      "stataue": {
+        "name": "Rabbit Statue",
+        "img": "img/icons/Livestock/Rabbit/Rabbit_Statue_Trophy_Icon.png",
+        "drops": 0.68,
+        "rarity": "epic",
+        "type":"statue",
+        "addedVersion": "v0.2"
+      },
+      "head": {
+        "name": "Rabbit Head",
+        "img": "img/icons/Livestock/Rabbit/Rabbit_Head_Trophy_Block_Icon.png",
+        "drops": 1.57,
+        "rarity": "rare",
+        "type":"head",
+        "addedVersion": "v0.2"
+      }
+    }
+  },
+  {
+    "name": "Mosshorn",
+    "id": "Mosshorn",
+    "image": [
+      "img/icons/Wildlife/Mosshorn/Mosshorn_Statue_Trophy_Icon.png",
+      "img/icons/Wildlife/Mosshorn/Mosshorn_Plain_Statue_Trophy_Icon.png"
+    ],
+    "zone": 1,
+    "drops": {
+      "stataue": {
+        "name": "Mosshorn Statue",
+        "img": [
+          "img/icons/Wildlife/Mosshorn/Mosshorn_Statue_Trophy_Icon.png",
+          "img/icons/Wildlife/Mosshorn/Mosshorn_Plain_Statue_Trophy_Icon.png"
+        ],
+        "drops": 0.60,
+        "dropsHover": "0.30% per variant",
+        "rarity": "mythic",
+        "type":"statue",
+        "addedVersion": "v0.3"
+      },
+      "head": {
+        "name": "Mosshorn Head",
+        "img": [
+          "img/icons/Wildlife/Mosshorn/Mosshorn_Head_Trophy_Block_Icon.png",
+          "img/icons/Wildlife/Mosshorn/Mosshorn_Plain_Head_Trophy_Block_Icon.png"
+        ],
+        "drops": 1.31,
+        "dropsHover": "0.60% per variant",
+        "rarity": "rare",
+        "type":"head",
+        "addedVersion": "v0.3"
+      }
+    }
   }
 ]
