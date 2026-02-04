@@ -5,14 +5,16 @@
     <link rel="stylesheet" href="style.css">
     <title>Mob Trophies - Drops</title>
     <style>
-        /* Style spécifique pour gérer l'affichage dynamique du texte au survol */
-        .drop-value { display: inline; }
-        .drop-hover-text { display: none; color: var(--accent); font-style: italic; }
-        
-        .item-card:hover .drop-value { 
+        /* On ne cache le drop-value QUE si le parent a aussi la classe 'has-hover' */
+        .item-card.has-hover:hover .drop-value { 
             display: none; 
         }
-        .item-card:hover .drop-hover-text { 
+        .item-card.has-hover .drop-hover-text { 
+            display: none; 
+            color: var(--accent);
+            font-weight: bold;
+        }
+        .item-card.has-hover:hover .drop-hover-text { 
             display: inline; 
         }
     </style>
@@ -116,11 +118,10 @@
                             <div style="display: flex; gap: 15px; flex-wrap: wrap;">
                                 ${dropItems.map(item => {
                                     const color = rarityColors[item.rarity?.toLowerCase()] || "var(--rarity-default)";
-                                    // On prépare le texte de remplacement si dropsHover existe
-                                    const hasHover = item.dropsHover ? true : false;
+                                    const hasHover = !!item.dropsHover;
                                     
                                     return `
-                                        <div class="item-card" style="background: linear-gradient(135deg, rgba(255,255,255,0.05) 0%, rgba(0,0,0,0.2) 100%); border: 1px solid ${color}; padding: 12px 14px; border-radius: 8px; display: flex; align-items: center; gap: 12px; min-width: 200px; position: relative;">
+                                        <div class="item-card ${hasHover ? 'has-hover' : ''}" style="background: linear-gradient(135deg, rgba(255,255,255,0.05) 0%, rgba(0,0,0,0.2) 100%); border: 1px solid ${color}; padding: 12px 14px; border-radius: 8px; display: flex; align-items: center; gap: 12px; min-width: 200px; position: relative;">
                                             <div style="position: absolute; top: 6px; right: 8px; font-size: 0.55rem; opacity: 0.5; color: #fff; font-family: monospace;">${item.addedVersion || 'v0.1'}</div>
                                             <div style="width: 32px; height: 32px; flex-shrink: 0; display: flex; align-items: center; justify-content: center; overflow: hidden;">${renderMedia(item.img, item.name)}</div>
                                             <div style="padding-right: 30px;">
