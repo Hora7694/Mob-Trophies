@@ -381,7 +381,7 @@
     "name": "Moose (Male)",
     "id": "Moose_Bull",
     "image": "img/icons/Wildlife/Moose/Moose_Statue_Trophy_Bull_Icon.png",
-    "zone": 1,
+    "zone": 3,
     "drops": {
       "stataue": {
         "name": "Moose (Male) Statue",
@@ -389,7 +389,7 @@
         "drops": 0.69,
         "rarity": "epic",
         "type":"statue",
-        "addedVersion": "v0.1"
+        "addedVersion": "v0.3"
       },
       "head": {
         "name": "Moose (Male) Head",
@@ -397,7 +397,7 @@
         "drops": 3.02,
         "rarity": "rare",
         "type":"head",
-        "addedVersion": "v0.1"
+        "addedVersion": "v0.3"
       }
     }
   },
@@ -405,7 +405,7 @@
     "name": "Moose (Female)",
     "id": "Moose_Cow",
     "image": "img/icons/Wildlife/Moose/Moose_Statue_Trophy_Cow_Icon.png",
-    "zone": 1,
+    "zone": 3,
     "drops": {
       "stataue": {
         "name": "Moose (Female) Statue",
@@ -413,7 +413,7 @@
         "drops": 0.50,
         "rarity": "epic",
         "type":"statue",
-        "addedVersion": "v0.1"
+        "addedVersion": "v0.3"
       },
       "head": {
         "name": "Moose (Female) Head",
@@ -421,7 +421,7 @@
         "drops": 2.92,
         "rarity": "rare",
         "type":"head",
-        "addedVersion": "v0.1"
+        "addedVersion": "v0.3"
       }
     }
   }
