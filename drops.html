@@ -255,5 +255,28 @@
         }
         load();
     </script>
+
+    <button id="backToTop" title="Back to top">↑</button>
+    <script>
+      // On récupère le bouton
+      const btnTop = document.getElementById("backToTop");
+
+      // Quand on scrolle, on vérifie la position
+      window.onscroll = function() {
+          if (document.body.scrollTop > 300 || document.documentElement.scrollTop > 300) {
+              btnTop.style.display = "block";
+          } else {
+              btnTop.style.display = "none";
+          }
+      };
+
+      // Quand on clique, on remonte
+      btnTop.onclick = function() {
+          window.scrollTo({
+              top: 0,
+              behavior: 'smooth' // Remontée fluide
+          });
+      };
+    </script>
 </body>
 </html>
