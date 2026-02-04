@@ -45,12 +45,20 @@
                 const data = await res.json();
                 const grid = document.getElementById('mobsGrid');
                 
+                // Couleurs de rareté (Variables CSS ou codes Hexa)
+                const rarityColors = {
+                    "uncommon": "#1eff00", // Vert
+                    "rare": "#0070dd",     // Bleu
+                    "epic": "#a335ee",     // Violet
+                    "mythic": "#ff8000",   // Orange
+                    "legendary": "#e6cc80" // Doré
+                };
+
                 const render = (list, searchTerm = "") => {
                     grid.innerHTML = list.map(m => {
                         let dropItems = m.drops ? Object.values(m.drops) : [];
 
-                        // LOGIQUE DE FILTRAGE DES ITEMS
-                        // Si on recherche par rareté (r:), on ne garde que les items concernés
+                        // LOGIQUE DE FILTRAGE DES ITEMS (pour le r:)
                         if (searchTerm.startsWith('r:')) {
                             const rarityTarget = searchTerm.split('r:')[1];
                             dropItems = dropItems.filter(item => 
@@ -69,15 +77,20 @@
                                     <p style="font-size: 0.75rem; opacity: 0.5; margin: 4px 0 15px 0; font-family: monospace;">Zone: ${m.zone}</p>
                                     
                                     <div style="display: flex; gap: 15px; flex-wrap: wrap;">
-                                        ${dropItems.map(item => `
-                                            <div style="background: #1a222b; border: 1px solid #2d3748; padding: 8px 12px; border-radius: 8px; display: flex; align-items: center; gap: 10px; min-width: 150px;">
-                                                <img src="${item.img}" alt="${item.name}" style="width: 32px; height: 32px; object-fit: contain;">
-                                                <div>
-                                                    <div style="font-size: 0.85rem; font-weight: bold; color: #e2e8f0;">${item.name}</div>
-                                                    <div style="font-size: 0.75rem; color: var(--accent);">${item.drops}%</div>
+                                        ${dropItems.map(item => {
+                                            // On définit la couleur selon la rareté
+                                            const color = rarityColors[item.rarity?.toLowerCase()] || "#2d3748";
+                                            
+                                            return `
+                                                <div class="item-card" style="background: rgba(26, 34, 43, 0.6); border: 1px solid ${color}; box-shadow: inset 0 0 10px ${color}22; padding: 8px 12px; border-radius: 8px; display: flex; align-items: center; gap: 10px; min-width: 160px; transition: 0.2s;">
+                                                    <img src="${item.img}" alt="${item.name}" style="width: 32px; height: 32px; object-fit: contain; filter: drop-shadow(0 0 5px ${color}66);">
+                                                    <div>
+                                                        <div style="font-size: 0.85rem; font-weight: bold; color: #e2e8f0;">${item.name}</div>
+                                                        <div style="font-size: 0.75rem; color: ${color}; font-weight: 600;">${item.drops}%</div>
+                                                    </div>
                                                 </div>
-                                            </div>
-                                        `).join('')}
+                                            `;
+                                        }).join('')}
                                     </div>
                                 </div>
                             </div>
@@ -98,7 +111,6 @@
                     } 
                     else if (term.startsWith('r:')) {
                         const rarityValue = term.split('r:')[1];
-                        // On filtre les mobs qui possèdent AU MOINS un item de cette rareté
                         filtered = data.filter(m => {
                             const items = m.drops ? Object.values(m.drops) : [];
                             return items.some(item => item.rarity && item.rarity.toLowerCase() === rarityValue);
@@ -111,7 +123,6 @@
                         );
                     }
                     
-                    // On passe 'term' à render pour qu'il sache s'il doit cacher des items
                     render(filtered, term);
                 });
 
