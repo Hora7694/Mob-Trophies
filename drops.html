@@ -4,27 +4,6 @@
     <meta charset="UTF-8">
     <link rel="stylesheet" href="style.css">
     <title>Mob Trophies - Drops</title>
-    <style>
-        .search-container { position: relative; width: 100%; margin-bottom: 20px; }
-        .info-icon {
-            position: absolute; right: 15px; top: 50%; transform: translateY(-50%);
-            background: var(--border-color); color: var(--text-muted);
-            width: 20px; height: 20px; border-radius: 50%;
-            display: flex; align-items: center; justify-content: center;
-            font-size: 12px; font-weight: bold; cursor: help; transition: 0.3s;
-            border: 1px solid var(--border-color);
-        }
-        .info-icon:hover { color: var(--accent); border-color: var(--accent); }
-        .tooltip {
-            visibility: hidden; position: absolute; right: 0; top: 100%;
-            background: #1a222b; color: var(--text-main); padding: 12px 15px;
-            border-radius: 8px; border: 1px solid var(--accent); width: 320px;
-            font-size: 0.8rem; z-index: 10; margin-top: 10px;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.5); opacity: 0; transition: opacity 0.3s;
-        }
-        .info-icon:hover + .tooltip { visibility: visible; opacity: 1; }
-        .tooltip b { color: var(--accent); }
-    </style>
 </head>
 <body>
     <nav>
@@ -45,8 +24,7 @@
                 <b>Search tips:</b><br>
                 • <b>z:[zone number]</b> : Filter by zone.<br>
                 • <b>r:[rarity]</b> : Filter by rarity.<br>
-                <small style="opacity: 0.6;">Rarity: uncommon, rare, epic, mythic, legendary</small><br>
-                • <b>t:[type]</b> Filter by type.<br>
+                • <b>t:[type]</b> : Filter by type (statue, head, fragment).<br>
             </div>
         </div>
         
@@ -76,9 +54,6 @@
           <div class="copyright">
               &copy; 2026 Mob Trophies (by kHorah_) - All rights reserved.
           </div>
-          <div class="text-xs opacity-30 text-center" style="font-size: 0.7rem; color: var(--text-muted); margin-top: 10px;">
-              This site is a fan project not affiliated with Hypixel Studios or Hytale.
-          </div>
       </div>
     </footer>
 
@@ -92,7 +67,6 @@
             "legendary": "var(--rarity-legendary)"
         };
 
-        // Gestion des images (simples ou animées)
         const renderMedia = (mediaData, name) => {
             const isArray = Array.isArray(mediaData);
             const firstImg = isArray ? mediaData[0] : (mediaData || 'img/placeholder.png');
@@ -102,13 +76,14 @@
             return `<img src="${firstImg}" alt="${name}" style="max-width: 100%; max-height: 100%; object-fit: contain;">`;
         };
 
-        // Fonction de rendu principale
         const render = (list, grid, searchTerms = []) => {
             const rarityFilter = searchTerms.find(t => t.startsWith('r:'))?.split('r:')[1];
             const typeFilter = searchTerms.find(t => t.startsWith('t:'))?.split('t:')[1];
 
             grid.innerHTML = list.map(m => {
                 let dropItems = m.drops ? Object.values(m.drops) : [];
+                
+                // Filtrage interne des items affichés
                 if (rarityFilter || typeFilter) {
                     dropItems = dropItems.filter(item => {
                         const matchRarity = rarityFilter ? (item.rarity && item.rarity.toLowerCase() === rarityFilter) : true;
@@ -116,6 +91,7 @@
                         return matchRarity && matchType;
                     });
                 }
+                
                 if ((rarityFilter || typeFilter) && dropItems.length === 0) return '';
 
                 return `
@@ -129,14 +105,13 @@
                             <div style="display: flex; gap: 15px; flex-wrap: wrap;">
                                 ${dropItems.map(item => {
                                     const color = rarityColors[item.rarity?.toLowerCase()] || "var(--rarity-default)";
-                                    const textId = `drop-${Math.random().toString(36).substr(2, 9)}`;
                                     return `
                                         <div class="item-card" style="background: linear-gradient(135deg, rgba(255,255,255,0.05) 0%, rgba(0,0,0,0.2) 100%); border: 1px solid ${color}; padding: 10px 14px; border-radius: 8px; display: flex; align-items: center; gap: 12px; min-width: 190px; position: relative;">
                                             <div style="position: absolute; top: 5px; right: 8px; font-size: 0.55rem; opacity: 0.4; color: #fff;">${item.addedVersion || 'v0.1'}</div>
                                             <div style="width: 32px; height: 32px; flex-shrink: 0; display: flex; align-items: center; justify-content: center; overflow: hidden;">${renderMedia(item.img, item.name)}</div>
                                             <div>
                                                 <div style="font-size: 0.85rem; font-weight: bold; color: var(--text-main);">${item.name}</div>
-                                                <div style="font-size: 0.75rem;"><span style="color: var(--text-muted);">${item.drops}%</span> <span style="color: ${color}; font-size: 0.65rem;">${item.rarity}</span></div>
+                                                <div style="font-size: 0.75rem;"><span style="color: var(--text-muted);">${item.drops}%</span> <span style="color: ${color}; font-size: 0.65rem; text-transform: uppercase;">${item.rarity}</span></div>
                                             </div>
                                         </div>`;
                                 }).join('')}
@@ -146,7 +121,6 @@
             }).join('');
         };
 
-        // Chargement des données
         async function load() {
             try {
                 const res = await fetch('mobs.json');
@@ -155,7 +129,6 @@
 
                 render(data, grid);
 
-                // Event Listeners (Scroll & Recherche)
                 window.addEventListener('scroll', () => {
                     btnTop.style.display = window.scrollY > 400 ? "flex" : "none";
                 });
@@ -170,13 +143,14 @@
                         terms.every(term => {
                             if (term.startsWith('z:')) return m.zone.toString() === term.split('z:')[1];
                             if (term.startsWith('r:')) return Object.values(m.drops || {}).some(i => i.rarity?.toLowerCase() === term.split('r:')[1]);
+                            // RÉPARÉ ICI : Ajout du filtre de type
+                            if (term.startsWith('t:')) return Object.values(m.drops || {}).some(i => i.type?.toLowerCase() === term.split('t:')[1]);
                             return m.name.toLowerCase().includes(term);
                         })
                     );
                     render(filtered, grid, terms);
                 });
 
-                // Animation images
                 setInterval(() => {
                     document.querySelectorAll('.cycling-img').forEach(img => {
                         const sources = JSON.parse(img.dataset.sources);
