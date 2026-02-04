@@ -150,12 +150,15 @@
                                             const bgGradient = `linear-gradient(135deg, ${color}15 0%, rgba(26, 34, 43, 1) 100%)`;
                                             
                                             return `
-                                                <div class="item-card" style="background: ${bgGradient}; border: 1px solid ${color}88; box-shadow: inset 0 0 10px ${color}11; padding: 8px 12px; border-radius: 8px; display: flex; align-items: center; gap: 10px; min-width: 160px; transition: 0.2s;">
+                                                <div class="item-card" style="background: ${bgGradient}; border: 1px solid ${color}88; box-shadow: inset 0 0 10px ${color}11; padding: 10px 14px; border-radius: 8px; display: flex; align-items: center; gap: 12px; min-width: 170px; transition: 0.2s;">
                                                     <img src="${item.img}" alt="${item.name}" style="width: 32px; height: 32px; object-fit: contain; filter: drop-shadow(0 0 5px ${color}66);">
                                                     <div>
-                                                        <div style="font-size: 0.85rem; font-weight: bold; color: #e2e8f0;">${item.name}</div>
-                                                        <div style="font-size: 0.75rem; color: ${color}; font-weight: 600;">
-                                                            ${item.drops}% • <span style="font-size: 0.65rem; text-transform: uppercase; opacity: 0.8;">${item.rarity || 'Common'}</span>
+                                                        <div style="font-size: 0.85rem; font-weight: bold; color: #e2e8f0; margin-bottom: 4px;">${item.name}</div>
+                                                        
+                                                        <div style="font-size: 0.75rem; font-weight: 600;">
+                                                            <span style="color: #cbd5e0;">${item.drops}%</span> 
+                                                            <span style="color: #4a5568; margin: 0 3px;">•</span> 
+                                                            <span style="color: ${color}; text-transform: uppercase; font-size: 0.65rem; letter-spacing: 0.5px;">${item.rarity || 'Common'}</span>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -202,4 +205,3 @@
     </script>
 </body>
 </html>
-
