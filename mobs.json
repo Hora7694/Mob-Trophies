@@ -360,7 +360,7 @@
     "zone": 3,
     "drops": {
       "stataue": {
-        "name": "Polar Statue",
+        "name": "Polar Bear Statue",
         "img": "img/icons/Beast/Bears/Polar/Bear_Polar_Statue_Trophy_Icon.png",
         "drops": 0.89,
         "rarity": "epic",
@@ -368,7 +368,7 @@
         "addedVersion": "v0.3"
       },
       "head": {
-        "name": "Polar Head",
+        "name": "Polar Bear Head",
         "img": "img/icons/Beast/Bears/Polar/Bear_Polar_Head_Trophy_Block_Icon.png",
         "drops": 2.11,
         "rarity": "rare",
