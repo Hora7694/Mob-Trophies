@@ -1,37 +1,86 @@
 <!DOCTYPE html>
-<html lang="fr">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Mob Trophies - Mentions Légales</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Legal Notice - Mob Trophies</title>
     <link rel="stylesheet" href="style.css">
     <script src="https://cdn.tailwindcss.com"></script>
-    <style>body { background-color: #0b0f13; color: #e2e8f0; }</style>
+    <style>
+        body { background-color: #0b0f13; color: #e2e8f0; font-family: 'Inter', sans-serif; }
+        .legal-section { border-bottom: 1px solid #1f2937; padding-bottom: 1.5rem; margin-bottom: 1.5rem; }
+        .legal-section:last-child { border-bottom: none; }
+        h2 { color: #d4af37; font-size: 1.1rem; font-weight: bold; margin-bottom: 0.5rem; text-transform: uppercase; }
+        p { font-size: 0.9rem; line-height: 1.6; opacity: 0.8; }
+    </style>
 </head>
-<body class="p-10">
-    <div class="max-w-2xl mx-auto bg-gray-900 p-8 rounded-lg">
-        <h1 class="text-2xl font-bold mb-4">Mentions Légales</h1>
-        <p class="mb-4">Ce site est un outil pour le mod [Ton Nom de Mod].</p>
-        <p class="mb-4">Hytale est une marque déposée de Hypixel Studios. Ce site n'est pas affilié à Hypixel Studios.</p>
-        <a href="index.html" class="text-yellow-600 hover:underline">← Retour au site</a>
+<body class="flex flex-col min-h-screen">
+    
+    <div class="container mx-auto px-4 py-12 max-w-3xl flex-grow">
+        <div class="bg-gray-900/50 p-8 rounded-xl border border-gray-800 shadow-2xl">
+            <h1 class="text-3xl font-bold mb-8 text-white">Legal Notice</h1>
+
+            <div class="legal-section">
+                <h2>1. Fan Project Disclaimer</h2>
+                <p>
+                    Mob Trophies is an independent fan-made project. This website and its associated mod are not affiliated with, endorsed by, or representative of <strong>Hypixel Studios</strong> or <strong>Hytale</strong>. All game-related assets, names, and trademarks are the sole property of their respective owners.
+                </p>
+            </div>
+
+            <div class="legal-section">
+                <h2>2. Hosting</h2>
+                <p>
+                    This website is hosted by <strong>GitHub Inc.</strong><br>
+                    Address: 88 Colin P. Kelly Jr Street, San Francisco, CA 94107, USA.<br>
+                    Platform: GitHub Pages.
+                </p>
+            </div>
+
+            <div class="legal-section">
+                <h2>3. Privacy & Cookies</h2>
+                <p>
+                    We value your privacy. This website is static and <strong>does not collect, store, or process any personal data</strong>. We do not use tracking cookies or third-party analytics. GitHub may collect server logs as part of its hosting services, which are governed by their own privacy policy.
+                </p>
+            </div>
+
+            <div class="legal-section">
+                <h2>4. Intellectual Property</h2>
+                <p>
+                    The "Mob Trophies" mod content and website code are created by <strong>kHorah_</strong>. You may not re-upload or redistribute the assets found on this site without explicit permission, except as permitted by the license of the mod itself.
+                </p>
+            </div>
+
+            <div class="legal-section">
+                <h2>5. Governing Law</h2>
+                <p>
+                    These terms are governed by and construed in accordance with the laws of <strong>France</strong>. Any dispute arising from the use of this website shall be subject to the exclusive jurisdiction of the French courts.
+                </p>
+            </div>
+
+            <div class="mt-8">
+                <a href="index.html" class="inline-block bg-yellow-600/10 text-yellow-500 px-6 py-2 rounded-lg border border-yellow-600/20 hover:bg-yellow-600 hover:text-black transition duration-300 font-bold">
+                    ← Back to Home
+                </a>
+            </div>
+        </div>
     </div>
+
     <footer>
       <div class="footer-content">
           <div class="footer-links">
               <a href="index.html">Home</a>
               <a href="drops.html">Drops</a>
               <a href="download.html">Download</a>
-              <a href="legal.html">Mentions Légales</a>
+              <a href="legal.html">Legal Notice</a>
           </div>
           <div class="copyright">
               &copy; 2026 Mob Trophies (by kHorah_) - All rights reserved.
           </div>
-          <div class="text-xs opacity-30 text-center" style="font-size: 0.7rem; color: var(--text-muted);">
-              This site is a fan project not affiliated with Hypixel Studios or Hytale.
+          <div class="text-xs opacity-30 text-center" style="font-size: 0.7rem; color: var(--text-muted); max-width: 600px; margin: 10px auto;">
+              Hytale is a registered trademark of Hypixel Studios. This site is a fan project and is not affiliated with Hypixel Studios or Hytale.
           </div>
       </div>
     </footer>
+
 </body>
-
-
-
 </html>
