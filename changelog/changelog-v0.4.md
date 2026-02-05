@@ -3,13 +3,12 @@ Download: https://www.curseforge.com/hytale/mods/mob-trophies/download/7572648
 
 > Short summary of the update: what is the main focus? (New zones, technical fixes, new mobs, etc.)
 
----
-
 ## ⚙️ Changes (short list of what change in this version)
 * **[New Feature/Block]**: [Description of the new functionality or workbench].
 * **System Change**: [Changes in game logic (e.g., crafting location changes, new rarities)].
 * **Rarity Balancing**: [Adjustments to drop rates or new rarity categories].
 
+---
 
 ## 🏆 Trophies
 ### New Trophies & Statues Added
@@ -18,25 +17,19 @@ Download: https://www.curseforge.com/hytale/mods/mob-trophies/download/7572648
 | **Undead Cow** | `0.45%` | `1.85%` |  |
 | **Wraith** | `0.45%` | `1.85%` |  |
 
-* **Undead Cow**
-  * Statue: `0.45%`
-  * Head: `1.85%`
-
-* **Wraith**
-  * Statue: `X%`
-  * Head: `X%`
 ---
 
 ### New Statues Variant Added
 * **[Mob Group]**
   * [Variant Type] (e.g., Ice, Sandstone, Mossy).
   * [State Variant] (e.g., Walk, Attack, Sleep).
----
+
 
 ### Fragments Utility
 * **[Fragment Name]**: [Utility or reward obtained through recycling/crafting].
 * **Recycling Updates**: [Changes to resources obtained from existing items].
 
+---
 
 ## 🖼️ UI
 * **Renaming**: [Name changes for better readability or consistency].

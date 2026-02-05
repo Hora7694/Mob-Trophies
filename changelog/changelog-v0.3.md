@@ -37,6 +37,8 @@ Download: https://www.curseforge.com/hytale/mods/mob-trophies/download/7562394
 | **Void Crawler** | `0.10%` | `0.45%` |  |
 | **Void Crawler** | `0.75%` | `1.75%` |  |
 
+---
+
 ## 🗿 New Statues Variant Added
 
 * **Camel Statues**
@@ -55,6 +57,7 @@ Download: https://www.curseforge.com/hytale/mods/mob-trophies/download/7562394
 * **Cultist Outlander Statues**
   * Walk variant for Cultist Outlander statue
 
+---
 
 ## Fragments Utility
 * **Sabertooth's fang**: Allows obtaining X Bone Fragments.
@@ -63,6 +66,7 @@ Download: https://www.curseforge.com/hytale/mods/mob-trophies/download/7562394
 * **Eye Void's Eye**: Allows obtaining 50 Void Essence.
 * **Eye Void's Tentacle**: Allows obtaining 2 Void Essence.
 
+---
 
 ## 🏷️ Nomenclature & Translation
 * Removal of 'Trophy' at the end of each added item for better readability.
