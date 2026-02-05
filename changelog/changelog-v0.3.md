@@ -19,67 +19,22 @@ Download: https://www.curseforge.com/hytale/mods/mob-trophies/download/7562394
 
 ## 🏆 New Trophies & Statues Added
 
-* **Mosshorn**
-  * Statue: `0.6%` 
-    * Classic: `0.3%`
-    * Plain: `0.3%`
-  * Head: `1.31%`
-    * Classic: `0.6%`
-    * Plain: `0.6%`
-
-* **Void Eye**
-  * Statue: `0.01%` (1/10.000)
-  * Fragment: `14.96%`
-    * Eye Void's Tentacle: `11%`
-    * Eye Void's Eye: `3%`
-
-* **Mooses**
-  * Male:
-    * Statue: `0.69%`
-    * Head: `3.02%`
-  * Female:
-    * Statue: `0.5%`
-    * Head: `2.92%`
-
-* **Polar Bear**
-  * Statue: `0.89%`
-  * Head: `2.11%`
-
-* **Frost Skeleton Fighter**
-  * Statue: `0.58%`
-  * Head: `2.92%`
-
-* **Frost Skeleton Knight**
-  * Statue: `0.45%`
-  * Head: `2.5%`
-
-* **Snow Leopard**
-  * Statue: `0.95%`
-  * Head: `2.5%`
-
-* **Mouflon**
-  * Statue: `0.75%`
-  * Head: `2.25%`
-
-* **Cultist Outlander**
-  * Statue: `0.85%`
-  * Head: `1.55%`
-
-* **Peon Outlander**
-  * Statue: `0.85%`
-  * Head: `1.55%`
-
-* **Penguin**
-  * Statue: `0.55%`
-  * Head: `1.75%`
-
-* **Void Crawler**
-  * Statue: `0.1%`
-  * Head: `0.45%`
-
-* **Void Spawn**
-  * Statue: `0.75%`
-  * Head: `1.75%`
+| Mob | Statue | Head | Fragments |
+|-----|--------|------|-----------|
+| **Mosshorn Classic** | `0.6%` (`0.3%` per variant) | `1.31%` (`0.6%` per variant) | `X` |
+| **Void Eye** | `0.01%` | `X` | Tentacle: `11%`, Eye: `3%` |
+| **Moose (Male)** | `0.69%` | `3.02%` | `X` |
+| **Moose (Female)** | `0.50%` | `2.92%` | `X` |
+| **Polar Bear** | `0.89%` | `2.11%` | `X` |
+| **Frost Skeleton Fighter** | `0.58%` | `2.92%` | `X` |
+| **Frost Skeleton Knight** | `0.45%` | `2.50%` | `X` |
+| **Snow Leopard** | `0.95%` | `2.50%` | `1.35%` |
+| **Mouflon** | `0.75%` | `2.25%` | `X` |
+| **Cultist Outlander** | `0.85%` | `1.55%` | `X` |
+| **Peon Outlander** | `0.85%` | `1.55%` | `X` |
+| **Penguin** | `0.55%` | `1.75%` | `X` |
+| **Void Crawler** | `0.10%` | `0.45%` | `X` |
+| **Void Crawler** | `0.75%` | `1.75%` | `X` |
 
 ## 🗿 New Statues Variant Added
 
