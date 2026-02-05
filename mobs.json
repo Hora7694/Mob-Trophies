@@ -322,7 +322,7 @@
     "name": "Void Eye",
     "id": "Eye_Void ",
     "image": "img/icons/Void/Eye_Void_Statue_Trophy_Icon.png",
-    "zone": 3,
+    "zone": [1, 2, 3, 4],
     "drops": {
       "stataue": {
         "name": "Void Eye Statue",
@@ -613,7 +613,7 @@
     "name": "Void Spawn",
     "id": "Spawn_Void ",
     "image": "img/icons/Void/Spawn_Void_Statue_Trophy_Icon.png",
-    "zone": [1, 2, 3],
+    "zone": [1, 2, 3, 4],
     "drops": {
       "stataue": {
         "name": "Void Spawn Statue",
