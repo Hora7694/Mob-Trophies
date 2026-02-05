@@ -16,6 +16,7 @@ Download: https://www.curseforge.com/hytale/mods/mob-trophies/download/7562394
 
 * **Addition of 'Mythic' rarity**: The 'Mythic' rarity has been added; it is located between 'Epic' and 'Legendary' and only concerns statues.
 
+---
 
 ## 🏆 New Trophies & Statues Added
 
