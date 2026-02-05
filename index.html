@@ -68,6 +68,29 @@
         </div>
     </div>
 
+    <div id="img-overlay">
+        <img src="" alt="Enlarged view">
+    </div>
+
+    <script>
+        const overlay = document.getElementById('img-overlay');
+        const overlayImg = overlay.querySelector('img');
+
+        // On cible toutes les images dans la zone de contenu
+        document.querySelectorAll('.md-content img').forEach(img => {
+            img.addEventListener('click', () => {
+                overlayImg.src = img.src;
+                overlay.classList.add('active');
+            });
+        });
+
+        // Fermer au clic sur le fond noir
+        overlay.addEventListener('click', () => {
+            overlay.classList.remove('active');
+            setTimeout(() => { overlayImg.src = ""; }, 300); // Nettoie la source après l'animation
+        });
+    </script>
+
     <footer>
       <div class="footer-content">
           <script type='text/javascript' src='https://storage.ko-fi.com/cdn/widget/Widget_2.js'></script>
