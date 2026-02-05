@@ -214,7 +214,7 @@ footer {
    7. BOUTON RETOUR EN HAUT (UI)
    ========================================= */
 #backToTop {
-    display: none; /* LAISSE CA UNIQUEMENT ICI */
+    display: none;
     position: fixed;
     bottom: 30px;
     right: 30px;
@@ -225,8 +225,8 @@ footer {
     border: 1px solid rgba(255, 255, 255, 0.1);
     background: rgba(30, 30, 30, 0.9);
     backdrop-filter: blur(5px);
-    align-items: center;     /* Aligne l'icône */
-    justify-content: center;  /* Centre l'icône */
+    align-items: center;
+    justify-content: center;
     cursor: pointer;
     transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
@@ -234,7 +234,7 @@ footer {
 
 #backToTop:hover {
     background: #ff4757;
-    transform: translateY(-5px); /* Remis à -5px pour l'effet de mouvement */
+    transform: translateY(-5px);
     border-color: rgba(255, 255, 255, 0.3);
 }
 
@@ -251,15 +251,12 @@ footer {
 /* =========================================
    8. GESTION DU DROPS HOVER
    ========================================= */
-
-/* Par défaut, on cache le texte de remplacement */
 .drop-hover-text { 
     display: none; 
     color: var(--text-muted);
     font-weight: bold;
 }
 
-/* Si la carte a la classe 'has-hover', on switch l'affichage au survol */
 .item-card.has-hover:hover .drop-value { 
     display: none; 
 }
@@ -276,10 +273,46 @@ footer {
     background-color: var(--card-bg);
 }
 
-.md-render {
+/* Conteneur du texte Markdown */
+.md-content {
     font-size: 0.85rem;
-    line-height: 1.5;
+    line-height: 1.6;
     color: var(--text-main);
+}
+
+/* Style pour les Tableaux Markdown */
+.md-content table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px 0;
+    background: rgba(255, 255, 255, 0.02);
+    border-radius: 8px;
+    overflow: hidden;
+    border: 1px solid var(--border-color);
+}
+
+.md-content th {
+    background: rgba(212, 175, 55, 0.1);
+    color: var(--accent);
+    text-align: left;
+    padding: 12px;
+    border-bottom: 2px solid var(--accent);
+}
+
+.md-content td {
+    padding: 10px 12px;
+    border-bottom: 1px solid var(--border-color);
+}
+
+/* Style pour le code inline (texte entre ``) */
+.md-content code {
+    font-family: 'Consolas', monospace;
+    background: rgba(212, 175, 55, 0.15);
+    color: var(--accent);
+    padding: 2px 6px;
+    border-radius: 4px;
+    font-size: 0.9em;
+    border: 1px solid rgba(212, 175, 55, 0.3);
 }
 
 .md-render h2 {
@@ -306,25 +339,7 @@ footer {
     font-size: 0.8rem;
 }
 
-/* Bouton de téléchargement dans la carte */
-.btn-download-simple {
-    display: block;
-    width: 100%;
-    text-align: center;
-    background: var(--accent);
-    color: var(--bg-dark);
-    padding: 10px;
-    border-radius: 6px;
-    font-weight: bold;
-    text-decoration: none;
-    transition: 0.3s;
-}
-
-.btn-download-simple:hover {
-    filter: brightness(1.2);
-    transform: translateY(-2px);
-}
-
+/* Bouton de téléchargement */
 .btn-download-now {
     background: var(--accent);
     color: var(--bg-dark);
@@ -346,11 +361,6 @@ footer {
     border-color: rgba(255, 255, 255, 0.3);
 }
 
-.btn-download-now:active {
-    transform: translateY(0);
-}
-
-/* Adaptation pour les petits écrans */
 @media (max-width: 800px) {
     .changelog-card div[style*="display: flex"] {
         flex-direction: column;
