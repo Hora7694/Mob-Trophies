@@ -145,8 +145,8 @@ nav a:hover, nav a.active {
 
 /* MODIF : Lueur spécifique pour les cartes identifiées glow-card (ou glow-effect) */
 .card.glow-card:hover, .card.glow-effect:hover {
-    box-shadow: 0 0 20px rgba(0, 255, 200, 0.4);
-    border-color: rgba(0, 255, 200, 0.6) !important;
+    box-shadow: 0 0 20px rgba(255, 196, 0, 0.4);
+    border-color: rgba(255, 208, 0, 0.6) !important;
 }
 
 .item-card {
