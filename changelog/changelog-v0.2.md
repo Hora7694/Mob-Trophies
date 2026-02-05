@@ -1,3 +1,4 @@
+Download: https://www.curseforge.com/hytale/mods/mob-trophies/download/7521184
 # 📜 CHANGELOG - Version 0.2: The Howling Sands Expansion
 
 v0.2 **"The Howling Sands Expansion"** addresses the lack of trophies for Zone 2 by introducing a first set of desert creatures. This update also integrates the new **Fragments** system along with several technical fixes.

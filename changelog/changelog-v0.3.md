@@ -1,3 +1,4 @@
+Download: https://www.curseforge.com/hytale/mods/mob-trophies/download/7562394
 # 📜 CHANGELOG - Version 0.3: The Borea Void
 
 > After Zone 2, it was obvious that I would move on to **Zone 3**, where I also added the **Void mobs** and a **new workbench**. This update addresses the lack of trophies for the new areas and integrates the new **Fragments** system along with several technical fixes.

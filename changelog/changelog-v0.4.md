@@ -1,3 +1,4 @@
+Download: https://www.curseforge.com/hytale/mods/mob-trophies/download/7572648
 # 📜 CHANGELOG - Version [v0.4]: [Update Name]
 
 > Short summary of the update: what is the main focus? (New zones, technical fixes, new mobs, etc.)
