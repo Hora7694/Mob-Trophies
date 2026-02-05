@@ -88,15 +88,15 @@
                     card.style.textAlign = "left";
 
                     card.innerHTML = `
-                        <div style="display: flex; justify-content: space-between; align-items: flex-start; border-bottom: 1px solid var(--border-color); padding-bottom: 15px; margin-bottom: 15px; gap: 20px;">
+                        <div style="display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid var(--border-color); padding-bottom: 15px; margin-bottom: 15px; gap: 20px;">
                             <div style="flex-grow: 1;">
                                 <h3 class="accent-text" style="margin: 0; font-size: 1.6rem;">${title}</h3>
                             </div>
-                            <a href="${downloadUrl}" target="_blank" rel="noopener noreferrer" class="btn-download" style="margin: 0; white-space: nowrap; padding: 10px 20px;">
-                                DOWNLOAD
+                            <a href="${downloadUrl}" target="_blank" rel="noopener noreferrer" class="btn-download-now">
+                                Download now on Curseforge
                             </a>
                         </div>
-                        <div class="md-content" style="font-size: 0.85rem;">
+                        <div class="md-content" style="font-size: 0.85rem; line-height: 1.6;">
                             ${marked.parse(bodyText)}
                         </div>
                     `;

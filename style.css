@@ -324,3 +324,41 @@ footer {
     filter: brightness(1.2);
     transform: translateY(-2px);
 }
+
+.btn-download-now {
+    background: var(--accent);
+    color: var(--bg-dark);
+    padding: 12px 20px;
+    border-radius: 8px;
+    font-weight: bold;
+    text-decoration: none;
+    font-size: 0.9rem;
+    white-space: nowrap;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+    border: 1px solid transparent;
+}
+
+.btn-download-now:hover {
+    transform: translateY(-2px);
+    filter: brightness(1.1);
+    box-shadow: 0 6px 20px rgba(212, 175, 55, 0.2);
+    border-color: rgba(255, 255, 255, 0.3);
+}
+
+.btn-download-now:active {
+    transform: translateY(0);
+}
+
+/* Adaptation pour les petits écrans */
+@media (max-width: 800px) {
+    .changelog-card div[style*="display: flex"] {
+        flex-direction: column;
+        align-items: flex-start !important;
+    }
+    .btn-download-now {
+        width: 100%;
+        text-align: center;
+        box-sizing: border-box;
+    }
+}
