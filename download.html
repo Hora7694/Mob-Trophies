@@ -45,11 +45,6 @@
     </footer>
 
     <script>
-        /**
-         * AJOUTE TES FICHIERS ICI
-         * Le script va créer une carte pour chaque fichier présent dans cette liste.
-         * Assure-toi que les fichiers sont bien accessibles à la racine ou dans le bon dossier.
-         */
         const changelogFiles = [
             'changelog-v0.4.md',
             'changelog-v0.3.md',
@@ -69,20 +64,19 @@
                     }
                     const text = await response.text();
 
-                    // 1. Extraction du titre (cherche la première ligne commençant par #)
                     const titleMatch = text.match(/^# (.*)/m);
                     const title = titleMatch ? titleMatch[1] : "Update";
 
-                    // 2. Extraction du lien de téléchargement (cherche une ligne "Download: URL")
-                    const downloadMatch = text.match(/Download:\s*(https?:\/\/[^\s]+)/);
+                    // Extraction du lien
+                    const downloadMatch = text.match(/Download:\s*(https?:\/\/[^\s]+)/i);
                     const downloadUrl = downloadMatch ? downloadMatch[1] : "https://www.curseforge.com/hytale/mods/mob-trophies";
 
-                    // 3. Nettoyage : On enlève le titre et la ligne de download pour le corps de la carte
-                    const bodyText = text.replace(/^# .*/m, "").replace(/Download:.*/g, "");
+                    // Nettoyage : On enlève le titre et la ligne Download pour ne pas l'afficher dans le texte
+                    let bodyText = text.replace(/^# .*/m, "");
+                    bodyText = bodyText.replace(/^Download:.*$/mi, ""); 
 
-                    // 4. Création de l'élément HTML (Carte)
                     const card = document.createElement('div');
-                    card.className = "card changelog-card"; // Utilise tes classes existantes + une spécifique
+                    card.className = "card changelog-card";
                     card.style.display = "flex";
                     card.style.flexDirection = "column";
                     card.style.textAlign = "left";
@@ -106,7 +100,6 @@
                 }
             }
 
-            // Si aucun fichier n'a pu être chargé
             if (grid.innerHTML === "") {
                 grid.innerHTML = "<p style='grid-column: 1/-1; text-align: center;'>No changelogs found.</p>";
             }
