@@ -239,7 +239,7 @@ footer {
 }
 
 #backToTop:hover {
-    background: #ff4757;
+    background: var(--accent);
     transform: translateY(-5px);
     border-color: rgba(255, 255, 255, 0.3);
 }
