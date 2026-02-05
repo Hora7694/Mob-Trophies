@@ -3,7 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <link rel="stylesheet" href="style.css">
-    <title>Mob Trophies - Downlaod</title>
+    <title>Mob Trophies - Download</title>
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
 </head>
 <body>
     <nav>
@@ -12,15 +13,14 @@
         <a href="download.html" class="active">Download</a>
     </nav>
 
-    <div class="container" style="text-align: center;">
-        <h1 class="accent-text">Ready for adventure?</h1>
-        <div class="card">
-            <h3>Lastest version : v0.3.1</h3>
-            <p>Compatible with the current version of Hytale.</p>
-            <br>
-            <a target="_blank" rel="noopener noreferrer" href="https://www.curseforge.com/hytale/mods/mob-trophies/download/7572648" class="btn-download">DOWNLOAD ON CURSFORGE</a>
+    <div class="container">
+        <h1 class="accent-text" style="text-align: center;">Ready for adventure?</h1>
+        
+        <div id="changelog-grid" style="display: grid; gap: 25px; grid-template-columns: repeat(auto-fill, minmax(350px, 1fr)); align-items: start;">
+            <p style="text-align: center; grid-column: 1 / -1;">Chargement des versions...</p>
         </div>
     </div>
+
     <footer>
       <div class="footer-content">
           <script type='text/javascript' src='https://storage.ko-fi.com/cdn/widget/Widget_2.js'></script>
@@ -43,5 +43,76 @@
           </div>
       </div>
     </footer>
+
+    <script>
+        /**
+         * AJOUTE TES FICHIERS ICI
+         * Le script va créer une carte pour chaque fichier présent dans cette liste.
+         * Assure-toi que les fichiers sont bien accessibles à la racine ou dans le bon dossier.
+         */
+        const changelogFiles = [
+            'changelog-v0.3.md'
+            // 'changelog-v0.2.md',
+            // 'changelog-v0.1.md'
+        ];
+
+        async function loadChangelogs() {
+            const grid = document.getElementById('changelog-grid');
+            grid.innerHTML = ""; 
+
+            for (const file of changelogFiles) {
+                try {
+                    const response = await fetch(file);
+                    if (!response.ok) {
+                        console.error(`Impossible de charger : ${file}`);
+                        continue;
+                    }
+                    const text = await response.text();
+
+                    // 1. Extraction du titre (cherche la première ligne commençant par #)
+                    const titleMatch = text.match(/^# (.*)/m);
+                    const title = titleMatch ? titleMatch[1] : "Update";
+
+                    // 2. Extraction du lien de téléchargement (cherche une ligne "Download: URL")
+                    const downloadMatch = text.match(/Download:\s*(https?:\/\/[^\s]+)/);
+                    const downloadUrl = downloadMatch ? downloadMatch[1] : "https://www.curseforge.com/hytale/mods/mob-trophies";
+
+                    // 3. Nettoyage : On enlève le titre et la ligne de download pour le corps de la carte
+                    const bodyText = text.replace(/^# .*/m, "").replace(/Download:.*/g, "");
+
+                    // 4. Création de l'élément HTML (Carte)
+                    const card = document.createElement('div');
+                    card.className = "card changelog-card"; // Utilise tes classes existantes + une spécifique
+                    card.style.display = "flex";
+                    card.style.flexDirection = "column";
+                    card.style.textAlign = "left";
+
+                    card.innerHTML = `
+                        <div style="border-bottom: 1px solid var(--border-color); padding-bottom: 10px; margin-bottom: 15px;">
+                            <h3 class="accent-text" style="margin: 0;">${title}</h3>
+                        </div>
+                        <div class="md-content" style="font-size: 0.85rem; flex-grow: 1;">
+                            ${marked.parse(bodyText)}
+                        </div>
+                        <div style="margin-top: 20px; padding-top: 15px; border-top: 1px solid rgba(255,255,255,0.05);">
+                            <a href="${downloadUrl}" target="_blank" rel="noopener noreferrer" class="btn-download" style="display: block; text-align: center; width: auto;">
+                                DOWNLOAD
+                            </a>
+                        </div>
+                    `;
+                    grid.appendChild(card);
+                } catch (err) {
+                    console.error("Erreur lors du traitement du fichier : " + file, err);
+                }
+            }
+
+            // Si aucun fichier n'a pu être chargé
+            if (grid.innerHTML === "") {
+                grid.innerHTML = "<p style='grid-column: 1/-1; text-align: center;'>No changelogs found.</p>";
+            }
+        }
+
+        loadChangelogs();
+    </script>
 </body>
 </html>
