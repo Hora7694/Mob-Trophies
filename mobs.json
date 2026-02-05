@@ -327,25 +327,25 @@
       "stataue": {
         "name": "Void Eye Statue",
         "img": "img/icons/Void/Eye_Void_Statue_Trophy_Icon.png",
-        "drops": 0.10,
-        "rarity": "epic",
+        "drops": 0.01,
+        "rarity": "legendary",
         "type":"statue",
         "addedVersion": "v0.3"
       },
       "fragment1": {
         "name": "Void Eye's Eye",
         "img": "img/icons/Void/Eye_Void_Eye_Trophy.png",
-        "drops": 0.45,
-        "rarity": "rare",
-        "type":"head",
+        "drops": 3,
+        "rarity": "epic",
+        "type":"fragment",
         "addedVersion": "v0.3"
       },
       "fragment2": {
         "name": "Void Eye's Tentacle",
         "img": "img/icons/Void/Eye_Void_Tentacle_Trophy_Icon.png",
-        "drops": 0.45,
-        "rarity": "rare",
-        "type":"head",
+        "drops": 11,
+        "rarity": "uncommon",
+        "type":"fragment",
         "addedVersion": "v0.3"
       }
     }
@@ -619,7 +619,7 @@
         "name": "Void Spawn Statue",
         "img": "img/icons/Void/Spawn_Void_Statue_Trophy_Icon.png",
         "drops": 0.75,
-        "rarity": "epic",
+        "rarity": "mythic",
         "type":"statue",
         "addedVersion": "v0.3"
       },
@@ -627,7 +627,7 @@
         "name": "Void Spawn Head",
         "img": "img/icons/Void/Spawn_Void_Head_Trophy_Icon.png",
         "drops": 1.75,
-        "rarity": "rare",
+        "rarity": "epic",
         "type":"head",
         "addedVersion": "v0.3"
       }
