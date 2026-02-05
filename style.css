@@ -286,21 +286,29 @@ footer {
     color: var(--text-main);
 }
 
-/* MODIF : Style pour la ligne de séparation '---' */
+/* MODIF : Ligne de séparation '---' avec effet de lueur dorée */
 .md-content hr {
     border: none;
-    height: 1px;
-    background: var(--border-color);
-    margin: 25px 0;
-    opacity: 0.6;
+    height: 2px; /* Un peu plus épais pour que la lueur soit visible */
+    background: var(--accent); /* Utilise ton doré */
+    margin: 35px 0;
+    opacity: 1; /* On enlève la transparence pour que ça brille */
+    border-radius: 10px;
+    
+    /* Effet de lueur (Glow) */
+    box-shadow: 0 0 8px var(--accent), 0 0 4px var(--accent);
 }
 
-/* MODIF : Supprimer les traits de séparation sous les titres Markdown */
-.md-content h1, .md-content h2, .md-content h3 {
+/* MODIF : Suppression totale des traits sous les titres Markdown */
+.md-content h1, 
+.md-content h2, 
+.md-content h3 {
     border-bottom: none !important;
-    padding-bottom: 0;
+    border-top: none !important;
+    padding-bottom: 0 !important;
     margin-top: 1.5rem;
     margin-bottom: 0.5rem;
+    box-shadow: none !important; /* Au cas où un thème en ajouterait un */
 }
 
 /* Style pour les Tableaux Markdown */
