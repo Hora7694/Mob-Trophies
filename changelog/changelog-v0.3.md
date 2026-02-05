@@ -21,20 +21,20 @@ Download: https://www.curseforge.com/hytale/mods/mob-trophies/download/7562394
 
 | Mob | Statue | Head | Fragments |
 |-----|--------|------|-----------|
-| **Mosshorn Classic** | `0.6%` (`0.3%` per variant) | `1.31%` (`0.6%` per variant) | `X` |
+| **Mosshorn Classic** | `0.6%` (`0.3%` per variant) | `1.31%` (`0.6%` per variant) |  |
 | **Void Eye** | `0.01%` | `X` | Tentacle: `11%`, Eye: `3%` |
-| **Moose (Male)** | `0.69%` | `3.02%` | `X` |
-| **Moose (Female)** | `0.50%` | `2.92%` | `X` |
-| **Polar Bear** | `0.89%` | `2.11%` | `X` |
-| **Frost Skeleton Fighter** | `0.58%` | `2.92%` | `X` |
-| **Frost Skeleton Knight** | `0.45%` | `2.50%` | `X` |
+| **Moose (Male)** | `0.69%` | `3.02%` |  |
+| **Moose (Female)** | `0.50%` | `2.92%` |  |
+| **Polar Bear** | `0.89%` | `2.11%` |  |
+| **Frost Skeleton Fighter** | `0.58%` | `2.92%` |  |
+| **Frost Skeleton Knight** | `0.45%` | `2.50%` |  |
 | **Snow Leopard** | `0.95%` | `2.50%` | `1.35%` |
-| **Mouflon** | `0.75%` | `2.25%` | `X` |
-| **Cultist Outlander** | `0.85%` | `1.55%` | `X` |
-| **Peon Outlander** | `0.85%` | `1.55%` | `X` |
-| **Penguin** | `0.55%` | `1.75%` | `X` |
-| **Void Crawler** | `0.10%` | `0.45%` | `X` |
-| **Void Crawler** | `0.75%` | `1.75%` | `X` |
+| **Mouflon** | `0.75%` | `2.25%` |  |
+| **Cultist Outlander** | `0.85%` | `1.55%` |  |
+| **Peon Outlander** | `0.85%` | `1.55%` |  |
+| **Penguin** | `0.55%` | `1.75%` |  |
+| **Void Crawler** | `0.10%` | `0.45%` |  |
+| **Void Crawler** | `0.75%` | `1.75%` |  |
 
 ## 🗿 New Statues Variant Added
 
