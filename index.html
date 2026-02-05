@@ -68,29 +68,6 @@
         </div>
     </div>
 
-    <div id="img-overlay">
-        <img src="" alt="Enlarged view">
-    </div>
-
-    <script>
-        const overlay = document.getElementById('img-overlay');
-        const overlayImg = overlay.querySelector('img');
-
-        // On cible toutes les images dans la zone de contenu
-        document.querySelectorAll('.md-content img').forEach(img => {
-            img.addEventListener('click', () => {
-                overlayImg.src = img.src;
-                overlay.classList.add('active');
-            });
-        });
-
-        // Fermer au clic sur le fond noir
-        overlay.addEventListener('click', () => {
-            overlay.classList.remove('active');
-            setTimeout(() => { overlayImg.src = ""; }, 300); // Nettoie la source après l'animation
-        });
-    </script>
-
     <footer>
       <div class="footer-content">
           <script type='text/javascript' src='https://storage.ko-fi.com/cdn/widget/Widget_2.js'></script>
@@ -113,5 +90,38 @@
           </div>
       </div>
     </footer>
+
+<div id="img-overlay">
+    <img src="" alt="Enlarged view">
+</div>
+
+<script>
+    // On attend que tout le contenu soit chargé
+    document.addEventListener('DOMContentLoaded', () => {
+        const overlay = document.getElementById('img-overlay');
+        const overlayImg = overlay.querySelector('img');
+
+        // On cherche toutes les images dans la zone de contenu
+        const images = document.querySelectorAll('.md-content img');
+
+        images.forEach(img => {
+            img.addEventListener('click', (e) => {
+                // On empêche d'autres actions si l'image est dans un lien
+                e.preventDefault(); 
+                overlayImg.src = img.src;
+                overlay.classList.add('active');
+                document.body.style.overflow = 'hidden'; // Empêche le scroll derrière
+            });
+        });
+
+        // Fermer l'overlay
+        overlay.addEventListener('click', () => {
+            overlay.classList.remove('active');
+            document.body.style.overflow = 'auto'; // Réactive le scroll
+            setTimeout(() => { overlayImg.src = ""; }, 300);
+        });
+    });
+</script>
+
 </body>
 </html>
