@@ -62,7 +62,7 @@
 
             for (const file of changelogFiles) {
                 try {
-                    const response = await fetch(file);
+                    const response = await fetch(`changelog/${file}`);
                     if (!response.ok) {
                         console.error(`Impossible de charger : ${file}`);
                         continue;
