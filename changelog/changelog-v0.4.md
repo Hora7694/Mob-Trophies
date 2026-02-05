@@ -15,8 +15,8 @@ Download: https://www.curseforge.com/hytale/mods/mob-trophies/download/7572648
 ### New Trophies & Statues Added
 | Mob | Statue | Head | Fragments |
 |-----|--------|------|-----------|
-| **Undead Cow** | `0.45%` | `1.85%` | X |
-| **Wraith** | `0.45%` | `1.85%` | X |
+| **Undead Cow** | `0.45%` | `1.85%` |  |
+| **Wraith** | `0.45%` | `1.85%` |  |
 
 * **Undead Cow**
   * Statue: `0.45%`
