@@ -22,7 +22,7 @@ Download: https://www.curseforge.com/hytale/mods/mob-trophies/download/7562394
 | Mob | Statue | Head | Fragments |
 |-----|--------|------|-----------|
 | **Mosshorn Classic** | `0.6%` (`0.3%` per variant) | `1.31%` (`0.6%` per variant) |  |
-| **Void Eye** | `0.01%` | `X` | Tentacle: `11%`, Eye: `3%` |
+| **Void Eye** | `0.01%` |  | Tentacle: `11%`, Eye: `3%` |
 | **Moose (Male)** | `0.69%` | `3.02%` |  |
 | **Moose (Female)** | `0.50%` | `2.92%` |  |
 | **Polar Bear** | `0.89%` | `2.11%` |  |
