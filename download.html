@@ -88,16 +88,16 @@
                     card.style.textAlign = "left";
 
                     card.innerHTML = `
-                        <div style="border-bottom: 1px solid var(--border-color); padding-bottom: 10px; margin-bottom: 15px;">
-                            <h3 class="accent-text" style="margin: 0;">${title}</h3>
-                        </div>
-                        <div class="md-content" style="font-size: 0.85rem; flex-grow: 1;">
-                            ${marked.parse(bodyText)}
-                        </div>
-                        <div style="margin-top: 20px; padding-top: 15px; border-top: 1px solid rgba(255,255,255,0.05);">
-                            <a href="${downloadUrl}" target="_blank" rel="noopener noreferrer" class="btn-download" style="display: block; text-align: center; width: auto;">
+                        <div style="display: flex; justify-content: space-between; align-items: flex-start; border-bottom: 1px solid var(--border-color); padding-bottom: 15px; margin-bottom: 15px; gap: 20px;">
+                            <div style="flex-grow: 1;">
+                                <h3 class="accent-text" style="margin: 0; font-size: 1.6rem;">${title}</h3>
+                            </div>
+                            <a href="${downloadUrl}" target="_blank" rel="noopener noreferrer" class="btn-download" style="margin: 0; white-space: nowrap; padding: 10px 20px;">
                                 DOWNLOAD
                             </a>
+                        </div>
+                        <div class="md-content" style="font-size: 0.85rem;">
+                            ${marked.parse(bodyText)}
                         </div>
                     `;
                     grid.appendChild(card);
