@@ -451,3 +451,23 @@ footer {
 .md-content img:hover {
     opacity: 0.9;
 }
+
+
+/* =========================================
+   10. Ko-Fi Support
+   ========================================= */
+.kofi-container {
+    max-width: 900px;
+    margin: 40px auto;
+    padding: 20px;
+    background: rgba(212, 175, 55, 0.02);
+    border: 1px solid var(--border-color);
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+}
+        
+iframe#kofiframe {
+    border-radius: 8px;
+    /* On force le fond de l'iframe à correspondre à ton site */
+    background: #0b1118; 
+}
