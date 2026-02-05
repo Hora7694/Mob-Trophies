@@ -286,17 +286,18 @@ footer {
     color: var(--text-main);
 }
 
-/* MODIF : Ligne de séparation '---' avec effet de lueur dorée */
+/* MODIF : Ligne de séparation '---' affinée sur les bords avec lueur au centre */
 .md-content hr {
     border: none;
-    height: 2px; /* Un peu plus épais pour que la lueur soit visible */
-    background: var(--accent); /* Utilise ton doré */
-    margin: 35px 0;
-    opacity: 1; /* On enlève la transparence pour que ça brille */
-    border-radius: 10px;
+    height: 3px; /* Légèrement plus épais au centre */
+    /* Dégradé : transparent -> doré -> transparent */
+    background: radial-gradient(circle, var(--accent) 0%, rgba(212, 175, 55, 0) 80%);
+    margin: 40px auto;
+    width: 90%; /* On ne prend pas toute la largeur pour accentuer l'effet */
+    opacity: 1;
     
-    /* Effet de lueur (Glow) */
-    box-shadow: 0 0 8px var(--accent), 0 0 4px var(--accent);
+    /* Lueur concentrée au milieu */
+    filter: drop-shadow(0 0 5px var(--accent));
 }
 
 /* MODIF : Suppression totale des traits sous les titres Markdown */
