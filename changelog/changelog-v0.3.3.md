@@ -1,4 +1,4 @@
-Download: https://www.curseforge.com/hytale/mods/mob-trophies/files/all?page=1&pageSize=20&showAlphaFiles=hide
+Download: https://www.curseforge.com/hytale/mods/mob-trophies/download/7583813
 # 📜 CHANGELOG - Version 0.3.3: Hotfix
 
 This is a technical update specifically designed to fix an invalid item drop from the Void Eye and correct its loot table.
