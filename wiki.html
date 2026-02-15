@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="style.css">
+    <title>Mob Trophies - Wiki Overview</title>
+    <style>
+        /* Style spécifique type Wikipedia */
+        .wiki-layout {
+            display: grid;
+            grid-template-columns: 250px 1fr;
+            gap: 40px;
+            margin-top: 30px;
+        }
+
+        .toc {
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            padding: 20px;
+            border-radius: 8px;
+            height: fit-content;
+            position: sticky;
+            top: 20px;
+        }
+
+        .toc h3 {
+            font-size: 1rem;
+            margin-bottom: 15px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: var(--accent);
+        }
+
+        .toc ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .toc li {
+            margin-bottom: 10px;
+        }
+
+        .toc a {
+            color: var(--text-muted);
+            text-decoration: none;
+            font-size: 0.9rem;
+            transition: color 0.2s;
+        }
+
+        .toc a:hover {
+            color: var(--accent);
+        }
+
+        .wiki-content section {
+            margin-bottom: 60px;
+            scroll-margin-top: 100px;
+        }
+
+        .wiki-content h2 {
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            padding-bottom: 10px;
+            margin-bottom: 20px;
+        }
+
+        .wiki-link-card {
+            display: inline-block;
+            margin-top: 15px;
+            padding: 8px 15px;
+            background: rgba(214, 55, 103, 0.1);
+            border: 1px solid var(--accent);
+            border-radius: 4px;
+            color: var(--accent);
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.85rem;
+        }
+
+        .wiki-link-card:hover {
+            background: var(--accent);
+            color: #fff;
+        }
+
+        @media (max-width: 900px) {
+            .wiki-layout { grid-template-columns: 1fr; }
+            .toc { position: relative; top: 0; }
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="wiki.html" class="active">Wiki</a>
+        <a href="download.html">Download</a>
+        <a href="support.html">Support</a>
+    </nav>
+
+    <div class="sub-nav">
+        <a href="wiki.html" class="active">Overview</a>
+        <a href="workbench.html">Workbench</a>
+        <a href="drops.html">Mob Drops</a>
+        <a href="recycling.html">Recycling</a>
+        <a href="statues.html">Statues</a>
+    </div>
+
+    <div class="container">
+        <h1 class="accent-text">General Wiki</h1>
+        
+        <div class="wiki-layout">
+            <aside class="toc">
+                <h3>Contents</h3>
+                <ul>
+                    <li><a href="#intro">1. Introduction</a></li>
+                    <li><a href="#workbench">2. Trophy Workbench</a></li>
+                    <li><a href="#drops">3. Mob Drops & Trophies</a></li>
+                    <li><a href="#recycling">4. Recycling System</a></li>
+                    <li><a href="#statues">5. Statue Effects</a></li>
+                </ul>
+            </aside>
+
+            <main class="wiki-content">
+                <section id="intro">
+                    <h2>Introduction</h2>
+                    <p>Mob Trophies is a comprehensive Hytale mod that adds collectible trophies for every creature in the game. Each trophy represents a milestone in your adventure, allowing you to showcase your victories in your base.</p>
+                    <p>The mod revolves around a progression system based on the <strong>Trophy Workbench</strong>, where you collect fragments and heads to craft high-quality decorations.</p>
+                </section>
+
+                <section id="workbench">
+                    <h2>Trophy Workbench</h2>
+                    <p>The Workbench is the heart of the mod. It is not just a crafting table, but an evolving tool that requires upgrades to unlock more complex trophies.</p>
+                    <ul>
+                        <li><strong>Tier 1:</strong> Basic wooden trophies and common mob heads.</li>
+                        <li><strong>Advanced Tiers:</strong> Unlock glow effects, animated trophies, and rare boss statues.</li>
+                    </ul>
+                    <a href="workbench.html" class="wiki-link-card">View Evolution Timeline →</a>
+                </section>
+
+                <section id="drops">
+                    <h2>Mob Drops & Trophies</h2>
+                    <p>Creatures don't just drop trophies; they drop <strong>Fragments</strong> and <strong>Heads</strong>. You need to combine these at the workbench.</p>
+                    <p>Drop rates vary depending on the rarity of the mob. Some trophies can only be obtained in specific biomes or during special events.</p>
+                    <a href="drops.html" class="wiki-link-card">Browse Drop List →</a>
+                </section>
+
+                <section id="recycling">
+                    <h2>Recycling System</h2>
+                    <p>Got too many duplicate fragments? The recycling system allows you to break down unwanted trophy parts into raw materials or <strong>Trophy Essence</strong>, used for high-tier upgrades.</p>
+                    <a href="recycling.html" class="wiki-link-card">Learn how to Recycle →</a>
+                </section>
+
+                <section id="statues">
+                    <h2>Statue Effects</h2>
+                    <p>Statues are the ultimate form of trophies. Once placed, they can be customized with special effects:</p>
+                    <ul>
+                        <li><strong>Glow:</strong> Makes parts of the statue illuminate in the dark.</li>
+                        <li><strong>Particles:</strong> Adds ambient effects like smoke, fire.</li>
+                    </ul>
+                    <a href="statues.html" class="wiki-link-card">See Statue Guide →</a>
+                </section>
+            </main>
+        </div>
+    </div>
+
+    <footer>
+        <div class="footer-content">
+            <script type='text/javascript' src='https://storage.ko-fi.com/cdn/widget/Widget_2.js'></script>
+            <script type='text/javascript'>
+                kofiwidget2.init('Support me on Ko-fi', '#d63767', 'T6T117BAZT');kofiwidget2.draw();
+            </script> 
+
+            <div class="footer-links">
+                <a href="index.html">Home</a>
+                <a href="wiki.html">Wiki</a>
+                <a href="download.html">Download</a>
+                <a href="support.html">Support</a>
+                <a href="legal.html">Terms of Service</a>
+            </div>
+
+            <div class="copyright">
+                &copy; 2026 Mob Trophies (by kHorah_) - All rights reserved.
+            </div>
+            <div class="text-xs opacity-30 text-center" style="font-size: 0.7rem; color: var(--text-muted); margin-top: 10px;">
+                This site is a fan project not affiliated with Hypixel Studios or Hytale.
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

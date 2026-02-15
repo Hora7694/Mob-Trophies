@@ -8,26 +8,43 @@
 <body>
     <nav>
         <a href="index.html">Home</a>
-        <a href="drops.html" class="active">Drops</a>
+        <a href="wiki.html" class="active">Wiki</a>
         <a href="download.html">Download</a>
         <a href="support.html">Support</a>
     </nav>
+
+    <div class="sub-nav">
+        <a href="wiki.html">Overview</a>
+        <a href="workbench.html">Workbench</a>
+        <a href="drops.html" class="active">Mob Drops</a>
+        <a href="recycling.html">Recycling</a>
+        <a href="statues.html">Statues</a>
+    </div>
 
     <div class="container">
         <h1 class="accent-text">Drops list</h1>
         
         <div class="search-container">
-            <input type="text" id="searchInput" placeholder="Search a mob or use filters..." 
-                   style="width: 100%; padding: 15px 45px 15px 15px; border-radius: 8px; background: #12181f; border: 1px solid #2d3748; color: white; box-sizing: border-box;">
+            <div class="search-wrapper">
+                <div id="searchHighlight"></div>
+                
+                <input type="text" id="searchInput" placeholder="Search a mob or use filters (@1, *rare, #statue...)">
+            </div>
             
             <div class="info-icon">?</div>
             <div class="tooltip">
                 <b>Search tips:</b><br>
-                • <b>z:[zone number]</b> : Filter by zone.<br>
-                • <b>r:[rarity]</b> : Filter by rarity.<br>
+                • <b>@[zone number]</b> : Filter by zone.<br>
+                • <b>*[rarity]</b> : Filter by rarity.<br>
                 <small style="opacity: 0.6;">Rarity: uncommon, rare, epic, mythic, legendary</small><br>
-                • <b>t:[type]</b> : Filter by type.<br>
+                • <b>#[type]</b> : Filter by type.<br>
                 <small style="opacity: 0.6;">Type: statue, head, fragment</small><br>
+                • <b>:[filter]</b> : Change the way it filters.<br>
+                <small style="opacity: 0.6;">Filter: az (A-Z), za (Z-A), ur (increasing rarity), dr (descending  rarity)</small><br>
+                • <b>%[percent]</b> : Filter by percent.<br>
+                <small style="opacity: 0.6;">&lt;, &gt;, =, &lt;=, &gt;=. Can be used</small><br>
+                • <b>!</b> : Invert your arguments<br>
+                <small style="opacity: 0.6;">e.g. '!@1' will show you everything except zone 1</small><br>
             </div>
         </div>
         
@@ -47,7 +64,7 @@
 
           <div class="footer-links">
               <a href="index.html">Home</a>
-              <a href="drops.html">Drops</a>
+              <a href="wiki.html">Wiki</a>
               <a href="download.html">Download</a>
               <a href="support.html">Support</a>
               <a href="legal.html">Terms of Service</a>
@@ -63,139 +80,424 @@
     </footer>
 
     <script>
-            const btnTop = document.getElementById("backToTop");
-            const rarityColors = {
-                "uncommon": "var(--rarity-uncommon)",
-                "rare": "var(--rarity-rare)",
-                "epic": "var(--rarity-epic)",
-                "mythic": "var(--rarity-mythic)",
-                "legendary": "var(--rarity-legendary)"
-            };
+        const btnTop = document.getElementById("backToTop");
 
-            // Variable de configuration pour les zones
-            const TOTAL_ZONES_COUNT = 4; 
+        // --- Gestion du bouton Back to Top ---
+        window.addEventListener('scroll', () => {
+            btnTop.style.display = window.pageYOffset > 400 ? "flex" : "none";
+        });
 
-            // --- Gestion du bouton Back to Top ---
-            window.addEventListener('scroll', () => {
-                btnTop.style.display = window.pageYOffset > 400 ? "flex" : "none";
-            });
+        btnTop.addEventListener('click', () => {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
 
-            btnTop.addEventListener('click', () => {
-                window.scrollTo({ top: 0, behavior: 'smooth' });
-            });
+        // --- CONFIGURATION ---
+        const PREFIX = {
+            ZONE: '@',
+            RARITY: '*',
+            TYPE: '#',
+            SORT: ':',
+            PERCENT: '%',
+            SYSTEM: '&'
+        };
 
-            // --- Rendu des médias (images simples ou cycliques) ---
-            const renderMedia = (mediaData, name) => {
-                const isArray = Array.isArray(mediaData);
-                const firstImg = isArray ? mediaData[0] : (mediaData || 'img/placeholder.png');
-                if (isArray && mediaData.length > 1) {
-                    return `<img src="${firstImg}" class="cycling-img" data-sources='${JSON.stringify(mediaData)}' data-index="0" alt="${name}" style="max-width: 100%; max-height: 100%; object-fit: contain;">`;
+        const rarityOrder = ["uncommon", "rare", "epic", "mythic", "legendary"];
+        const TOTAL_ZONES_COUNT = 4; 
+        
+        const rarityColors = {
+            "uncommon": "var(--rarity-uncommon)",
+            "rare": "var(--rarity-rare)",
+            "epic": "var(--rarity-epic)",
+            "mythic": "var(--rarity-mythic)",
+            "legendary": "var(--rarity-legendary)"
+        };
+
+        const EASTER_EGG_KEY = "easteregg";
+        let currentData = [];
+
+        // --- ELEMENTS DU DOM ---
+        const searchInput = document.getElementById('searchInput');
+        const searchHighlight = document.getElementById('searchHighlight');
+        const mobsGrid = document.getElementById('mobsGrid');
+
+        // --- UTILITAIRE DE COMPARAISON POUR LE % ---
+        const comparePercent = (itemValue, filterString) => {
+            const match = filterString.match(/^([<>]=?|=)?([0-9.]+)/);
+            if (match === null) {
+                return false;
+            }
+
+            const operator = match[1] || '=';
+            const valueToCompare = parseFloat(match[2]);
+            const actualValue = parseFloat(itemValue);
+
+            if (operator === '>') {
+                return actualValue > valueToCompare;
+            } else if (operator === '<') {
+                return actualValue < valueToCompare;
+            } else if (operator === '>=') {
+                return actualValue >= valueToCompare;
+            } else if (operator === '<=') {
+                return actualValue <= valueToCompare;
+            } else if (operator === '=') {
+                return actualValue === valueToCompare;
+            }
+            
+            return actualValue === valueToCompare;
+        };
+
+        // --- LOGIQUE DE TRI ---
+        const applySorts = (data, sortObjects, currentTerms) => {
+            let sorted = [...data];
+            
+            let rarityFilterValue = null;
+            let typeFilterValue = null;
+
+            for (let i = 0; i < currentTerms.length; i++) {
+                if (currentTerms[i].includes(PREFIX.RARITY)) {
+                    rarityFilterValue = currentTerms[i].split(PREFIX.RARITY)[1];
                 }
-                return `<img src="${firstImg}" alt="${name}" style="max-width: 100%; max-height: 100%; object-fit: contain;">`;
-            };
+                if (currentTerms[i].includes(PREFIX.TYPE)) {
+                    typeFilterValue = currentTerms[i].split(PREFIX.TYPE)[1];
+                }
+            }
 
-            // --- Fonction pour formater l'affichage des zones ---
-            const formatZoneDisplay = (zoneData) => {
-                const zones = Array.isArray(zoneData) ? zoneData : [zoneData];
-                if (zones.length >= TOTAL_ZONES_COUNT) return "Any";
-                return zones.join(', ');
-            };
+            sortObjects.forEach(obj => {
+                const code = obj.code;
+                const prefix = obj.prefix;
 
-            // --- Fonction de rendu principale ---
-            const render = (list, grid, searchTerms = []) => {
-                const rarityFilter = searchTerms.find(t => t.startsWith('r:'))?.split('r:')[1];
-                const typeFilter = searchTerms.find(t => t.startsWith('t:'))?.split('t:')[1];
-
-                grid.innerHTML = list.map(m => {
-                    let dropItems = m.drops ? Object.values(m.drops) : [];
-                    
-                    // Filtrage des items par rareté ou type
-                    if (rarityFilter || typeFilter) {
-                        dropItems = dropItems.filter(item => {
-                            const matchRarity = rarityFilter ? (item.rarity && item.rarity.toLowerCase() === rarityFilter) : true;
-                            const matchType = typeFilter ? (item.type && item.type.toLowerCase() === typeFilter) : true;
-                            return matchRarity && matchType;
+                if (prefix === PREFIX.SORT) {
+                    if (code === 'az') {
+                        sorted.sort((a, b) => a.name.localeCompare(b.name));
+                    } else if (code === 'za') {
+                        sorted.sort((a, b) => b.name.localeCompare(a.name));
+                    } else if (code === 'uz') {
+                        sorted.sort((a, b) => {
+                            let zoneA = Array.isArray(a.zone) ? a.zone[0] : a.zone;
+                            let zoneB = Array.isArray(b.zone) ? b.zone[0] : b.zone;
+                            return zoneA - zoneB;
+                        });
+                    } else if (code === 'dz') {
+                        sorted.sort((a, b) => {
+                            let zoneA = Array.isArray(a.zone) ? a.zone[0] : a.zone;
+                            let zoneB = Array.isArray(b.zone) ? b.zone[0] : b.zone;
+                            return zoneB - zoneA;
+                        });
+                    } else if (code === 'ur' || code === 'dr') {
+                        const getHighestRarity = (mob) => {
+                            let drops = Object.values(mob.drops || {});
+                            let indexes = [];
+                            drops.forEach(d => {
+                                indexes.push(rarityOrder.indexOf(d.rarity.toLowerCase()));
+                            });
+                            if (indexes.length === 0) return -1;
+                            return Math.max(...indexes);
+                        };
+                        sorted.sort((a, b) => {
+                            if (code === 'ur') return getHighestRarity(a) - getHighestRarity(b);
+                            return getHighestRarity(b) - getHighestRarity(a);
                         });
                     }
-                    
-                    if ((rarityFilter || typeFilter) && dropItems.length === 0) return '';
+                }
 
-                    return `
-                        <div class="card" style="display: flex; align-items: center; gap: 30px;">
-                            <div style="background: rgba(0,0,0,0.3); padding: 10px; border-radius: 8px; width: 100px; height: 100px; display: flex; align-items: center; justify-content: center; flex-shrink: 0; overflow: hidden;">
-                                ${renderMedia(m.image, m.name)}
-                            </div>
-                            <div style="flex-grow: 1;">
-                                <h3 style="margin: 0; font-size: 1.4rem; color: #fff;">${m.name}</h3>
-                                <p style="font-size: 0.75rem; opacity: 0.5; margin: 4px 0 15px 0; font-family: monospace;">
-                                    Zone: ${formatZoneDisplay(m.zone)}
-                                </p>
-                                <div style="display: flex; gap: 15px; flex-wrap: wrap;">
-                                    ${dropItems.map(item => {
-                                        const color = rarityColors[item.rarity?.toLowerCase()] || "var(--rarity-default)";
-                                        const hasHover = !!item.dropsHover;
-                                        
-                                        return `
-                                            <div class="item-card ${hasHover ? 'has-hover' : ''}" style="background: linear-gradient(135deg, rgba(255,255,255,0.05) 0%, rgba(0,0,0,0.2) 100%); border: 1px solid ${color}; padding: 12px 14px; border-radius: 8px; display: flex; align-items: center; gap: 12px; min-width: 200px; position: relative;">
-                                                <div style="position: absolute; top: 6px; right: 8px; font-size: 0.55rem; opacity: 0.5; color: #fff; font-family: monospace;">${item.addedVersion || 'v0.1'}</div>
-                                                <div style="width: 32px; height: 32px; flex-shrink: 0; display: flex; align-items: center; justify-content: center; overflow: hidden;">${renderMedia(item.img, item.name)}</div>
-                                                <div style="padding-right: 30px;">
-                                                    <div style="font-size: 0.85rem; font-weight: bold; color: var(--text-main); line-height: 1.2;">${item.name}</div>
-                                                    <div style="font-size: 0.75rem; margin-top: 2px;">
-                                                        <span class="drop-value" style="color: var(--text-muted);">${item.drops}%</span>
-                                                        ${hasHover ? `<span class="drop-hover-text">${item.dropsHover}</span>` : ''}
-                                                        <span style="color: ${color}; font-size: 0.65rem; text-transform: uppercase; font-weight: bold; margin-left: 4px;">${item.rarity}</span>
-                                                    </div>
-                                                </div>
-                                            </div>`;
-                                    }).join('')}
-                                </div>
-                            </div>
-                        </div>`;
-                }).join('');
-            };
-
-            // --- Chargement des données et Recherche ---
-            async function load() {
-                try {
-                    const res = await fetch('mobs.json');
-                    const data = await res.json();
-                    const grid = document.getElementById('mobsGrid');
-                    render(data, grid);
-
-                    document.getElementById('searchInput').addEventListener('input', e => {
-                        const terms = e.target.value.toLowerCase().trim().split(/\s+/).filter(t => t.length > 0);
-                        const filtered = data.filter(m => 
-                            terms.every(term => {
-                                // Filtre Zone (gère les nombres et les tableaux)
-                                if (term.startsWith('z:')) {
-                                    const targetZone = term.split('z:')[1];
-                                    const mobZones = Array.isArray(m.zone) ? m.zone.map(String) : [m.zone.toString()];
-                                    return mobZones.includes(targetZone);
-                                }
-                                // Filtres Rareté et Type
-                                if (term.startsWith('r:')) return Object.values(m.drops || {}).some(i => i.rarity?.toLowerCase() === term.split('r:')[1]);
-                                if (term.startsWith('t:')) return Object.values(m.drops || {}).some(i => i.type?.toLowerCase() === term.split('t:')[1]);
-                                // Recherche Nom
-                                return m.name.toLowerCase().includes(term);
-                            })
-                        );
-                        render(filtered, grid, terms);
+                if (prefix === PREFIX.PERCENT && (code === 'u' || code === 'd')) {
+                    sorted.sort((a, b) => {
+                        const getChance = (mob) => {
+                            let items = Object.values(mob.drops || {});
+                            if (rarityFilterValue !== null || typeFilterValue !== null) {
+                                items = items.filter(item => {
+                                    let match = true;
+                                    if (rarityFilterValue && item.rarity.toLowerCase() !== rarityFilterValue) match = false;
+                                    if (typeFilterValue && item.type.toLowerCase() !== typeFilterValue) match = false;
+                                    return match;
+                                });
+                            }
+                            let chances = items.map(i => parseFloat(i.drops) || 0);
+                            if (chances.length === 0) return code === 'u' ? 999 : -1;
+                            return Math.max(...chances);
+                        };
+                        if (code === 'u') return getChance(a) - getChance(b);
+                        return getChance(b) - getChance(a);
                     });
+                }
+            });
+            return sorted;
+        };
 
-                    // Intervalle pour les images cycliques
-                    setInterval(() => {
-                        document.querySelectorAll('.cycling-img').forEach(img => {
-                            const sources = JSON.parse(img.dataset.sources);
-                            let idx = (parseInt(img.dataset.index) + 1) % sources.length;
-                            img.src = sources[idx];
-                            img.dataset.index = idx;
-                        });
-                    }, 2000);
-
-                } catch (err) { console.error(err); }
+        // --- HIGHLIGHTS ---
+        searchInput.addEventListener('input', () => {
+            const text = searchInput.value;
+            if (!text) {
+                searchHighlight.innerHTML = '';
+                return;
             }
-            load();
-        </script>
+            const words = text.split(/(\s+)/);
+            
+            let activeSorts = [];
+            let activePercents = [];
+            words.forEach(w => {
+                if (w.includes(PREFIX.SORT)) activeSorts.push(w.split(PREFIX.SORT)[1]);
+                if (w.includes(PREFIX.PERCENT)) activePercents.push(w.split(PREFIX.PERCENT)[1]);
+            });
+
+            const conflicts = { 'alpha': ['az', 'za'], 'zone': ['uz', 'dz'], 'rare': ['ur', 'dr'], 'perc': ['u', 'd'] };
+
+            searchHighlight.innerHTML = words.map(word => {
+                let isNegation = word.startsWith('!');
+                let cleanWord = isNegation ? word.slice(1) : word;
+                
+                let foundPrefix = null;
+                if (cleanWord.startsWith(PREFIX.ZONE)) foundPrefix = PREFIX.ZONE;
+                else if (cleanWord.startsWith(PREFIX.RARITY)) foundPrefix = PREFIX.RARITY;
+                else if (cleanWord.startsWith(PREFIX.TYPE)) foundPrefix = PREFIX.TYPE;
+                else if (cleanWord.startsWith(PREFIX.SORT)) foundPrefix = PREFIX.SORT;
+                else if (cleanWord.startsWith(PREFIX.PERCENT)) foundPrefix = PREFIX.PERCENT;
+
+                if (foundPrefix !== null) {
+                    let className = isNegation ? "filter-negation" : "filter-glow";
+                    let valuePart = cleanWord.slice(1);
+
+                    for (let key in conflicts) {
+                        let group = conflicts[key];
+                        if (group.includes(valuePart)) {
+                            let pool = (foundPrefix === PREFIX.SORT) ? activeSorts : activePercents;
+                            let hasOther = false;
+                            pool.forEach(p => { if (p !== valuePart && group.includes(p)) hasOther = true; });
+                            if (hasOther) className = "filter-conflict";
+                        }
+                    }
+                    return `<i class="${className}">${word}</i>`;
+                }
+
+                // Ajoute cette condition dans ton .map(word => { ... })
+                if (cleanWord.startsWith(PREFIX.SYSTEM)) {
+                    return `<i class="filter-system">${word}</i>`; // Ajoute .filter-system dans ton CSS
+                }
+                return `<span>${word}</span>`;
+            }).join('');
+        });
+
+
+        const formatZoneDisplay = (zoneData) => {
+            let zones = Array.isArray(zoneData) ? zoneData : [zoneData];
+            
+            // Si le nombre de zones du mob est égal ou supérieur au max, on affiche Any
+            if (zones.length >= TOTAL_ZONES_COUNT) {
+                return "Any";
+            }
+            
+            return zones.join(', ');
+        };
+
+
+
+        // --- RENDU ---
+        const renderMedia = (mediaData, name) => {
+            if (Array.isArray(mediaData)) {
+                let sources = JSON.stringify(mediaData);
+                return `<img src="${mediaData[0]}" class="cycling-img" data-sources='${sources}' data-index="0" alt="${name}" style="max-width: 100%; max-height: 100%; object-fit: contain;">`;
+            }
+            return `<img src="${mediaData || 'img/placeholder.png'}" alt="${name}" style="max-width: 100%; max-height: 100%; object-fit: contain;">`;
+        };
+
+const render = (list, grid, searchTerms = []) => {
+            grid.innerHTML = list.map(mob => {
+                let drops = mob.drops ? Object.values(mob.drops) : [];
+                
+                // Filtrage des items à l'intérieur
+                drops = drops.filter(item => {
+                    let isVisible = true;
+                    searchTerms.forEach(term => {
+                        let isNeg = term.startsWith('!');
+                        let clean = isNeg ? term.slice(1) : term;
+                        let val = clean.slice(1);
+
+                        if (clean.startsWith(PREFIX.RARITY)) {
+                            let match = item.rarity.toLowerCase() === val;
+                            if (isNeg && match) isVisible = false;
+                            if (!isNeg && !match) isVisible = false;
+                        }
+                        if (clean.startsWith(PREFIX.TYPE)) {
+                            let match = item.type.toLowerCase() === val;
+                            if (isNeg && match) isVisible = false;
+                            if (!isNeg && !match) isVisible = false;
+                        }
+                        if (clean.startsWith(PREFIX.PERCENT)) {
+                            if (val !== 'u' && val !== 'd') {
+                                let match = comparePercent(item.drops, val);
+                                if (isNeg && match) isVisible = false;
+                                if (!isNeg && !match) isVisible = false;
+                            }
+                        }
+                    });
+                    return isVisible;
+                });
+
+                return `
+                    <div class="card" style="display: flex; align-items: center; gap: 30px;">
+                        <div style="background: rgba(0,0,0,0.3); padding: 10px; border-radius: 8px; width: 100px; height: 100px; display: flex; align-items: center; justify-content: center; flex-shrink: 0; overflow: hidden;">
+                            ${renderMedia(mob.image, mob.name)}
+                        </div>
+                        <div style="flex-grow: 1;">
+                            <h3 style="margin: 0; font-size: 1.4rem; color: #fff;">${mob.name}</h3>
+                            <p style="font-size: 0.75rem; opacity: 0.5; margin: 4px 0 15px 0;">Zone: ${formatZoneDisplay(mob.zone)}</p>
+                            <div style="display: flex; gap: 15px; flex-wrap: wrap;">
+                                ${drops.map(item => {
+                                    const color = rarityColors[item.rarity.toLowerCase()] || "gray";
+                                    const hoverAttr = item.dropsHover ? `data-hover="${item.dropsHover}"` : '';
+
+                                    return `<div class="item-card" ${hoverAttr} style="border: 1px solid ${color}; padding: 12px 14px; border-radius: 8px; display: flex; align-items: center; gap: 12px; min-width: 220px; position: relative; overflow: hidden;">
+                                        
+                                        <div style="position: absolute; top: 6px; right: 8px; font-size: 0.55rem; opacity: 0.5; z-index: 2; background: inherit; padding-left: 5px;">${item.addedVersion || 'v0.1'}</div>
+
+                                        <div style="width: 32px; height: 32px; flex-shrink: 0;">
+                                            ${renderMedia(item.img, item.name)}
+                                        </div>
+                                        
+                                        <div style="flex-grow: 1; min-width: 0; padding-right: 35px;">
+                                            <div style="font-size: 0.85rem; font-weight: bold; color: white; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;" title="${item.name}">
+                                                ${item.name}
+                                            </div>
+                                            <div style="font-size: 0.75rem;">
+                                                <span class="drop-value" style="color: #aaa;">${item.drops}%</span>
+                                                <span style="color: ${color}; font-weight: bold; margin-left: 4px;">${item.rarity}</span>
+                                            </div>
+                                        </div>
+                                    </div>`;
+                                }).join('')}
+                            </div>
+                        </div>
+                    </div>`;
+            }).join('');
+
+            // --- RELANCE DES HOVERS ---
+            grid.querySelectorAll('.item-card[data-hover]').forEach(card => {
+                const span = card.querySelector('.drop-value');
+                if (!span) return;
+                const original = span.innerText;
+                const hoverTxt = card.getAttribute('data-hover');
+                card.addEventListener('mouseenter', () => { span.innerText = hoverTxt; span.style.color = "white"; });
+                card.addEventListener('mouseleave', () => { span.innerText = original; span.style.color = "#aaa"; });
+            });
+
+            // --- RELANCE DU CYCLE DES IMAGES (CYCLING) ---
+            grid.querySelectorAll('.cycling-img').forEach(img => {
+                const sources = JSON.parse(img.dataset.sources);
+                let idx = 0;
+                
+                setInterval(() => {
+                    img.style.opacity = 0; // Début du fondu sortant
+                    
+                    setTimeout(() => {
+                        idx = (idx + 1) % sources.length;
+                        img.src = sources[idx];
+                        img.style.opacity = 1; // Début du fondu entrant
+                    }, 200); 
+                }, 2000);
+            });
+        };
+
+// --- CHARGEMENT ---
+async function load() {
+    try {
+        const res = await fetch('mobs.json');
+        let raw = await res.json();
+        
+        // On filtre DIRECTEMENT ici pour ne garder que ceux sans hide:true
+        let data = raw.filter(mob => mob.hide !== true);
+        
+        let currentSource = 'mobs.json';
+        const EASTER_EGG_KEY = '&easteregg';
+
+        const initHovers = () => {
+            document.querySelectorAll('.item-card[data-hover]').forEach(card => {
+                const dropSpan = card.querySelector('.drop-value');
+                if (!dropSpan) return;
+                const originalText = dropSpan.innerText;
+                const hoverText = card.getAttribute('data-hover');
+
+                card.addEventListener('mouseenter', () => {
+                    dropSpan.innerText = hoverText;
+                    dropSpan.style.color = "white";
+                });
+                card.addEventListener('mouseleave', () => {
+                    dropSpan.innerText = originalText;
+                    dropSpan.style.color = "#aaa";
+                });
+            });
+        };
+
+        const handleSearch = async () => {
+            const val = searchInput.value.toLowerCase().trim();
+            const terms = val.split(/\s+/).filter(t => t.length > 0);
+
+            const hasEasterEgg = terms.includes(EASTER_EGG_KEY);
+            const targetSource = hasEasterEgg ? 'easter_egg.json' : 'mobs.json';
+
+            if (targetSource !== currentSource) {
+                try {
+                    const newRes = await fetch(targetSource);
+                    let newRaw = await newRes.json();
+                    // On filtre aussi la nouvelle source
+                    data = newRaw.filter(mob => mob.hide !== true);
+                    currentSource = targetSource;
+                } catch (err) { console.log(err); }
+            }
+
+            let filtered = data;
+            if (val !== "") {
+                filtered = data.filter(mob => {
+                    let isMobVisible = true;
+                    terms.forEach(term => {
+                        if (term === EASTER_EGG_KEY) return;
+                        let isNeg = term.startsWith('!');
+                        let clean = isNeg ? term.slice(1) : term;
+                        let value = clean.slice(1);
+
+                        if (isNeg && (clean.startsWith(PREFIX.TYPE) || clean.startsWith(PREFIX.RARITY) || clean.startsWith(PREFIX.PERCENT))) return;
+
+                        if (clean.startsWith(PREFIX.ZONE)) {
+                            let zones = Array.isArray(mob.zone) ? mob.zone.map(String) : [mob.zone.toString()];
+                            let match = zones.includes(value);
+                            if (isNeg && match) isMobVisible = false;
+                            if (!isNeg && !match) isMobVisible = false;
+                        } else if (clean.startsWith(PREFIX.RARITY)) {
+                            if (!Object.values(mob.drops).some(d => d.rarity.toLowerCase() === value)) isMobVisible = false;
+                        } else if (clean.startsWith(PREFIX.TYPE)) {
+                            if (!Object.values(mob.drops).some(d => d.type.toLowerCase() === value)) isMobVisible = false;
+                        } else if (clean.startsWith(PREFIX.PERCENT)) {
+                            if (value !== 'u' && value !== 'd') {
+                                if (!Object.values(mob.drops).some(d => comparePercent(d.drops, value))) isMobVisible = false;
+                            }
+                        } else if (!clean.startsWith(PREFIX.SORT)) {
+                            let match = mob.name.toLowerCase().includes(clean);
+                            if (isNeg && match) isMobVisible = false;
+                            if (!isNeg && !match) isMobVisible = false;
+                        }
+                    });
+                    return isMobVisible;
+                });
+            }
+
+            let sortObjects = [];
+            terms.forEach(t => {
+                let clean = t.startsWith('!') ? t.slice(1) : t;
+                if (clean.startsWith(PREFIX.SORT) || (clean.startsWith(PREFIX.PERCENT) && (clean.slice(1) === 'u' || clean.slice(1) === 'd'))) {
+                    sortObjects.push({ prefix: clean[0], code: clean.slice(1) });
+                }
+            });
+            if (sortObjects.length > 0) filtered = applySorts(filtered, sortObjects, terms);
+
+            render(filtered, mobsGrid, terms);
+            initHovers(); 
+        };
+
+        searchInput.addEventListener('input', handleSearch);
+        render(data, mobsGrid); // Affiche les données filtrées au départ
+        initHovers(); 
+    } catch (e) { console.log(e); }
+}
+load();
+    </script>
 </body>
 </html>

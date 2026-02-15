@@ -1,0 +1,415 @@
+/* --- Workbench Timeline Layout --- */
+
+/* Le conteneur qui englobe tout tes Tiers */
+/* --- Workbench Timeline Layout --- */
+
+#workbenchTimeline {
+    position: relative;
+    padding: 40px 0;
+}
+
+/* Le trait épais en dégradé (Gris-Bleu vers Or) */
+#workbenchTimeline::before {
+    content: '';
+    position: absolute;
+    left: 28px; 
+    top: 0;
+    bottom: 0;
+    width: 8px;
+    background: linear-gradient(to bottom, #2e3a49 0%, #d4af37 100%);
+    border-radius: 4px;
+    z-index: 1;
+}
+
+.timeline-item {
+    position: relative;
+    padding-left: 90px;
+    margin-bottom: 50px;
+    z-index: 2;
+}
+
+.timeline-number {
+    position: absolute;
+    left: 0;
+    top: 20px;
+    width: 64px;
+    height: 64px;
+    
+    /* Dégradé dynamique */
+    background: color-mix(in srgb, #d4af37 calc(var(--tier-index) * 100%), #2e3a49);
+    
+    /* Couleur par défaut */
+    color: #ffffff;
+    
+    border: 4px solid #1a232e;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 900;
+    font-size: 1.2rem;
+    z-index: 3;
+    box-shadow: 0 0 0 6px #0a0f14;
+}
+
+/* On force le changement de couleur de texte de manière binaire (0 ou 1) */
+.timeline-item[style*="--tier-index: 0.6"] .timeline-number,
+.timeline-item[style*="--tier-index: 0.7"] .timeline-number,
+.timeline-item[style*="--tier-index: 0.8"] .timeline-number,
+.timeline-item[style*="--tier-index: 0.9"] .timeline-number,
+.timeline-item[style*="--tier-index: 1"] .timeline-number {
+    color: #000000 !important;
+}
+
+.workbench-card {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    padding: 25px !important;
+    background: rgba(10, 15, 20, 0.95);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+    margin-bottom: 30px;
+    position: relative;
+}
+
+
+
+
+
+
+
+
+
+
+
+/* Séparateur stylisé */
+hr {
+    border: none;
+    height: 2px;
+    background: radial-gradient(circle, var(--accent) 0%, rgba(214, 55, 103, 0) 80%);
+    margin: 10px auto;
+    width: 95%;
+    opacity: 0.6;
+    filter: drop-shadow(0 0 3px var(--accent));
+}
+
+.wb-header-flex {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+}
+
+.wb-visual img {
+    width: 120px;
+    height: 120px;
+    filter: drop-shadow(0 0 5px rgba(214, 55, 103, 0.2));
+    object-fit: contain;
+}
+
+.wb-info {
+    flex: 1;
+}
+
+.wb-info h2 {
+    margin: 0 !important;
+    color: var(--accent);
+}
+
+.description {
+    display: block;
+    margin-top: 10px !important;
+    margin-bottom: 15px !important;
+    line-height: 1.5;
+    color: var(--text-muted);
+    font-size: 0.95rem;
+}
+
+.unlocks-box {
+    background: rgba(214, 55, 103, 0.05);
+    border-left: 3px solid var(--accent);
+    padding: 12px 15px;
+    font-size: 0.95rem;
+    margin-top: 15px !important;
+}
+
+/* --- Grille d'ingrédients --- */
+.wb-requirements h4 {
+    margin-top: 10px;
+    margin-bottom: 15px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-size: 0.8rem;
+    opacity: 0.6;
+    color: var(--text-muted);
+}
+
+.ingredient-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 15px;
+}
+
+.ingredient-tile {
+    display: flex !important;
+    align-items: center !important; /* Centre tout le contenu verticalement (icône + texte) */
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 8px;
+    padding: 10px;
+    height: 80px;
+    box-sizing: border-box;
+}
+
+.ingredient-tile:hover {
+    background: rgba(255, 255, 255, 0.05);
+    border-color: var(--accent);
+    transform: translateY(-2px);
+}
+
+.tile-icon-slot {
+    width: 54px;
+    height: 54px;
+    background: rgba(0, 0, 0, 0.5);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 6px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    margin-right: 15px;
+}
+
+.tile-icon-slot img {
+    width: 38px !important;
+    height: 38px !important;
+    object-fit: contain;
+}
+
+.tile-content {
+    display: flex !important;
+    flex-direction: row !important;
+    align-items: center !important; /* Centre verticalement la Qty par rapport au bloc de gauche */
+    justify-content: space-between !important;
+    flex: 1;
+    min-width: 0;
+}
+
+.tile-main {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: space-between !important;
+    width: 100% !important;
+}
+
+.tile-name {
+    color: #fff !important;
+    font-weight: 600 !important;
+    font-size: 0.9rem !important;
+    line-height: 1.2;
+}
+
+.qty {
+    color: var(--accent) !important;
+    font-weight: 700 !important;
+    font-size: 0.9rem !important; /* TAILLE RÉDUITE ici */
+    font-family: monospace !important;
+    margin-left: 15px;
+    flex-shrink: 0;
+}
+
+.tile-source {
+    font-size: 0.75rem !important;
+    color: var(--text-muted) !important;
+    opacity: 0.6;
+    font-style: italic;
+    white-space: pre-line;
+}
+
+.tile-text-group {
+    display: flex !important;
+    flex-direction: column !important;
+    justify-content: center !important;
+    gap: 4px !important; /* RECRÉE L'ESPACE entre le nom et la source */
+    min-width: 0;
+    flex: 1;
+}
+/* --- Responsive --- */
+@media (max-width: 600px) {
+    .ingredient-grid { grid-template-columns: 1fr; }
+    .wb-header-flex { flex-direction: column; text-align: center; }
+    .wb-visual img { width: 100px; height: 100px; }
+}
+
+
+
+
+/* --- Unlocks Cards --- */
+.unlocks-section {
+    margin-top: 15px;
+}
+
+.unlocks-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px; /* Espace entre les cartes elles-mêmes */
+    padding-left: 5px; /* Optionnel : léger décalage vers la droite pour l'alignement */
+}
+
+.unlock-icon-container {
+    position: relative;
+    width: 30px;  /* Ta taille demandée */
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0; /* Empêche l'icône de s'écraser */
+}
+
+.unlock-mini-icon {
+    width: 30px;
+    height: 30px;
+    object-fit: contain;
+    position: absolute;
+    opacity: 0;
+    transition: none; /* On laisse l'animation gérer le flux */
+}
+
+.unlock-card {
+    background: rgba(255, 255, 255, 0.05); /* Un peu plus neutre car l'icône apporte la couleur */
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 6px;
+    padding: 6px 12px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    transition: all 0.2s ease;
+}
+
+.unlock-card:hover {
+    background: rgba(214, 55, 103, 0.15);
+    border-color: var(--accent);
+    transform: translateY(-2px);
+}
+.unlock-icon {
+    font-size: 0.9rem;
+}
+
+.unlock-text {
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: #fff;
+}
+
+.unlocks-label {
+    display: block;
+    font-size: 0.75rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin-bottom: 12px !important; /* Augmenté pour décoller les cartes */
+    letter-spacing: 0.5px;
+}
+
+/* Gestion de l'image unique (si pas d'animation) */
+.unlock-icon-container:not(.is-animated) .unlock-mini-icon { opacity: 1; position: relative; }
+
+/* --- PRESETS D'ANIMATION --- */
+
+/* 2 IMAGES (Cycle 6s) */
+.cycle-2 .unlock-mini-icon { animation: switch2 6s infinite ease-in-out; }
+.cycle-2 .unlock-mini-icon:nth-child(1) { animation-delay: 0s; }
+.cycle-2 .unlock-mini-icon:nth-child(2) { animation-delay: 3s; }
+@keyframes switch2 {
+    0%, 5% { opacity: 0; transform: scale(0.9); }
+    15%, 45% { opacity: 1; transform: scale(1); }
+    55%, 100% { opacity: 0; transform: scale(1.1); }
+}
+
+/* 3 IMAGES (Cycle 9s) */
+.cycle-3 .unlock-mini-icon { animation: switch3 9s infinite ease-in-out; }
+.cycle-3 .unlock-mini-icon:nth-child(1) { animation-delay: 0s; }
+.cycle-3 .unlock-mini-icon:nth-child(2) { animation-delay: 3s; }
+.cycle-3 .unlock-mini-icon:nth-child(3) { animation-delay: 6s; }
+@keyframes switch3 {
+    0%, 3% { opacity: 0; transform: scale(0.9); }
+    10%, 30% { opacity: 1; transform: scale(1); }
+    36%, 100% { opacity: 0; transform: scale(1.1); }
+}
+
+/* 4 IMAGES (Cycle 12s) */
+.cycle-4 .unlock-mini-icon { animation: switch4 12s infinite ease-in-out; }
+.cycle-4 .unlock-mini-icon:nth-child(1) { animation-delay: 0s; }
+.cycle-4 .unlock-mini-icon:nth-child(2) { animation-delay: 3s; }
+.cycle-4 .unlock-mini-icon:nth-child(3) { animation-delay: 6s; }
+.cycle-4 .unlock-mini-icon:nth-child(4) { animation-delay: 9s; }
+@keyframes switch4 {
+    0%, 2% { opacity: 0; transform: scale(0.9); }
+    8%, 22% { opacity: 1; transform: scale(1); }
+    28%, 100% { opacity: 0; transform: scale(1.1); }
+}
+
+/* --- PRESET 5 IMAGES (Cycle 15s) --- */
+.cycle-5 .unlock-mini-icon { animation: switch5 15s infinite ease-in-out; }
+.cycle-5 .unlock-mini-icon:nth-child(1) { animation-delay: 0s; }
+.cycle-5 .unlock-mini-icon:nth-child(2) { animation-delay: 3s; }
+.cycle-5 .unlock-mini-icon:nth-child(3) { animation-delay: 6s; }
+.cycle-5 .unlock-mini-icon:nth-child(4) { animation-delay: 9s; }
+.cycle-5 .unlock-mini-icon:nth-child(5) { animation-delay: 12s; }
+
+@keyframes switch5 {
+    0%, 2% { opacity: 0; transform: scale(0.9); }
+    7%, 18% { opacity: 1; transform: scale(1); }
+    22%, 100% { opacity: 0; transform: scale(1.1); }
+}
+
+/* --- PRESET 6 IMAGES (Cycle 18s) --- */
+.cycle-6 .unlock-mini-icon { animation: switch6 18s infinite ease-in-out; }
+.cycle-6 .unlock-mini-icon:nth-child(1) { animation-delay: 0s; }
+.cycle-6 .unlock-mini-icon:nth-child(2) { animation-delay: 3s; }
+.cycle-6 .unlock-mini-icon:nth-child(3) { animation-delay: 6s; }
+.cycle-6 .unlock-mini-icon:nth-child(4) { animation-delay: 9s; }
+.cycle-6 .unlock-mini-icon:nth-child(5) { animation-delay: 12s; }
+.cycle-6 .unlock-mini-icon:nth-child(6) { animation-delay: 15s; }
+
+@keyframes switch6 {
+    0%, 2% { opacity: 0; transform: scale(0.9); }
+    5%, 15% { opacity: 1; transform: scale(1); }
+    18%, 100% { opacity: 0; transform: scale(1.1); }
+}
+
+/* --- PRESET 7 IMAGES (Cycle 21s) --- */
+.cycle-7 .unlock-mini-icon { animation: switch7 21s infinite ease-in-out; }
+.cycle-7 .unlock-mini-icon:nth-child(1) { animation-delay: 0s; }
+.cycle-7 .unlock-mini-icon:nth-child(2) { animation-delay: 3s; }
+.cycle-7 .unlock-mini-icon:nth-child(3) { animation-delay: 6s; }
+.cycle-7 .unlock-mini-icon:nth-child(4) { animation-delay: 9s; }
+.cycle-7 .unlock-mini-icon:nth-child(5) { animation-delay: 12s; }
+.cycle-7 .unlock-mini-icon:nth-child(6) { animation-delay: 15s; }
+.cycle-7 .unlock-mini-icon:nth-child(7) { animation-delay: 18s; }
+
+@keyframes switch7 {
+    0%, 2% { opacity: 0; transform: scale(0.9); }
+    5%, 12% { opacity: 1; transform: scale(1); }    /* Reste visible jusqu'à ~2.5s */
+    14.28% { opacity: 0; transform: scale(1.1); }   /* Disparaît pile à la 3ème seconde */
+    100% { opacity: 0; }
+}
+
+/* --- PRESET 8 IMAGES (Cycle 24s) --- */
+.cycle-8 .unlock-mini-icon { animation: switch8 24s infinite ease-in-out; }
+.cycle-8 .unlock-mini-icon:nth-child(1) { animation-delay: 0s; }
+.cycle-8 .unlock-mini-icon:nth-child(2) { animation-delay: 3s; }
+.cycle-8 .unlock-mini-icon:nth-child(3) { animation-delay: 6s; }
+.cycle-8 .unlock-mini-icon:nth-child(4) { animation-delay: 9s; }
+.cycle-8 .unlock-mini-icon:nth-child(5) { animation-delay: 12s; }
+.cycle-8 .unlock-mini-icon:nth-child(6) { animation-delay: 15s; }
+.cycle-8 .unlock-mini-icon:nth-child(7) { animation-delay: 18s; }
+.cycle-8 .unlock-mini-icon:nth-child(8) { animation-delay: 21s; }
+
+@keyframes switch8 {
+    0%, 1% { opacity: 0; transform: scale(0.9); }
+    3%, 10% { opacity: 1; transform: scale(1); }    /* Reste stable */
+    12.5% { opacity: 0; transform: scale(1.1); }   /* Disparaît pile quand la suivante arrive */
+    100% { opacity: 0; }
+}

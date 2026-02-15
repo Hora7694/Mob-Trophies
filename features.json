@@ -1,0 +1,8 @@
+[
+  {
+    "id": "glow",
+    "icon": "/img/icons/UI/features/glow.png",
+    "name": "Glow",
+    "description": "Certain parts glow in the dark. Can be toggled using the interact key."
+  }
+]

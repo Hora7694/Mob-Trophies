@@ -7,7 +7,6 @@
     --border-color: #1f2937;
     --accent: #d4af37;
     --text-main: #e2e8f0;
-    --text-muted: #a0aec0;
 
     /* Couleurs de Rareté */
     --rarity-uncommon: #29c714c2;
@@ -67,12 +66,74 @@ nav a:hover, nav a.active {
 }
 
 /* =========================================
-   4. SYSTÈME DE RECHERCHE & TOOLTIP
+    4. SYSTÈME DE RECHERCHE & TOOLTIP
    ========================================= */
 .search-container {
     position: relative;
     width: 100%;
     margin-bottom: 20px;
+}
+
+.search-wrapper:focus-within {
+    border-color: #ffffff !important; /* Contour blanc pur */
+    box-shadow: 0 0 8px rgba(255, 255, 255, 0.2); /* Légère lueur blanche */
+    transition: all 0.2s ease;
+}
+
+/* Le conteneur qui encadre tout */
+.search-wrapper {
+    position: relative;
+    width: 100%;
+    background: #12181f;
+    border-radius: 8px;
+    border: 1px solid #2d3748;
+    height: 50px;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    transition: all 0.2s ease;
+    border: 1px solid #2d3748;
+}
+
+/* Le calque de rendu (derrière l'input) */
+/* Le calque de rendu */
+#searchHighlight {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    padding: 15px 45px 15px 15px; /* Doit être STRICTEMENT identique à l'input */
+    box-sizing: border-box;
+    pointer-events: none;
+    white-space: pre;
+    font-family: 'Inter', sans-serif !important;
+    font-size: 14px;
+    z-index: 1;
+    /* On enlève display: flex pour éviter les décalages */
+    line-height: 20px; /* On fixe une hauteur de ligne exacte */
+    overflow: hidden;
+    color: white !important;
+}
+
+/* L'input réel */
+#searchInput {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: calc(100% - 45px);
+    height: 100%;
+    padding: 15px 0 15px 15px; /* Padding identique (sauf droite car width calc) */
+    background: transparent !important;
+    border: none !important;
+    color: transparent !important;
+    caret-color: white !important;
+    box-sizing: border-box;
+    font-family: 'Inter', sans-serif !important;
+    font-size: 14px;
+    z-index: 2;
+    outline: none;
+    line-height: 20px; /* Strictement identique au calque */
 }
 
 .info-icon {
@@ -91,6 +152,7 @@ nav a:hover, nav a.active {
     font-size: 12px;
     font-weight: bold;
     cursor: help;
+    z-index: 3;
     transition: 0.3s;
     border: 1px solid var(--border-color);
 }
@@ -124,8 +186,6 @@ nav a:hover, nav a.active {
     visibility: visible;
     opacity: 1;
 }
-
-.tooltip b { color: var(--accent); }
 
 /* =========================================
    5. CARTES (MOBS & ITEMS)
@@ -171,6 +231,34 @@ nav a:hover, nav a.active {
 }
 
 .accent-text { color: var(--accent); }
+
+/* --- Animation des Images (Mobs & Items) --- */
+
+/* --- Animation Fluide (Drops & Mobs) --- */
+
+/* On applique uniquement la transition d'opacité et de transformation */
+.cycling-img, 
+.item-card img {
+    transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out !important;
+    opacity: 1;
+    /* Les tailles sont gérées par ton HTML/JS (100px et 32px) */
+}
+
+/* État quand l'image est masquée par ton JS */
+.cycling-img[style*="opacity: 0"], 
+.item-card img[style*="opacity: 0"] {
+    opacity: 0 !important;
+    transform: scale(0.9); /* Petit effet de réduction fluide */
+}
+
+/* État quand l'image est affichée par ton JS */
+.cycling-img[style*="opacity: 1"], 
+.item-card img[style*="opacity: 1"] {
+    opacity: 1 !important;
+    transform: scale(1); /* Retour à la taille normale */
+}
+
+
 
 /* =========================================
    6. FOOTER
@@ -512,4 +600,355 @@ iframe#kofiframe {
     transform: translateY(-3px);
     box-shadow: 0 0 25px var(--accent);
     filter: brightness(1.1);
+}
+
+
+
+
+
+
+
+
+
+
+/* =========================================
+   11. text neon dans la search bar
+   ========================================= */
+
+/* Style unique pour tous les arguments de filtrage (@, #, *) */
+.filter-glow {
+    font-style: italic;
+    color: #c6e4ff; /* Couleur de base blanche */
+    font-weight: normal;
+    /* L'effet de lueur (Glowing effect) */
+    text-shadow: 0 0 5px rgba(255, 255, 255, 0.8), 
+                 0 0 10px rgba(0, 162, 255, 0.5); 
+    transition: all 0.3s ease;
+}
+
+/* Optionnel : la lueur pulse un peu quand on écrit */
+.search-wrapper:focus-within .filter-glow {
+    text-shadow: 0 0 8px rgba(255, 255, 255, 1), 
+                 0 0 15px rgba(0, 162, 255, 0.8);
+}
+
+/* Couleur d'alerte pour les filtres incompatibles */
+.filter-conflict {
+    color: #405685 !important;
+    text-shadow: 0 0 8px rgba(41, 67, 122, 0.8) !important;
+    font-style: italic;
+    text-decoration: underline wavy #405685; /* Petit effet ondulé pour l'erreur */
+}
+
+
+.filter-negation {
+    color: #ff446d !important;
+    text-shadow: 0 0 8px rgba(255, 68, 68, 0.8) !important;
+    font-style: italic;
+}
+
+.filter-system {
+    color: #bb86fc; /* Une couleur distincte des autres filtres */
+    font-style: normal;
+    text-shadow: 0 0 5px rgba(187, 134, 252, 0.5);
+}
+
+
+/* =========================================
+   12. Trophy Workbench Style
+   ========================================= */
+
+.timeline-container {
+    position: relative;
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 20px 0;
+}
+
+/* La ligne verticale derrière */
+.timeline-container::before {
+    content: '';
+    position: absolute;
+    left: 50px; /* Aligné avec le milieu des numéros */
+    top: 0;
+    bottom: 0;
+    width: 2px;
+    background: linear-gradient(to bottom, transparent, var(--accent), transparent);
+    opacity: 0.3;
+}
+
+.timeline-item {
+    position: relative;
+    margin-bottom: 60px;
+    padding-left: 100px; /* Espace pour la ligne et le numéro */
+}
+
+.timeline-number {
+    position: absolute;
+    left: 20px;
+    top: 20px;
+    background: var(--accent);
+    color: #000;
+    font-weight: bold;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 2;
+    box-shadow: 0 0 15px var(--accent);
+}
+
+.workbench-card {
+    display: flex !important;
+    flex-direction: row;
+    gap: 30px;
+    padding: 25px !important;
+}
+
+.wb-visual {
+    flex-shrink: 0;
+    width: 150px;
+    height: 150px;
+    background: rgba(0,0,0,0.4);
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.wb-visual img {
+    max-width: 90%;
+    max-height: 90%;
+}
+
+.upgrade-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+    gap: 15px;
+    margin-top: 10px;
+}
+
+.upgrade-item {
+    background: rgba(255,255,255,0.05);
+    padding: 10px;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    border: 1px solid rgba(255,255,255,0.1);
+}
+
+.upgrade-item img {
+    width: 32px;
+    height: 32px;
+}
+
+.upgrade-details {
+    display: flex;
+    flex-direction: column;
+}
+
+.upgrade-details .amount {
+    font-weight: bold;
+    color: var(--accent);
+}
+
+.unlocks-box {
+    background: rgba(var(--accent-rgb), 0.1);
+    border-left: 3px solid var(--accent);
+    padding: 10px 15px;
+    margin: 15px 0;
+    font-style: italic;
+}
+
+
+
+/* =========================================
+   13. Wiki
+   ========================================= */
+
+.sub-nav {
+    background: rgba(0, 0, 0, 0.3);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    padding: 10px 0;
+}
+
+.sub-nav a {
+    text-decoration: none;
+    color: #aaa;
+    font-size: 0.9rem;
+    font-weight: 500;
+    transition: 0.3s;
+    padding: 5px 10px;
+    border-radius: 4px;
+}
+
+.sub-nav a:hover {
+    color: var(--accent);
+}
+
+.sub-nav a.active {
+    color: #fff;
+    background: rgba(var(--accent-rgb), 0.2);
+    border: 1px solid var(--accent);
+}
+
+
+/* =========================================
+   13. HYTALE UI RECYCLING
+   ========================================= */
+
+.recycling-grid {
+    display: grid; 
+    grid-template-columns: repeat(auto-fill, minmax(400px, 1fr)); 
+    gap: 25px;
+}
+
+.recipe-card {
+    background: #0d1117;
+    border: 1px solid #2d3644;
+    border-radius: 4px;
+    overflow: hidden;
+    transition: transform 0.2s ease;
+}
+
+.recipe-card:hover {
+    transform: translateY(-5px);
+    border-color: #3e4b5d;
+}
+
+.recipe-header {
+    background: #1a1f26;
+    padding: 12px 15px;
+    border-bottom: 1px solid #2d3644;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.recipe-title {
+    font-weight: bold; 
+    color: #eee; 
+    font-size: 0.85rem;
+    letter-spacing: 0.5px;
+}
+
+.recipe-tier {
+    color: var(--accent); 
+    font-size: 0.7rem; 
+    font-weight: 800;
+    letter-spacing: 1px;
+}
+
+.recipe-body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 25px;
+    background: rgba(18, 22, 28, 0.6);
+    padding: 30px 20px;
+}
+
+/* Le Slot Hytale */
+.item-slot {
+    width: 64px;
+    height: 64px;
+    background: #1a1f26;
+    border: 2px solid #2d3644;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    box-shadow: inset 0 0 15px rgba(0,0,0,0.4);
+}
+
+.item-slot:hover {
+    border-color: var(--accent);
+    background: #232a33;
+}
+
+.result-slot {
+    background: rgba(214, 55, 99, 0.05); 
+    border-color: rgba(214, 55, 99, 0.4);
+}
+
+.item-slot img {
+    width: 42px;
+    height: 42px;
+    image-rendering: pixelated;
+    z-index: 2;
+}
+
+.item-amount {
+    position: absolute;
+    bottom: 2px;
+    right: 5px;
+    color: #ffffff;
+    font-weight: bold;
+    font-size: 0.95rem;
+    text-shadow: 2px 2px 0 #000;
+    z-index: 3;
+}
+
+/* Flèche Hytale CSS */
+.arrow-separator {
+    width: 35px;
+    height: 3px;
+    background: var(--accent);
+    position: relative;
+    filter: drop-shadow(0 0 5px rgba(214, 55, 99, 0.4));
+}
+
+.arrow-separator::after {
+    content: '';
+    position: absolute;
+    right: -4px;
+    top: -6px;
+    border-left: 10px solid var(--accent);
+    border-top: 7px solid transparent;
+    border-bottom: 7px solid transparent;
+}
+
+.ingredient-list {
+    display: flex;
+    gap: 10px;
+}
+
+.recipe-footer {
+    padding: 12px; 
+    text-align: center; 
+    font-size: 0.8rem; 
+    color: #888; 
+    background: #0a0d12;
+    font-style: italic;
+    border-top: 1px solid #2d3644;
+}
+
+
+/* --- HYTALE TOOLTIP --- */
+.hytale-tooltip {
+    position: fixed;
+    pointer-events: none;
+    background: rgba(13, 17, 23, 0.95);
+    border: 1px solid #2d3644;
+    padding: 8px 12px;
+    border-radius: 4px;
+    color: #fff;
+    font-size: 0.9rem;
+    font-weight: bold;
+    z-index: 9999;
+    display: none; /* Caché par défaut */
+    box-shadow: 0 4px 15px rgba(0,0,0,0.5);
+    white-space: nowrap;
+}
+
+.item-slot:hover {
+    border-color: var(--accent);
+    background: #232a33;
+    box-shadow: inset 0 0 10px rgba(214, 55, 99, 0.2);
 }

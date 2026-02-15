@@ -1,0 +1,107 @@
+[
+  {
+    "id": "Archaeopteryx_Feather_To_Life_Essance",
+    "result": "Essence of Life",
+    "result_amount": 2,
+    "result_img": "img/icons/Items/Ingredient/Ingredient_Life_Essence.png",
+    "description": " ",
+    "workbench_tier": 4,
+    "ingredients": [
+      {
+        "item": "Archaeopteryx Feather",
+        "amount": 10,
+        "img": "img/icons/Trophy/Flying_Beast/Archaeopteryx/Archaeopteryx_Feather_Trophy_Icon.png"
+      }
+    ]
+  },
+  {
+    "id": "Emberwulf_Crest_To_Fire_Essance",
+    "result": "Essence of Fire",
+    "result_amount": 5,
+    "result_img": "img/icons/Items/Ingredient/Ingredient_Fire_Essence.png",
+    "description": " ",
+    "workbench_tier": 5,
+    "ingredients": [
+      {
+        "item": "Emberwulf Crest",
+        "amount": 1,
+        "img": "img/icons/Trophy/Beast/Emberwulf/Emberwulf_Crest_Trophy_Icon.png"
+      }
+    ]
+  },
+  {
+    "id": "Eye_Void_Eye_To_Void_Essance",
+    "result": "Essence of Void",
+    "result_amount": 50,
+    "result_img": "img/icons/Items/Ingredient/Ingredient_Void_Essence.png",
+    "description": " ",
+    "workbench_tier": 7,
+    "ingredients": [
+      {
+        "item": "Eye Void's Eye",
+        "amount": 1,
+        "img": "img/icons/Trophy/Void/Eye_Void/Eye_Void_Eye_Trophy.png"
+      }
+    ]
+  },
+  {
+    "id": "Eye_Void_Tentacle_To_Void_Essance",
+    "result": "Essence of Void",
+    "result_amount": 2,
+    "result_img": "img/icons/Items/Ingredient/Ingredient_Void_Essence.png",
+    "description": " ",
+    "workbench_tier": 2,
+    "ingredients": [
+      {
+        "item": "Eye Void's Tentacle",
+        "amount": 1,
+        "img": "img/icons/Trophy/Void/Eye_Void/Eye_Void_Tentacle_Trophy_Icon.png"
+      }
+    ]
+  },
+  {
+    "id": "Leopard_Snow_Fang_To_Bone_Fragment",
+    "result": "Bone Fragment",
+    "result_amount": 8,
+    "result_img": "img/icons/Items/Ingredient/Ingredient_Bone_Fragment.png",
+    "description": " ",
+    "workbench_tier": 4,
+    "ingredients": [
+      {
+        "item": "Snow Leopard Fang",
+        "amount": 1,
+        "img": "img/icons/Trophy/Beast/Leopard_Snow/Leopard_Snow_Fang_Trophy_Icon.png"
+      }
+    ]
+  },
+  {
+    "id": "Tiger_Sabertooth_Fang_To_Bone_Fragment",
+    "result": "Bone Fragment",
+    "result_amount": 6,
+    "result_img": "img/icons/Items/Ingredient/Ingredient_Bone_Fragment.png",
+    "description": " ",
+    "workbench_tier": 3,
+    "ingredients": [
+      {
+        "item": "Tiger Sabertooth Fang",
+        "amount": 1,
+        "img": "img/icons/Trophy/Beast/Leopard_Snow/Leopard_Snow_Fang_Trophy_Icon.png"
+      }
+    ]
+  },
+  {
+    "id": "Scorpion_Skull_Trophy_To_Bone_Fragment",
+    "result": "Bone Fragment",
+    "result_amount": 2,
+    "result_img": "img/icons/Items/Ingredient/Ingredient_Bone_Fragment.png",
+    "description": " ",
+    "workbench_tier": 3,
+    "ingredients": [
+      {
+        "item": "Tiger Sabertooth Fang",
+        "amount": 1,
+        "img": "img/icons/Trophy/Beast/Scorpion/Scorpion_Skull_Trophy_Block_Icon.png"
+      }
+    ]
+  }
+]

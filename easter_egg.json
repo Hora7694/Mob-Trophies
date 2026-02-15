@@ -1,0 +1,26 @@
+[
+  {
+    "name": "Fox",
+    "id": "Fox",
+    "image": "img/icons/Fox/Fox_Icon.png",
+    "zone": 1,
+    "drops": {
+      "stataue": {
+        "name": "Fox Statue",
+        "img": "img/icons/Fox/Fox_Statue_Trophy_Icon.png",
+        "drops": 0.75,
+        "rarity": "Epic",
+        "type":"statue",
+        "addedVersion": "v0.1"
+      },
+      "head": {
+        "name": "Fox Head",
+        "img": "img/icons/Fox/Fox_Head_Trophy_Icon.png",
+        "drops": 2.25,
+        "rarity": "uncommon",
+        "type":"head",
+        "addedVersion": "v0.1"
+      }
+    }
+  }
+]

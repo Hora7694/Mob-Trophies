@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="/style.css">
+    <link rel="stylesheet" href="/workbench.css"> 
+    <title>Mob Trophies - Workbench Tiers</title>
+</head>
+<body>
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="wiki.html" class="active">Wiki</a>
+        <a href="download.html">Download</a>
+        <a href="support.html">Support</a>
+    </nav>
+
+    <div class="sub-nav">
+        <a href="wiki.html">Overview</a>
+        <a href="workbench.html" class="active">Workbench</a>
+        <a href="drops.html">Mob Drops</a>
+        <a href="recycling.html">Recycling</a>
+        <a href="statues.html">Statues</a>
+    </div>
+
+    <div class="container">
+        <h1 class="accent-text">Trophy Workbench Evolution</h1>
+        <p style="text-align: center; opacity: 0.7; margin-bottom: 40px;">Upgrade your workbench to unlock new trophies and features.</p>
+        <div id="workbenchTimeline" class="timeline-container"></div>
+    </div>
+
+    <button id="backToTop" title="Back to top">
+        <img src="/img/icons/UI/Arrow_Up_Icon.png" alt="Top" style="width: 20px; height: 20px;">
+    </button>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-links">
+                <a href="index.html">Home</a>
+                <a href="wiki.html">Wiki</a>
+                <a href="download.html">Download</a>
+                <a href="support.html">Support</a>
+                <a href="legal.html">Terms of Service</a>
+            </div>
+            <div class="copyright">&copy; 2026 Mob Trophies (by kHorah_) - All rights reserved.</div>
+        </div>
+    </footer>
+
+    <script>
+        const btnTop = document.getElementById("backToTop");
+        let workbenchData = [];
+
+        window.addEventListener('scroll', () => {
+            btnTop.style.display = window.pageYOffset > 400 ? "flex" : "none";
+        });
+        btnTop.addEventListener('click', () => {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+
+        async function loadWorkbench() {
+            try {
+                const res = await fetch('/workbench-tiers.json');
+                workbenchData = await res.json();
+                renderTimeline();
+            } catch (e) {
+                console.error("Erreur chargement workbench:", e);
+            }
+        }
+
+        function renderTimeline() {
+    const container = document.getElementById('workbenchTimeline');
+    if (!container) return;
+
+    container.innerHTML = workbenchData.map((tier, index) => {
+        const totalTiers = workbenchData.length;
+        // On force 1 décimale pour que le CSS puisse matcher [style*="0.x"]
+        const ratio = (index / (totalTiers - 1 || 1)).toFixed(1);
+        const sectionTitle = tier.tier === 1 ? "Crafting Requirements" : "Upgrade Requirements";
+        
+        return `
+            <div class="timeline-item" style="--tier-index: ${ratio}">
+                <div class="timeline-number">${tier.tier}</div>
+                <div class="card workbench-card">
+                    <div class="wb-header-flex">
+                        <div class="wb-visual">
+                            <img src="${tier.image}" alt="${tier.name}">
+                        </div>
+                        <div class="wb-info">
+                            <h2>${tier.name}</h2>
+                            <p class="description">${tier.description}</p>
+                            
+                            <div class="unlocks-section">
+                                <span class="unlocks-label">Unlocks:</span>
+                                <div class="unlocks-container">
+                                    ${tier.unlocks.map(unlock => {
+                                        const icons = Array.isArray(unlock.icon) ? unlock.icon : [unlock.icon];
+                                        const count = icons.length;
+                                        const hasMultiple = count > 1;
+                                        
+                                        return `
+                                            <div class="unlock-card">
+                                                <div class="unlock-icon-container ${hasMultiple ? 'is-animated cycle-' + count : ''}">
+                                                    ${icons.map(icon => `<img src="${icon}" class="unlock-mini-icon" alt="">`).join('')}
+                                                </div>
+                                                <span class="unlock-text">${unlock.name}</span>
+                                            </div>
+                                        `;
+                                    }).join('')}
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <hr>
+
+                    <div class="wb-requirements">
+                        <h4>${sectionTitle}</h4>
+                        <div class="ingredient-grid">
+                            ${tier.upgrade_cost.map(req => `
+                                <div class="ingredient-tile">
+                                    <div class="tile-icon-slot">
+                                        <img src="${req.img}" alt="${req.item}">
+                                    </div>
+                                    <div class="tile-content">
+                                        <div class="tile-text-group">
+                                            <span class="tile-name">${req.item}</span>
+                                            <span class="tile-source">${req.source}</span>
+                                        </div>
+                                        <span class="qty">${req.amount}x</span>
+                                    </div>
+                                </div>
+                            `).join('')}
+                        </div>
+                    </div>
+                </div>
+            </div>`;
+    }).join('');
+}
+
+        loadWorkbench();
+    </script>
+</body>
+</html>

@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="recycling.css"> 
+    <title>Mob Trophies - Recycling</title>
+</head>
+<body>
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="wiki.html" class="active">Wiki</a>
+        <a href="download.html">Download</a>
+        <a href="support.html">Support</a>
+    </nav>
+
+    <div class="sub-nav">
+        <a href="wiki.html">Overview</a>
+        <a href="workbench.html">Workbench</a>
+        <a href="drops.html">Mob Drops</a>
+        <a href="recycling.html" class="active">Recycling</a>
+        <a href="statues.html">Statues</a>
+    </div>
+
+    <div class="container">
+        <h1 class="accent-text">Fragment Recycling</h1>
+        <p style="text-align: center; opacity: 0.7; margin-bottom: 40px;">Combine your materials to craft powerful essences.</p>
+        
+        <div id="recyclingGrid" class="recycling-grid"></div>
+    </div>
+
+    <button id="backToTop" title="Back to top">
+        <img src="img/icons/UI/Arrow_Up_Icon.png" alt="Top" style="width: 20px; height: 20px;">
+    </button>
+
+    <footer>
+      <div class="footer-content">
+          <script type='text/javascript' src='https://storage.ko-fi.com/cdn/widget/Widget_2.js'></script>
+          <script type='text/javascript'>
+              kofiwidget2.init('Support me on Ko-fi', '#d63767', 'T6T117BAZT');kofiwidget2.draw();
+          </script> 
+
+          <div class="footer-links">
+              <a href="index.html">Home</a>
+              <a href="wiki.html">Wiki</a>
+              <a href="download.html">Download</a>
+              <a href="support.html">Support</a>
+              <a href="legal.html">Terms of Service</a>
+          </div>
+
+          <div class="copyright">
+              &copy; 2026 Mob Trophies (by kHorah_) - All rights reserved.
+          </div>
+      </div>
+    </footer>
+
+    <script>
+        let recyclingRecipes = [];
+            
+            // Création du tooltip dans le DOM
+            const tooltip = document.createElement('div');
+            tooltip.className = 'hytale-tooltip';
+            document.body.appendChild(tooltip);
+
+            async function loadRecycling() {
+                try {
+                    const res = await fetch('recycling.json');
+                    recyclingRecipes = await res.json();
+                    renderRecipes();
+                    initTooltip(); // On initialise les événements après le rendu
+                } catch (e) { console.error("Erreur chargement recyclage:", e); }
+            }
+
+            function renderRecipes() {
+                const grid = document.getElementById('recyclingGrid');
+                grid.innerHTML = recyclingRecipes.map(recipe => `
+                    <div class="recipe-card">
+                        <div class="recipe-header">
+                            <span class="recipe-title">${recipe.result.toUpperCase()}</span>
+                            <span class="recipe-tier">WORKBENCH TIER ${recipe.workbench_tier}</span>
+                        </div>
+                        <div class="recipe-body">
+                            <div class="ingredient-list">
+                                ${recipe.ingredients.map(ing => `
+                                    <div class="item-slot" data-name="${ing.item}">
+                                        <img src="${ing.img}" alt="${ing.item}">
+                                        <span class="item-amount">${ing.amount}</span>
+                                    </div>
+                                `).join('')}
+                            </div>
+                            <div class="arrow-separator"></div>
+                            <div class="item-slot result-slot" data-name="${recipe.result}">
+                                <img src="${recipe.result_img}" alt="${recipe.result}">
+                                <span class="item-amount">${recipe.result_amount || 1}</span>
+                            </div>
+                        </div>
+                        <div class="recipe-footer">${recipe.description}</div>
+                    </div>
+                `).join('');
+            }
+
+            function initTooltip() {
+                const slots = document.querySelectorAll('.item-slot');
+                
+                slots.forEach(slot => {
+                    slot.addEventListener('mouseenter', (e) => {
+                        tooltip.innerText = slot.getAttribute('data-name');
+                        tooltip.style.display = 'block';
+                    });
+
+                    slot.addEventListener('mousemove', (e) => {
+                        // On décale un peu le tooltip de la souris (15px)
+                        tooltip.style.left = (e.clientX + 15) + 'px';
+                        tooltip.style.top = (e.clientY + 15) + 'px';
+                    });
+
+                    slot.addEventListener('mouseleave', () => {
+                        tooltip.style.display = 'none';
+                    });
+                });
+            }
+
+            // Gestion du bouton Back to Top (ton code existant)
+            const btnTop = document.getElementById("backToTop");
+            window.addEventListener('scroll', () => {
+                btnTop.style.display = window.pageYOffset > 400 ? "flex" : "none";
+            });
+            btnTop.addEventListener('click', () => {
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+            });
+
+            loadRecycling();
+    </script>
+</body>
+</html>

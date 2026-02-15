@@ -1,0 +1,492 @@
+/* =========================================
+   1. COULEURS & CONFIGURATION
+   ========================================= */
+:root {
+    --bg-dark: #0b0f13;
+    --card-bg: #12181f;
+    --border-color: #1f2937;
+    --accent: #d4af37;
+    --text-main: #e2e8f0;
+    --text-muted: #a0aec0;
+
+    /* Couleurs de Rareté */
+    --rarity-uncommon: #29c714c2;
+    --rarity-rare: #00a9dd;
+    --rarity-epic: #a335ee;
+    --rarity-mythic: #e41453;
+    --rarity-legendary: #fcc40d;
+    --rarity-default: #2d3748;
+}
+
+
+hr {
+    border: none;
+    height: 3px; /* Légèrement plus épais au centre */
+    /* Dégradé : transparent -> doré -> transparent */
+    background: radial-gradient(circle, var(--accent) 0%, rgba(212, 175, 55, 0) 80%);
+    margin: 40px auto;
+    width: 90%; /* On ne prend pas toute la largeur pour accentuer l'effet */
+    opacity: 1;
+    
+    /* Lueur concentrée au milieu */
+    filter: drop-shadow(0 0 5px var(--accent));
+}
+
+
+/* --- GRILLE PRINCIPALE --- */
+.statues-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 25px;
+}
+
+/* --- CARTE DE LA STATUE --- */
+.statue-card {
+    background: #0d1117;
+    border: 1px solid #2d3644;
+    border-radius: 4px;
+    padding: 15px;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    transition: transform 0.2s ease;
+}
+
+.statue-card:hover {
+    transform: translateY(-5px);
+    border-color: #3e4b5d;
+}
+
+/* --- HEADER : TIER REQUIRED --- */
+.recipe-header {
+    margin-bottom: 12px;
+    border-bottom: 1px solid #2d3644;
+    padding-bottom: 8px;
+    display: flex;
+    justify-content: center;
+}
+
+.tier-badge {
+    color: #8a919b; 
+    font-size: 0.75rem;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.tier-highlight {
+    color: var(--accent);
+    font-weight: 900;
+    text-shadow: 0 0 8px rgba(255, 165, 0, 0.3); 
+}
+
+/* --- ZONE D'EXPOSITION (IMAGE) --- */
+.statue-main-area {
+    position: relative;
+    width: 100%;
+}
+
+.statue-display {
+    background: #1a1f26;
+    height: 160px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 4px;
+    border: 1px solid #252d38;
+    box-shadow: inset 0 0 20px rgba(0,0,0,0.3);
+}
+
+.statue-display img {
+    height: 110px;
+    image-rendering: pixelated;
+}
+
+/* --- ICÔNES DE FEATURES (Commun Card & Légende) --- */
+.feature-icons {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    z-index: 10;
+}
+
+/* Le cercle réutilisé partout */
+.feature-icon {
+    width: 32px;
+    height: 32px;
+    background: rgba(26, 31, 38, 0.9);
+    border: 1px solid var(--accent);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.5);
+}
+
+.feature-icon img {
+    width: 55%; 
+    height: 55%;
+    object-fit: contain;
+}
+
+/* --- NOM ET TEXTE --- */
+.statue-name {
+    text-align: center;
+    color: white;
+    font-size: 0.95rem;
+    margin: 15px 0;
+}
+
+/* --- ZONE DE CRAFT --- */
+.statue-craft {
+    display: flex;
+    gap: 8px;
+    background: rgba(0,0,0,0.3);
+    padding: 10px;
+    border-radius: 4px;
+    justify-content: center;
+    border: 1px solid #1a1f26;
+    margin-top: auto;
+}
+
+.mini-slot {
+    width: 44px;
+    height: 44px;
+    background: #1a1f26;
+    border: 2px solid #2d3644;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+
+/* --- Mini-slot Animation (Mouvement Continu) --- */
+.mini-slot img {
+    width: 32px;
+    display: block;
+    margin: 0 auto;
+}
+
+/* ÉTAT 1 : SORTIE (Quand le JS met opacity: 0) */
+/* L'image 1 grossit et disparaît */
+.mini-slot img[style*="opacity: 0"] {
+    animation: exitForward 0.4s forwards ease-in;
+}
+
+/* ÉTAT 2 : ENTRÉE (Quand le JS met opacity: 1) */
+/* L'image 2 part de petit (0.9) et revient à sa taille normale */
+.mini-slot img[style*="opacity: 1"] {
+    animation: enterFromBack 0.4s forwards ease-out;
+}
+
+/* Animation de sortie : Zoom vers l'utilisateur */
+@keyframes exitForward {
+    0% { opacity: 1; transform: scale(1); }
+    100% { opacity: 0; transform: scale(1.1); }
+}
+
+/* Animation d'entrée : Arrive du fond */
+@keyframes enterFromBack {
+    0% { opacity: 0; transform: scale(0.85); }
+    100% { opacity: 1; transform: scale(1); }
+}
+
+
+.pixelated {
+    image-rendering: pixelated;
+}
+
+.mini-amount {
+    position: absolute;
+    bottom: 1px;
+    right: 3px;
+    font-size: 0.75rem;
+    color: #fff;
+    font-weight: bold;
+    text-shadow: 1px 1px 2px #000;
+}
+
+/* --- TOOLTIP --- */
+.hytale-tooltip {
+    position: fixed;
+    pointer-events: none;
+    background: rgba(13, 17, 23, 0.95);
+    border: 1px solid #2d3644;
+    padding: 8px 12px;
+    border-radius: 4px;
+    color: #fff;
+    font-size: 0.9rem;
+    font-weight: bold;
+    z-index: 9999;
+    display: none;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.5);
+    white-space: nowrap;
+}
+
+/* =========================================
+   2. FEATURES LEGEND (SIDEBAR)
+   ========================================= */
+.features-legend {
+    position: fixed;
+    left: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(13, 17, 23, 0.9);
+    border-left: 4px solid var(--accent);
+    padding: 20px;
+    border-radius: 4px 12px 12px 4px;
+    z-index: 1000;
+    width: 220px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+    backdrop-filter: blur(10px);
+}
+
+.legend-title {
+    color: var(--accent);
+    font-weight: bold;
+    font-size: 1rem;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    padding-bottom: 10px;
+}
+
+.legend-item {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 15px;
+}
+
+/* On utilise .feature-icon défini plus haut pour le cercle */
+
+.legend-text {
+    display: flex;
+    flex-direction: column;
+}
+
+.legend-text .label {
+    color: #fff;
+    font-size: 0.85rem;
+    font-weight: 600;
+}
+
+.legend-text .desc {
+    color: rgba(255, 255, 255, 0.5);
+    font-size: 0.7rem;
+    line-height: 1.2;
+}
+
+
+/* Conteneur du texte à droite de l'icône */
+.legend-text {
+    display: flex;
+    flex-direction: column;
+    gap: 8px; /* Espace vertical entre le titre et la desc */
+}
+
+/* Le Titre (ex: Glow) */
+.legend-text .label {
+    color: var(--accent); /* Utilise ton doré Hytale */
+    font-size: 0.95rem;
+    font-weight: bold;
+    text-transform: capitalize;
+}
+
+/* La Description (le texte long) */
+.legend-text .desc {
+    color: rgba(255, 255, 255, 0.6); /* Plus clair pour détacher du titre */
+    font-size: 0.75rem;
+    line-height: 1.4; /* Meilleure lisibilité sur plusieurs lignes */
+    padding-top: 2px;
+    border-top: 1px solid rgba(255, 255, 255, 0.05); /* Optionnel : mini ligne de séparation */
+}
+
+/* Espacement entre chaque bloc de feature */
+.legend-item {
+    display: flex;
+    align-items: flex-start; /* Aligné en haut pour les longues descriptions */
+    gap: 15px;
+    margin-bottom: 25px; /* Plus d'espace entre les catégories */
+    padding: 10px;
+    background: rgba(255, 255, 255, 0.03); /* Léger fond pour l'unité visuelle */
+    border-radius: 8px;
+}
+
+.recipe-label {
+    font-size: 0.65rem;
+    text-transform: uppercase;
+    color: var(--text-muted, #a0aec0);
+    letter-spacing: 1.2px;
+    margin-bottom: 6px;
+    font-weight: bold;
+    margin-left: 2px;
+}
+
+
+
+
+/* =========================================
+   X. Search BAR
+   ========================================= */
+
+
+.search-container {
+    width: 100%;
+    max-width: 500px;
+    margin: 0 auto 30px auto;
+    position: relative;
+}
+
+#statueSearch {
+    width: 100%;
+    background: #0d1117;
+    border: 1px solid #2d3644;
+    border-radius: 8px;
+    padding: 12px 20px;
+    color: white;
+    font-size: 1rem;
+    outline: none;
+    transition: all 0.3s ease;
+}
+
+#statueSearch:focus {
+    border-color: var(--accent);
+    box-shadow: 0 0 10px rgba(212, 175, 55, 0.2);
+    background: #141b24;
+}
+
+#statueSearch::placeholder {
+    color: rgba(255, 255, 255, 0.3);
+}
+
+
+
+
+
+
+
+
+/* =========================================
+   3. MODALE VISUEL 3D - PREMIUM VERSION
+   ========================================= */
+
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 10000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0); /* Fond ultra noir */
+    backdrop-filter: blur(5px); /* Flou plus intense */
+    justify-content: center;
+    align-items: center;
+}
+
+.modal-content {
+    background: #05070a; /* Noir pur pour le contenu */
+    padding: 0; /* On gère le padding en interne */
+    border-radius: 8px;
+    border: 1px solid var(--accent);
+    width: 95%;
+    max-width: 850px;
+    position: relative;
+    box-shadow: 0 0 50px rgba(0, 0, 0, 1), 0 0 20px rgba(212, 175, 55, 0.1);
+    overflow: hidden; /* Pour que le header ne dépasse pas */
+}
+
+/* Header de la modale pour le titre et la croix */
+.modal-header {
+    padding: 15px 25px;
+    background: rgba(212, 175, 55, 0.05);
+    border-bottom: 1px solid rgba(212, 175, 55, 0.2);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#modalTitle {
+    color: var(--accent);
+    margin: 0;
+    font-size: 1.2rem;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    text-shadow: 0 0 10px rgba(212, 175, 55, 0.4);
+}
+
+.close-modal {
+    color: var(--accent);
+    font-size: 28px;
+    cursor: pointer;
+    line-height: 1;
+    transition: all 0.2s;
+    opacity: 0.6;
+    padding: 5px;
+}
+
+.close-modal:hover {
+    opacity: 1;
+    transform: scale(1.2);
+}
+
+/* Container du viewer */
+#modelContainer {
+    width: 100%;
+    height: 550px;
+    background: radial-gradient(circle, #0f141a 0%, #05070a 100%);
+    position: relative;
+}
+
+model-viewer {
+    width: 100%;
+    height: 100%;
+    outline: none;
+    --poster-color: transparent;
+}
+
+/* Petit effet de reflet en bas */
+#modelContainer::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 50px;
+    background: linear-gradient(to top, rgba(212, 175, 55, 0.05), transparent);
+    pointer-events: none;
+}
+
+
+
+
+
+
+
+
+
+
+.model-disclaimer {
+    display: block; /* Force le retour à la ligne */
+    width: 100%;
+    background: rgba(0, 0, 0, 0.6); /* Un peu plus sombre pour le contraste */
+    color: rgba(255, 255, 255, 0.5);
+    padding: 12px 0;
+    font-size: 0.75rem;
+    text-align: center;
+    border-top: 1px solid rgba(212, 175, 55, 0.2);
+    font-style: italic;
+}
+
+.info-icon {
+    color: var(--accent);
+    font-weight: bold;
+    margin-right: 6px;
+    font-style: normal;
+}

@@ -2,12 +2,12 @@
   {
     "name": "Fox",
     "id": "Fox",
-    "image": "img/icons/Fox/Fox_Icon.png",
+    "image": "img/icons/Trophy/Beast/Fox/Fox_Icon.png",
     "zone": 1,
     "drops": {
       "stataue": {
         "name": "Fox Statue",
-        "img": "img/icons/Fox/Fox_Statue_Trophy_Icon.png",
+        "img": "img/icons/Trophy/Beast/Fox/Fox_Statue_Trophy_Icon.png",
         "drops": 0.75,
         "rarity": "Epic",
         "type":"statue",
@@ -15,7 +15,7 @@
       },
       "head": {
         "name": "Fox Head",
-        "img": "img/icons/Fox/Fox_Head_Trophy_Icon.png",
+        "img": "img/icons/Trophy/Beast/Fox/Fox_Head_Trophy_Icon.png",
         "drops": 2.25,
         "rarity": "uncommon",
         "type":"head",
@@ -26,20 +26,20 @@
   {
     "name": "Duck",
     "id": "Duck",
-    "image": "img/icons/Duck/Duck_Statue_Trophy_Icon.png",
+    "image": "img/icons/Trophy/Flying_Wildlife/Duck/Duck_Statue_Trophy_Icon.png",
     "zone": 1,
     "drops": {
       "stataue": {
         "name": "Duck Statue",
-        "img": "img/icons/Duck/Duck_Statue_Trophy_Icon.png",
+        "img": "img/icons/Trophy/Flying_Wildlife/Duck/Duck_Statue_Trophy_Icon.png",
         "drops": 1.25,
-        "rarity": "epic",
+        "rarity": "Rare",
         "type":"statue",
         "addedVersion": "v0.1"
       },
       "head": {
         "name": "Duck Head",
-        "img": "img/icons/Duck/Duck_Head_Trophy_Icon.png",
+        "img": "img/icons/Trophy/Flying_Wildlife/Duck/Duck_Head_Trophy_Icon.png",
         "drops": 3.5,
         "rarity": "uncommon",
         "type":"head",
@@ -50,12 +50,12 @@
   {
     "name": "Grizzly",
     "id": "Bear_Grizzly",
-    "image": "img/icons/Beast/Bears/Grizzly/Bear_Grizzly_Icon.png",
+    "image": "img/icons/Trophy/Beast/Bears/Grizzly/Bear_Grizzly_Icon.png",
     "zone": 1,
     "drops": {
       "stataue": {
         "name": "Grizzly Statue",
-        "img": "img/icons/Beast/Bears/Grizzly/Bear_Grizzly_Statue_Trophy_Icon.png",
+        "img": "img/icons/Trophy/Beast/Bears/Grizzly/Bear_Grizzly_Statue_Trophy_Icon.png",
         "drops": 0.89,
         "rarity": "epic",
         "type":"statue",
@@ -63,7 +63,7 @@
       },
       "head": {
         "name": "Grizzly Head",
-        "img": "img/icons/Beast/Bears/Grizzly/Bear_Grizzly_Head_Trophy_Icon.png",
+        "img": "img/icons/Trophy/Beast/Bears/Grizzly/Bear_Grizzly_Head_Trophy_Icon.png",
         "drops": 2.11,
         "rarity": "rare",
         "type":"head",
@@ -74,12 +74,12 @@
   {
     "name": "Outlander Berserker",
     "id": "Outlander_Berserker",
-    "image": "img/icons/Outlander/Berserker/Outlander_Berserker_Statue_Trophy_Icon.png",
+    "image": "img/icons/Trophy/Intelligent/Outlander/Berserker/Outlander_Berserker_Statue_Trophy_Icon.png",
     "zone": 3,
     "drops": {
       "stataue": {
         "name": "Outlander Berserker Statue",
-        "img": "img/icons/Outlander/Berserker/Outlander_Berserker_Statue_Trophy_Icon.png",
+        "img": "img/icons/Trophy/Intelligent/Outlander/Berserker/Outlander_Berserker_Statue_Trophy_Icon.png",
         "drops": 0.75,
         "rarity": "epic",
         "type":"statue",
@@ -87,7 +87,7 @@
       },
       "head": {
         "name": "Outlander Berserker Head",
-        "img": "img/icons/Outlander/Berserker/Outlander_Berserker_Head_Trophy_Icon.png",
+        "img": "img/icons/Trophy/Intelligent/Outlander/Berserker/Outlander_Berserker_Head_Trophy_Icon.png",
         "drops": 1.25,
         "rarity": "rare",
         "type":"head",
@@ -98,12 +98,12 @@
   {
     "name": "Skeleton Fighter",
     "id": "Skeleton_Fighter",
-    "image": "img/icons/Undead/Skeleton/Fighter/Skeleton_Classic_Fighter_Statue_Trophy_Icon.png",
+    "image": "img/icons/Trophy/Undead/Skeleton/Fighter/Skeleton_Classic_Fighter_Statue_Trophy_Icon.png",
     "zone": 1,
     "drops": {
       "stataue": {
         "name": "Skeleton Fighter Statue",
-        "img": "img/icons/Undead/Skeleton/Fighter/Skeleton_Classic_Fighter_Statue_Trophy_Icon.png",
+        "img": "img/icons/Trophy/Undead/Skeleton/Fighter/Skeleton_Classic_Fighter_Statue_Trophy_Icon.png",
         "drops": 0.58,
         "rarity": "epic",
         "type":"statue",
@@ -111,7 +111,7 @@
       },
       "head": {
         "name": "Skeleton Fighter Skull",
-        "img": "img/icons/Undead/Skeleton/Fighter/Skeleton_Classic_Fighter_Head_Trophy_Icon.png",
+        "img": "img/icons/Trophy/Undead/Skeleton/Fighter/Skeleton_Classic_Fighter_Head_Trophy_Icon.png",
         "drops": 2.92,
         "rarity": "rare",
         "type":"head",
@@ -122,12 +122,12 @@
   {
     "name": "Rex Cave",
     "id": "Rex_Cave",
-    "image": "img/icons/Beast/Rex_Cave/Rex_Cave_Statue_Trophy_Icon.png",
+    "image": "img/icons/Trophy/Beast/Rex_Cave/Rex_Cave_Statue_Trophy_Icon.png",
     "zone": 4,
     "drops": {
       "stataue": {
         "name": "Rex Cave Statue",
-        "img": "img/icons/Beast/Rex_Cave/Rex_Cave_Statue_Trophy_Icon.png",
+        "img": "img/icons/Trophy/Beast/Rex_Cave/Rex_Cave_Statue_Trophy_Icon.png",
         "drops": 2,
         "rarity": "legendary",
         "type":"statue",
@@ -135,7 +135,7 @@
       },
       "head": {
         "name": "Rex Cave Head",
-        "img": "img/icons/Beast/Rex_Cave/Rex_Cave_Head_Trophy_Block_Icon.png",
+        "img": "img/icons/Trophy/Beast/Rex_Cave/Rex_Cave_Head_Trophy_Block_Icon.png",
         "drops": 7.2,
         "rarity": "epic",
         "type":"head",
@@ -146,12 +146,12 @@
   {
     "name": "Black Wolf",
     "id": "Wolf_Black",
-    "image": "img/icons/Beast/Wolf/Black/Wolf_Black_Statue_Trophy_Icon.png",
+    "image": "img/icons/Trophy/Beast/Wolf/Black/Wolf_Black_Statue_Trophy_Icon.png",
     "zone": 1,
     "drops": {
       "stataue": {
         "name": "Black Wolf Statue",
-        "img": "img/icons/Beast/Wolf/Black/Wolf_Black_Statue_Trophy_Icon.png",
+        "img": "img/icons/Trophy/Beast/Wolf/Black/Wolf_Black_Statue_Trophy_Icon.png",
         "drops": 0.65,
         "rarity": "epic",
         "type":"statue",
@@ -159,7 +159,7 @@
       },
       "head": {
         "name": "Black Wolf Head",
-        "img": "img/icons/Beast/Wolf/Black/Wolf_Black_Head_Trophy_Wall_Icon.png",
+        "img": "img/icons/Trophy/Beast/Wolf/Black/Wolf_Black_Head_Trophy_Wall_Icon.png",
         "drops": 2.11,
         "rarity": "rare",
         "type":"head",
@@ -170,12 +170,12 @@
   {
     "name": "Tiger Sabertooth",
     "id": "Wolf_Black",
-    "image": "img/icons/Beast/Tiger_Sabertooth/Tiger_Sabertooth_Statue_Trophy_Icon.png",
+    "image": "img/icons/Trophy/Beast/Tiger_Sabertooth/Tiger_Sabertooth_Statue_Trophy_Icon.png",
     "zone": 2,
     "drops": {
       "stataue": {
         "name": "Tiger Sabertooth Statue",
-        "img": "img/icons/Beast/Tiger_Sabertooth/Tiger_Sabertooth_Statue_Trophy_Icon.png",
+        "img": "img/icons/Trophy/Beast/Tiger_Sabertooth/Tiger_Sabertooth_Statue_Trophy_Icon.png",
         "drops": 0.06,
         "rarity": "mythic",
         "type":"statue",
@@ -183,7 +183,7 @@
       },
       "head": {
         "name": "Tiger Sabertooth Head",
-        "img": "img/icons/Beast/Tiger_Sabertooth/Tiger_Sabertooth_Head_Trophy_Block_Icon.png",
+        "img": "img/icons/Trophy/Beast/Tiger_Sabertooth/Tiger_Sabertooth_Head_Trophy_Block_Icon.png",
         "drops": 0.29,
         "rarity": "rare",
         "type":"head",
@@ -191,7 +191,7 @@
       },
       "fragment": {
         "name": "Tiger Sabertooth's Fang",
-        "img": "img/icons/Beast/Tiger_Sabertooth/Tiger_Sabertooth_Fang_Trophy_Icon.png",
+        "img": "img/icons/Trophy/Beast/Tiger_Sabertooth/Tiger_Sabertooth_Fang_Trophy_Icon.png",
         "drops": 1.35,
         "rarity": "uncommon",
         "type":"fragment",
@@ -202,12 +202,12 @@
   {
     "name": "Sand Lizard",
     "id": "Lizard_Sand",
-    "image": "img/icons/Beast/Lizard_Sand/Lizard_Sand_Statue_Trophy_Icon.png",
+    "image": "img/icons/Trophy/Beast/Lizard_Sand/Lizard_Sand_Statue_Trophy_Icon.png",
     "zone": 2,
     "drops": {
       "stataue": {
         "name": "Sand Lizard Statue",
-        "img": "img/icons/Beast/Lizard_Sand/Lizard_Sand_Statue_Trophy_Icon.png",
+        "img": "img/icons/Trophy/Beast/Lizard_Sand/Lizard_Sand_Statue_Trophy_Icon.png",
         "drops": 0.70,
         "rarity": "epic",
         "type":"statue",
@@ -215,7 +215,7 @@
       },
       "head": {
         "name": "Sand Lizard Head",
-        "img": "img/icons/Beast/Lizard_Sand/Lizard_Sand_Head_Trophy_Block_Icon.png",
+        "img": "img/icons/Trophy/Beast/Lizard_Sand/Lizard_Sand_Head_Trophy_Block_Icon.png",
         "drops": 2.80,
         "rarity": "rare",
         "type":"head",
@@ -226,12 +226,12 @@
   {
     "name": "Scorpion",
     "id": "Scorpion",
-    "image": "img/icons/Beast/Scorpion/Scorpion_Statue_Trophy_Icon.png",
+    "image": "img/icons/Trophy/Beast/Scorpion/Scorpion_Statue_Trophy_Icon.png",
     "zone": 2,
     "drops": {
       "stataue": {
         "name": "Scorpion Statue",
-        "img": "img/icons/Beast/Scorpion/Scorpion_Statue_Trophy_Icon.png",
+        "img": "img/icons/Trophy/Beast/Scorpion/Scorpion_Statue_Trophy_Icon.png",
         "drops": 0.39,
         "rarity": "epic",
         "type":"statue",
@@ -239,7 +239,7 @@
       },
       "head": {
         "name": "Scorpion Head",
-        "img": "img/icons/Beast/Scorpion/Scorpion_Head_Trophy_Block_Icon.png",
+        "img": "img/icons/Trophy/Beast/Scorpion/Scorpion_Head_Trophy_Block_Icon.png",
         "drops": 1.56,
         "rarity": "rare",
         "type":"head",
@@ -247,7 +247,7 @@
       },
       "fragment": {
         "name": "Scorpion skull",
-        "img": "img/icons/Beast/Scorpion/Scorpion_Skull_Trophy_Block_Icon.png",
+        "img": "img/icons/Trophy/Beast/Scorpion/Scorpion_Skull_Trophy_Block_Icon.png",
         "drops": 4.55,
         "rarity": "uncommon",
         "type":"fragment",
@@ -259,24 +259,24 @@
     "name": "Camel",
     "id": "Camel",
     "image": [
-      "img/icons/Livestock/Camel/Camel_Statue_Trophy_Yellow_Icon.png",
-      "img/icons/Livestock/Camel/Camel_Statue_Trophy_Yellow_Icon.png",
-      "img/icons/Livestock/Camel/Camel_Statue_Trophy_Yellow_Icon.png",
-      "img/icons/Livestock/Camel/Camel_Statue_Trophy_Yellow_Icon.png",
-      "img/icons/Livestock/Camel/Camel_Statue_Trophy_Yellow_Icon.png",
-      "img/icons/Livestock/Camel/Camel_Statue_Trophy_Yellow_Icon.png"
+      "img/icons/Trophy/Livestock/Camel/Camel_Statue_Trophy_Yellow_Icon.png",
+      "img/icons/Trophy/Livestock/Camel/Camel_Statue_Trophy_Yellow_Icon.png",
+      "img/icons/Trophy/Livestock/Camel/Camel_Statue_Trophy_Yellow_Icon.png",
+      "img/icons/Trophy/Livestock/Camel/Camel_Statue_Trophy_Yellow_Icon.png",
+      "img/icons/Trophy/Livestock/Camel/Camel_Statue_Trophy_Yellow_Icon.png",
+      "img/icons/Trophy/Livestock/Camel/Camel_Statue_Trophy_Yellow_Icon.png"
     ],
     "zone": 2,
     "drops": {
       "stataue": {
         "name": "Camel Statue",
         "img": [
-          "img/icons/Livestock/Camel/Camel_Statue_Trophy_Blue_Icon.png",
-          "img/icons/Livestock/Camel/Camel_Statue_Trophy_Green_Icon.png",
-          "img/icons/Livestock/Camel/Camel_Statue_Trophy_Orange_Icon.png",
-          "img/icons/Livestock/Camel/Camel_Statue_Trophy_Purple_Icon.png",
-          "img/icons/Livestock/Camel/Camel_Statue_Trophy_Red_Icon.png",
-          "img/icons/Livestock/Camel/Camel_Statue_Trophy_Yellow_Icon.png"
+          "img/icons/Trophy/Livestock/Camel/Camel_Statue_Trophy_Blue_Icon.png",
+          "img/icons/Trophy/Livestock/Camel/Camel_Statue_Trophy_Green_Icon.png",
+          "img/icons/Trophy/Livestock/Camel/Camel_Statue_Trophy_Orange_Icon.png",
+          "img/icons/Trophy/Livestock/Camel/Camel_Statue_Trophy_Purple_Icon.png",
+          "img/icons/Trophy/Livestock/Camel/Camel_Statue_Trophy_Red_Icon.png",
+          "img/icons/Trophy/Livestock/Camel/Camel_Statue_Trophy_Yellow_Icon.png"
         ],
         "drops": 0.53,
         "dropsHover": "0.088% per color",
@@ -286,7 +286,7 @@
       },
       "head": {
         "name": "Camel Head",
-        "img": "img/icons/Livestock/Camel/Camel_Head_Trophy_Block_Icon.png",
+        "img": "img/icons/Trophy/Livestock/Camel/Camel_Head_Trophy_Block_Icon.png",
         "drops": 2.97,
         "rarity": "rare",
         "type":"head",
@@ -297,12 +297,12 @@
   {
     "name": "Rabbit",
     "id": "Rabbit",
-    "image": "img/icons/Livestock/Rabbit/Rabbit_Statue_Trophy_Icon.png",
+    "image": "img/icons/Trophy/Livestock/Rabbit/Rabbit_Statue_Trophy_Icon.png",
     "zone": 1,
     "drops": {
       "stataue": {
         "name": "Rabbit Statue",
-        "img": "img/icons/Livestock/Rabbit/Rabbit_Statue_Trophy_Icon.png",
+        "img": "img/icons/Trophy/Livestock/Rabbit/Rabbit_Statue_Trophy_Icon.png",
         "drops": 0.68,
         "rarity": "epic",
         "type":"statue",
@@ -310,7 +310,7 @@
       },
       "head": {
         "name": "Rabbit Head",
-        "img": "img/icons/Livestock/Rabbit/Rabbit_Head_Trophy_Block_Icon.png",
+        "img": "img/icons/Trophy/Livestock/Rabbit/Rabbit_Head_Trophy_Block_Icon.png",
         "drops": 1.57,
         "rarity": "rare",
         "type":"head",
@@ -321,12 +321,12 @@
   {
     "name": "Void Eye",
     "id": "Eye_Void ",
-    "image": "img/icons/Void/Eye_Void_Statue_Trophy_Icon.png",
+    "image": "img/icons/Trophy/Void/Eye_Void/Eye_Void_Statue_Trophy_Icon.png",
     "zone": [1, 2, 3, 4],
     "drops": {
       "stataue": {
         "name": "Void Eye Statue",
-        "img": "img/icons/Void/Eye_Void_Statue_Trophy_Icon.png",
+        "img": "img/icons/Trophy/Void/Eye_Void/Eye_Void_Statue_Trophy_Icon.png",
         "drops": 0.01,
         "rarity": "legendary",
         "type":"statue",
@@ -334,7 +334,7 @@
       },
       "fragment1": {
         "name": "Void Eye's Eye",
-        "img": "img/icons/Void/Eye_Void_Eye_Trophy.png",
+        "img": "img/icons/Trophy/Void/Eye_Void/Eye_Void_Eye_Trophy.png",
         "drops": 3,
         "rarity": "epic",
         "type":"fragment",
@@ -342,7 +342,7 @@
       },
       "fragment2": {
         "name": "Void Eye's Tentacle",
-        "img": "img/icons/Void/Eye_Void_Tentacle_Trophy_Icon.png",
+        "img": "img/icons/Trophy/Void/Eye_Void/Eye_Void_Tentacle_Trophy_Icon.png",
         "drops": 11,
         "rarity": "uncommon",
         "type":"fragment",
@@ -354,16 +354,16 @@
     "name": "Mosshorn",
     "id": "Mosshorn",
     "image": [
-      "img/icons/Wildlife/Mosshorn/Mosshorn_Statue_Trophy_Icon.png",
-      "img/icons/Wildlife/Mosshorn/Mosshorn_Plain_Statue_Trophy_Icon.png"
+      "img/icons/Trophy/Wildlife/Mosshorn/Mosshorn_Statue_Trophy_Icon.png",
+      "img/icons/Trophy/Wildlife/Mosshorn/Mosshorn_Plain_Statue_Trophy_Icon.png"
     ],
     "zone": 1,
     "drops": {
       "stataue": {
         "name": "Mosshorn Statue",
         "img": [
-          "img/icons/Wildlife/Mosshorn/Mosshorn_Statue_Trophy_Icon.png",
-          "img/icons/Wildlife/Mosshorn/Mosshorn_Plain_Statue_Trophy_Icon.png"
+          "img/icons/Trophy/Wildlife/Mosshorn/Mosshorn_Statue_Trophy_Icon.png",
+          "img/icons/Trophy/Wildlife/Mosshorn/Mosshorn_Plain_Statue_Trophy_Icon.png"
         ],
         "drops": 0.60,
         "dropsHover": "0.30% per variant",
@@ -374,8 +374,8 @@
       "head": {
         "name": "Mosshorn Head",
         "img": [
-          "img/icons/Wildlife/Mosshorn/Mosshorn_Head_Trophy_Block_Icon.png",
-          "img/icons/Wildlife/Mosshorn/Mosshorn_Plain_Head_Trophy_Block_Icon.png"
+          "img/icons/Trophy/Wildlife/Mosshorn/Mosshorn_Head_Trophy_Block_Icon.png",
+          "img/icons/Trophy/Wildlife/Mosshorn/Mosshorn_Plain_Head_Trophy_Block_Icon.png"
         ],
         "drops": 1.31,
         "dropsHover": "0.60% per variant",
@@ -388,12 +388,12 @@
   {
     "name": "Polar Bear",
     "id": "Bear_Polar",
-    "image": "img/icons/Beast/Bears/Polar/Bear_Polar_Icon.png",
+    "image": "img/icons/Trophy/Beast/Bears/Polar/Bear_Polar_Icon.png",
     "zone": 3,
     "drops": {
       "stataue": {
         "name": "Polar Bear Statue",
-        "img": "img/icons/Beast/Bears/Polar/Bear_Polar_Statue_Trophy_Icon.png",
+        "img": "img/icons/Trophy/Beast/Bears/Polar/Bear_Polar_Statue_Trophy_Icon.png",
         "drops": 0.89,
         "rarity": "epic",
         "type":"statue",
@@ -401,7 +401,7 @@
       },
       "head": {
         "name": "Polar Bear Head",
-        "img": "img/icons/Beast/Bears/Polar/Bear_Polar_Head_Trophy_Block_Icon.png",
+        "img": "img/icons/Trophy/Beast/Bears/Polar/Bear_Polar_Head_Trophy_Block_Icon.png",
         "drops": 2.11,
         "rarity": "rare",
         "type":"head",
@@ -412,12 +412,12 @@
   {
     "name": "Moose (Male)",
     "id": "Moose_Bull",
-    "image": "img/icons/Wildlife/Moose/Moose_Statue_Trophy_Bull_Icon.png",
+    "image": "img/icons/Trophy/Wildlife/Moose/Moose_Statue_Trophy_Bull_Icon.png",
     "zone": 3,
     "drops": {
       "stataue": {
         "name": "Moose (Male) Statue",
-        "img": "img/icons/Wildlife/Moose/Moose_Statue_Trophy_Bull_Icon.png",
+        "img": "img/icons/Trophy/Wildlife/Moose/Moose_Statue_Trophy_Bull_Icon.png",
         "drops": 0.69,
         "rarity": "epic",
         "type":"statue",
@@ -425,7 +425,7 @@
       },
       "head": {
         "name": "Moose (Male) Head",
-        "img": "img/icons/Wildlife/Moose/Moose_Head_Trophy_Bull_Block_Icon.png",
+        "img": "img/icons/Trophy/Wildlife/Moose/Moose_Head_Trophy_Bull_Block_Icon.png",
         "drops": 3.02,
         "rarity": "rare",
         "type":"head",
@@ -436,12 +436,12 @@
   {
     "name": "Moose (Female)",
     "id": "Moose_Cow",
-    "image": "img/icons/Wildlife/Moose/Moose_Statue_Trophy_Cow_Icon.png",
+    "image": "img/icons/Trophy/Wildlife/Moose/Moose_Statue_Trophy_Cow_Icon.png",
     "zone": 3,
     "drops": {
       "stataue": {
         "name": "Moose (Female) Statue",
-        "img": "img/icons/Wildlife/Moose/Moose_Statue_Trophy_Cow_Icon.png",
+        "img": "img/icons/Trophy/Wildlife/Moose/Moose_Statue_Trophy_Cow_Icon.png",
         "drops": 0.50,
         "rarity": "epic",
         "type":"statue",
@@ -449,7 +449,7 @@
       },
       "head": {
         "name": "Moose (Female) Head",
-        "img": "img/icons/Wildlife/Moose/Moose_Head_Trophy_Cow_Block_Icon.png",
+        "img": "img/icons/Trophy/Wildlife/Moose/Moose_Head_Trophy_Cow_Block_Icon.png",
         "drops": 2.92,
         "rarity": "rare",
         "type":"head",
@@ -460,12 +460,12 @@
   {
     "name": "Frost Skeleton Fighter",
     "id": "Skeleton_Frost_Fighter",
-    "image": "img/icons/Undead/Skeleton/Fighter/Skeleton_Frost_Fighter_Statue_Trophy_Icon.png",
+    "image": "img/icons/Trophy/Undead/Skeleton/Fighter/Skeleton_Frost_Fighter_Statue_Trophy_Icon.png",
     "zone": 3,
     "drops": {
       "stataue": {
         "name": "Frost Skeleton Fighter Statue",
-        "img": "img/icons/Undead/Skeleton/Fighter/Skeleton_Frost_Fighter_Statue_Trophy_Icon.png",
+        "img": "img/icons/Trophy/Undead/Skeleton/Fighter/Skeleton_Frost_Fighter_Statue_Trophy_Icon.png",
         "drops": 0.58,
         "rarity": "epic",
         "type":"statue",
@@ -473,7 +473,7 @@
       },
       "head": {
         "name": "Frost Skeleton Fighter Skull",
-        "img": "img/icons/Undead/Skeleton/Fighter/Skeleton_Frost_Fighter_Head_Trophy_Icon.png",
+        "img": "img/icons/Trophy/Undead/Skeleton/Fighter/Skeleton_Frost_Fighter_Head_Trophy_Icon.png",
         "drops": 2.92,
         "rarity": "rare",
         "type":"head",
@@ -484,12 +484,12 @@
   {
     "name": "Frost Skeleton Knight",
     "id": "Skeleton_Frost_Knight",
-    "image": "img/icons/Undead/Skeleton/Knight/Skeleton_Frost_Knight_Statue_Trophy_Icon.png",
+    "image": "img/icons/Trophy/Undead/Skeleton/Knight/Skeleton_Frost_Knight_Statue_Trophy_Icon.png",
     "zone": 3,
     "drops": {
       "stataue": {
         "name": "Frost Skeleton Knight Statue",
-        "img": "img/icons/Undead/Skeleton/Knight/Skeleton_Frost_Knight_Statue_Trophy_Icon.png",
+        "img": "img/icons/Trophy/Undead/Skeleton/Knight/Skeleton_Frost_Knight_Statue_Trophy_Icon.png",
         "drops": 0.45,
         "rarity": "epic",
         "type":"statue",
@@ -497,7 +497,7 @@
       },
       "head": {
         "name": "Frost Skeleton Knight Skull",
-        "img": "img/icons/Undead/Skeleton/Knight/Skeleton_Frost_Knight_Head_Trophy_Icon.png",
+        "img": "img/icons/Trophy/Undead/Skeleton/Knight/Skeleton_Frost_Knight_Head_Trophy_Icon.png",
         "drops": 2.50,
         "rarity": "rare",
         "type":"head",
@@ -506,14 +506,70 @@
     }
   },
   {
+    "name": "Snow Leopard",
+    "id": "Wolf_Black",
+    "image": "img/icons/Trophy/Beast/Leopard_Snow/Leopard_Snow_Statue_Trophy_Icon.png",
+    "zone": 3,
+    "drops": {
+      "stataue": {
+        "name": "Snow Leopard Statue",
+        "img": "img/icons/Trophy/Beast/Leopard_Snow/Leopard_Snow_Statue_Trophy_Icon.png",
+        "drops": 0.95,
+        "rarity": "mythic",
+        "type":"statue",
+        "addedVersion": "v0.3"
+      },
+      "head": {
+        "name": "Snow Leopard Head",
+        "img": "img/icons/Trophy/Beast/Leopard_Snow/Leopard_Snow_Head_Trophy_Block_Icon.png",
+        "drops": 2.5,
+        "rarity": "rare",
+        "type":"head",
+        "addedVersion": "v0.3"
+      },
+      "fragment": {
+        "name": "Snow Leopard's Fang",
+        "img": "img/icons/Trophy/Beast/Leopard_Snow/Leopard_Snow_Fang_Trophy_Icon.png",
+        "drops": 1.35,
+        "rarity": "uncommon",
+        "type":"fragment",
+        "addedVersion": "v0.3"
+      }
+    }
+  },
+  {
+    "name": "Mouflon",
+    "id": "Mouflon ",
+    "image": "img/icons/Trophy/Livestock/Mouflon/Mouflon_Statue_Trophy_Icon.png",
+    "zone": 3,
+    "drops": {
+      "stataue": {
+        "name": "Mouflon Statue",
+        "img": "img/icons/Trophy/Livestock/Mouflon/Mouflon_Statue_Trophy_Icon.png",
+        "drops": 0.75,
+        "rarity": "Rare",
+        "type":"statue",
+        "addedVersion": "v0.3"
+      },
+      "head": {
+        "name": "Mouflon Head",
+        "img": "img/icons/Trophy/Livestock/Mouflon/Mouflon_Head_Trophy_Icon.png",
+        "drops": 2.25,
+        "rarity": "uncommon",
+        "type":"head",
+        "addedVersion": "v0.3"
+      }
+    }
+  },
+  {
     "name": "Outlander Cultist",
     "id": "Outlander_Cultist ",
-    "image": "img/icons/Outlander/Cultist/Outlander_Cultist_Statue_Trophy_Icon.png",
+    "image": "img/icons/Trophy/Intelligent/Outlander/Cultist/Outlander_Cultist_Statue_Trophy_Icon.png",
     "zone": 3,
     "drops": {
       "stataue": {
         "name": "Outlander Cultist Statue",
-        "img": "img/icons/Outlander/Cultist/Outlander_Cultist_Statue_Trophy_Icon.png",
+        "img": "img/icons/Trophy/Intelligent/Outlander/Cultist/Outlander_Cultist_Statue_Trophy_Icon.png",
         "drops": 0.85,
         "rarity": "epic",
         "type":"statue",
@@ -521,7 +577,7 @@
       },
       "head": {
         "name": "Outlander Cultist Head",
-        "img": "img/icons/Outlander/Cultist/Outlander_Cultist_Head_Trophy_Icon.png",
+        "img": "img/icons/Trophy/Intelligent/Outlander/Cultist/Outlander_Cultist_Head_Trophy_Icon.png",
         "drops": 1.55,
         "rarity": "rare",
         "type":"head",
@@ -532,12 +588,12 @@
   {
     "name": "Outlander Peon",
     "id": "Outlander_Peon ",
-    "image": "img/icons/Outlander/Peon/Outlander_Peon_Statue_Trophy_Icon.png",
+    "image": "img/icons/Trophy/Intelligent/Outlander/Peon/Outlander_Peon_Statue_Trophy_Icon.png",
     "zone": 3,
     "drops": {
       "stataue": {
         "name": "Outlander Peon Statue",
-        "img": "img/icons/Outlander/Peon/Outlander_Peon_Statue_Trophy_Icon.png",
+        "img": "img/icons/Trophy/Intelligent/Outlander/Peon/Outlander_Peon_Statue_Trophy_Icon.png",
         "drops": 0.85,
         "rarity": "epic",
         "type":"statue",
@@ -545,7 +601,7 @@
       },
       "head": {
         "name": "Outlander Peon Head",
-        "img": "img/icons/Outlander/Peon/Outlander_Peon_Head_Trophy_Icon.png",
+        "img": "img/icons/Trophy/Intelligent/Outlander/Peon/Outlander_Peon_Head_Trophy_Icon.png",
         "drops": 1.55,
         "rarity": "rare",
         "type":"head",
@@ -554,33 +610,25 @@
     }
   },
   {
-    "name": "Snow Leopard",
-    "id": "Wolf_Black",
-    "image": "img/icons/Beast/Leopard_Snow/Leopard_Snow_Statue_Trophy_Icon.png",
+    "name": "Penguin",
+    "id": "Penguin ",
+    "image": "img/icons/Trophy/Wildlife/Penguin/Penguin_Statue_Trophy_Icon.png",
     "zone": 3,
     "drops": {
       "stataue": {
-        "name": "Snow Leopard Statue",
-        "img": "img/icons/Beast/Leopard_Snow/Leopard_Snow_Statue_Trophy_Icon.png",
-        "drops": 0.95,
-        "rarity": "mythic",
+        "name": "Penguin Statue",
+        "img": "img/icons/Trophy/Wildlife/Penguin/Penguin_Statue_Trophy_Icon.png",
+        "drops": 0.55,
+        "rarity": "epic",
         "type":"statue",
         "addedVersion": "v0.3"
       },
       "head": {
-        "name": "Snow Leopard Head",
-        "img": "img/icons/Beast/Leopard_Snow/Leopard_Snow_Head_Trophy_Block_Icon.png",
-        "drops": 2.5,
+        "name": "Penguin Head",
+        "img": "img/icons/Trophy/Wildlife/Penguin/Penguin_Head_Trophy_Icon.png",
+        "drops": 1.75,
         "rarity": "rare",
         "type":"head",
-        "addedVersion": "v0.3"
-      },
-      "fragment": {
-        "name": "Snow Leopard's Fang",
-        "img": "img/icons/Beast/Leopard_Snow/Leopard_Snow_Fang_Trophy_Icon.png",
-        "drops": 1.35,
-        "rarity": "uncommon",
-        "type":"fragment",
         "addedVersion": "v0.3"
       }
     }
@@ -588,12 +636,12 @@
   {
     "name": "Void Crawler",
     "id": "Crawler_Void ",
-    "image": "img/icons/Void/Crawler_Void_Statue_Trophy_Icon.png",
+    "image": "img/icons/Trophy/Void/Crawler_Void/Crawler_Void_Statue_Trophy_Icon.png",
     "zone": [1, 2, 3, 4],
     "drops": {
       "stataue": {
         "name": "Void Crawler Statue",
-        "img": "img/icons/Void/Crawler_Void_Statue_Trophy_Icon.png",
+        "img": "img/icons/Trophy/Void/Crawler_Void/Crawler_Void_Statue_Trophy_Icon.png",
         "drops": 0.10,
         "rarity": "epic",
         "type":"statue",
@@ -601,7 +649,7 @@
       },
       "head": {
         "name": "Void Crawler Head",
-        "img": "img/icons/Void/Crawler_Void_Head_Trophy_Icon.png",
+        "img": "img/icons/Trophy/Void/Crawler_Void/Crawler_Void_Head_Trophy_Icon.png",
         "drops": 0.45,
         "rarity": "rare",
         "type":"head",
@@ -612,12 +660,12 @@
   {
     "name": "Void Spawn",
     "id": "Spawn_Void ",
-    "image": "img/icons/Void/Spawn_Void_Statue_Trophy_Icon.png",
+    "image": "img/icons/Trophy/Void/Spawn_Void/Spawn_Void_Statue_Trophy_Icon.png",
     "zone": [1, 2, 3, 4],
     "drops": {
       "stataue": {
         "name": "Void Spawn Statue",
-        "img": "img/icons/Void/Spawn_Void_Statue_Trophy_Icon.png",
+        "img": "img/icons/Trophy/Void/Spawn_Void/Spawn_Void_Statue_Trophy_Icon.png",
         "drops": 0.75,
         "rarity": "mythic",
         "type":"statue",
@@ -625,11 +673,333 @@
       },
       "head": {
         "name": "Void Spawn Head",
-        "img": "img/icons/Void/Spawn_Void_Head_Trophy_Icon.png",
+        "img": "img/icons/Trophy/Void/Spawn_Void/Spawn_Void_Head_Trophy_Icon.png",
         "drops": 1.75,
         "rarity": "epic",
         "type":"head",
         "addedVersion": "v0.3"
+      }
+    }
+  },
+  {
+    "name": "Undead Cow",
+    "id": "Cow_Undead ",
+    "image": "img/icons/Trophy/Undead/Cow_Undead/Cow_Undead_Icon.png",
+    "zone": 4,
+    "drops": {
+      "stataue": {
+        "name": "Undead Cow Statue",
+        "img": "img/icons/Trophy/Undead/Cow_Undead/Cow_Undead_Statue_Trophy_Icon.png",
+        "drops": 0.45,
+        "rarity": "epic",
+        "type":"statue",
+        "addedVersion": "v0.4"
+      },
+      "head": {
+        "name": "Undead Cow Head",
+        "img": "img/icons/Trophy/Undead/Cow_Undead/Cow_Undead_Head_Trophy_Icon.png",
+        "drops": 1.85,
+        "rarity": "rare",
+        "type":"head",
+        "addedVersion": "v0.4"
+      }
+    }
+  },
+  {
+    "name": "Wraith",
+    "id": "Wraith ",
+    "image": "img/icons/Trophy/Undead/Wraith/Wraith_Icon.png",
+    "zone": 4,
+    "drops": {
+      "stataue": {
+        "name": "Wraith Statue",
+        "img": "img/icons/Trophy/Undead/Wraith/Wraith_Statue_Trophy_Icon.png",
+        "drops": 0.35,
+        "rarity": "mythic",
+        "type":"statue",
+        "addedVersion": "v0.4"
+      },
+      "head": {
+        "name": "Wraith Head",
+        "img": "img/icons/Trophy/Undead/Wraith/Wraith_Head_Trophy_Icon.png",
+        "drops": 0.90,
+        "rarity": "epic",
+        "type":"head",
+        "addedVersion": "v0.4"
+      }
+    }
+  },
+  {
+    "name": "Emberwulf",
+    "id": "Emberwulf ",
+    "image": "img/icons/Trophy/Beast/Emberwulf/Emberwulf_Icon.png",
+    "zone": 4,
+    "drops": {
+      "stataue": {
+        "name": "Emberwulf Statue",
+        "img": "img/icons/Trophy/Beast/Emberwulf/Emberwulf_Statue_Trophy_Icon.png",
+        "drops": 0.65,
+        "rarity": "mythic",
+        "type":"statue",
+        "addedVersion": "v0.4"
+      },
+      "head": {
+        "name": "Emberwulf Head",
+        "img": "img/icons/Trophy/Beast/Emberwulf/Emberwulf_Head_Trophy_Icon.png",
+        "drops": 1.25,
+        "rarity": "epic",
+        "type":"head",
+        "addedVersion": "v0.4"
+      },
+      "crest": {
+        "name": "Emberwulf Crest",
+        "img": "img/icons/Trophy/Beast/Emberwulf/Emberwulf_Crest_Trophy_Icon.png",
+        "drops": 6.50,
+        "rarity": "rare",
+        "type":"fragment",
+        "addedVersion": "v0.4"
+      }
+    }
+  },
+  {
+    "name": "Toad Rhino Magma",
+    "id": "Toad_Rhino_Magma ",
+    "image": "img/icons/Trophy/Beast/Toad_Rhino/Magma/Toad_Rhino_Magma_Icon.png",
+    "zone": [1, 4],
+    "drops": {
+      "stataue": {
+        "name": "Toad Rhino Magma Statue",
+        "img": "img/icons/Trophy/Beast/Toad_Rhino/Magma/Toad_Rhino_Magma_Statue_Trophy_Icon.png",
+        "drops": 0.85,
+        "rarity": "epic",
+        "type":"statue",
+        "addedVersion": "v0.4"
+      },
+      "head": {
+        "name": "Toad Rhino Magma Head",
+        "img": "img/icons/Trophy/Beast/Toad_Rhino/Magma/Toad_Rhino_Magma_Head_Trophy_Icon.png",
+        "drops": 1.55,
+        "rarity": "rare",
+        "type":"head",
+        "addedVersion": "v0.4"
+      }
+    }
+  },
+  {
+    "hide": true,
+    "name": "Living Spark",
+    "id": "Spark_Living ",
+    "image": "img/icons/Trophy/Beast/Spark_Living/Spark_Living_Icon.png",
+    "zone": [1, 4],
+    "drops": {
+      "stataue": {
+        "name": "Living Spark Statue",
+        "img": "img/icons/Trophy/Beast/Spark_Living/Spark_Living_Statue_Trophy_Icon.png",
+        "drops": 0.02,
+        "rarity": "Legendary",
+        "type":"statue",
+        "addedVersion": "v0.4"
+      }
+    }
+  },
+  {
+    "name": "Firesteel Golem",
+    "id": "Golem_Firesteel ",
+    "image": "img/icons/Trophy/Elemental/Golem_Firesteel/Golem_Firesteel_Icon.png",
+    "zone": 4,
+    "drops": {
+      "stataue": {
+        "name": "Firesteel Golem Statue",
+        "img": "img/icons/Trophy/Elemental/Golem_Firesteel/Golem_Firesteel_Statue_Trophy_Icon.png",
+        "drops": 1.10,
+        "rarity": "mythic",
+        "type":"statue",
+        "addedVersion": "v0.4"
+      },
+      "head": {
+        "name": "Firesteel Golem Head",
+        "img": "img/icons/Trophy/Elemental/Golem_Firesteel/Golem_Firesteel_Head_Trophy_Icon.png",
+        "drops": 3,
+        "rarity": "rare",
+        "type":"head",
+        "addedVersion": "v0.4"
+      }
+    }
+  },
+  {
+    "hide": true,
+    "name": "Skeleton Giant",
+    "id": "Skeleton_Giant ",
+    "image": "img/icons/Trophy/Undead/Skeleton_Giant/Skeleton_Giant_Icon.png",
+    "zone": 4,
+    "drops": {
+      "stataue": {
+        "name": "Firesteel Golem Statue",
+        "img": "img/icons/Trophy/Elemental/Golem_Firesteel/Golem_Firesteel_Statue_Trophy_Icon.png",
+        "drops": 1.10,
+        "rarity": "epic",
+        "type":"statue",
+        "addedVersion": "v0.4"
+      },
+      "head": {
+        "name": "Firesteel Golem Head",
+        "img": "img/icons/Trophy/Elemental/Golem_Firesteel/Golem_Firesteel_Head_Trophy_Icon.png",
+        "drops": 3,
+        "rarity": "rare",
+        "type":"head",
+        "addedVersion": "v0.4"
+      }
+    }
+  },
+  {
+    "name": "Cave Raptor",
+    "id": "Raptor_Cave ",
+    "image": "img/icons/Trophy/Beast/Raptor_Cave/Raptor_Cave_Icon.png",
+    "zone": 4,
+    "drops": {
+      "stataue": {
+        "name": "Cave Raptor Statue",
+        "img": "img/icons/Trophy/Beast/Raptor_Cave/Raptor_Cave_Statue_Trophy_Icon.png",
+        "drops": 0.22,
+        "rarity": "mythic",
+        "type":"statue",
+        "addedVersion": "v0.4"
+      },
+      "head": {
+        "name": "Cave Raptor Head",
+        "img": "img/icons/Trophy/Beast/Raptor_Cave/Raptor_Cave_Head_Trophy_Icon.png",
+        "drops": 1.15,
+        "rarity": "epic",
+        "type":"head",
+        "addedVersion": "v0.4"
+      }
+    }
+  },
+  {
+    "name": "Trillodon",
+    "id": "Trillodon ",
+    "image": "img/icons/Trophy/Wildlife/Trillodon/Trillodon_Icon.png",
+    "zone": 4,
+    "drops": {
+      "stataue": {
+        "name": "Trillodon Statue",
+        "img": "img/icons/Trophy/Wildlife/Trillodon/Trillodon_Statue_Trophy_Icon.png",
+        "drops": 0.32,
+        "rarity": "epic",
+        "type":"statue",
+        "addedVersion": "v0.4"
+      },
+      "head": {
+        "name": "Trillodon Head",
+        "img": "img/icons/Trophy/Wildlife/Trillodon/Trillodon_Head_Trophy_Block_Icon.png",
+        "drops": 1.80,
+        "rarity": "rare",
+        "type":"head",
+        "addedVersion": "v0.4"
+      }
+    }
+  },
+  {
+    "name": "Pterodactyl",
+    "id": "Pterodactyl ",
+    "image": "img/icons/Trophy/Flying_Beast/Pterodactyl/Pterodactyl_Statue_Trophy_Icon.png",
+    "zone": 4,
+    "drops": {
+      "stataue": {
+        "name": "Pterodactyl Statue",
+        "img": "img/icons/Trophy/Flying_Beast/Pterodactyl/Pterodactyl_Statue_Trophy_Icon.png",
+        "drops": 0.65,
+        "rarity": "epic",
+        "type":"statue",
+        "addedVersion": "v0.4"
+      },
+      "head": {
+        "name": "Pterodactyl Head",
+        "img": "img/icons/Trophy/Flying_Beast/Pterodactyl/Pterodactyl_Head_Trophy_Block_Icon.png",
+        "drops": 2.8,
+        "rarity": "rare",
+        "type":"head",
+        "addedVersion": "v0.4"
+      }
+    }
+  },
+  {
+    "name": "Archaeopteryx",
+    "id": "Archaeopteryx ",
+    "image": "img/icons/Trophy/Flying_Beast/Archaeopteryx/Archaeopteryx_Icon.png",
+    "zone": 4,
+    "drops": {
+      "stataue": {
+        "name": "Archaeopteryx Statue",
+        "img": "img/icons/Trophy/Flying_Beast/Archaeopteryx/Archaeopteryx_Statue_Trophy_Icon.png",
+        "drops": 1.85,
+        "rarity": "rare",
+        "type":"statue",
+        "addedVersion": "v0.4"
+      },
+      "head": {
+        "name": "Archaeopteryx Head",
+        "img": "img/icons/Trophy/Flying_Beast/Archaeopteryx/Archaeopteryx_Head_Trophy_Block_Icon.png",
+        "drops": 3.25,
+        "rarity": "uncommon",
+        "type":"head",
+        "addedVersion": "v0.4"
+      },
+      "feather": {
+        "name": "Archaeopteryx Feather",
+        "img": "img/icons/Trophy/Flying_Beast/Archaeopteryx/Archaeopteryx_Feather_Trophy_Icon.png",
+        "drops": 7.72,
+        "rarity": "uncommon",
+        "type":"fragment",
+        "addedVersion": "v0.4"
+      }
+    }
+  },
+  {
+    "name": "Snapdragon",
+    "id": "Snapdragon ",
+    "image": "img/icons/Trophy/Beast/Snapdragon/Snapdragon_Icon.png",
+    "zone": 4,
+    "drops": {
+      "stataue": {
+        "name": "Snapdragon Statue",
+        "img": "img/icons/Trophy/Beast/Snapdragon/Snapdragon_Statue_Trophy_Icon.png",
+        "drops": 0.35,
+        "rarity": "mythic",
+        "type":"statue",
+        "addedVersion": "v0.4"
+      },
+      "head": {
+        "name": "Snapdragon Bulb",
+        "img": "img/icons/Trophy/Beast/Snapdragon/Snapdragon_Head_Trophy_Block_Icon.png",
+        "drops": 1.5,
+        "rarity": "rare",
+        "type":"head",
+        "addedVersion": "v0.4"
+      }
+    }
+  },
+  {
+    "name": "Skeleton Horse",
+    "id": "Horse_Skeleton ",
+    "image": "img/icons/Trophy/Undead/Horse_Skeleton/Horse_Skeleton_Icon.png",
+    "zone": 4,
+    "drops": {
+      "stataue": {
+        "name": "Skeleton Horse Statue",
+        "img": "img/icons/Trophy/Undead/Horse_Skeleton/Horse_Skeleton_Statue_Trophy_Icon.png",
+        "drops": 0.55,
+        "rarity": "epic",
+        "type":"statue",
+        "addedVersion": "v0.4"
+      },
+      "head": {
+        "name": "Skeleton Horse Head",
+        "img": "img/icons/Trophy/Undead/Horse_Skeleton/Horse_Skeleton_Head_Trophy_Block_Icon.png",
+        "drops": 1.90,
+        "rarity": "rare",
+        "type":"head",
+        "addedVersion": "v0.4"
       }
     }
   }

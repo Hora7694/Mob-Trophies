@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+      <meta charset="UTF-8">
+      <link rel="stylesheet" href="style.css">
+      <link rel="stylesheet" href="statues.css">
+      <title>Mob Trophies - Statues</title>
+      <script type="module" src="https://ajax.googleapis.com/ajax/libs/model-viewer/3.4.0/model-viewer.min.js"></script>
+  </head>
+  <body>
+      <nav>
+          <a href="index.html">Home</a>
+          <a href="wiki.html" class="active">Wiki</a>
+          <a href="download.html">Download</a>
+          <a href="support.html">Support</a>
+      </nav>
+
+      <div class="sub-nav">
+          <a href="wiki.html">Overview</a>
+          <a href="workbench.html">Workbench</a>
+          <a href="drops.html">Mob Drops</a>
+          <a href="recycling.html">Recycling</a>
+          <a href="statues.html" class="active">Statues</a>
+      </div>
+
+      <div class="container">
+          <h1 class="accent-text">Collectable Statues</h1>
+          <p style="text-align: center; opacity: 0.7; margin-bottom: 40px;">Display your hunting achievements with unique statues.</p>
+          <div class="search-container">
+              <input type="text" id="statueSearch" placeholder="Search statues by name or tier..." onkeyup="filterStatues()">
+          </div>
+          <hr>
+          <div id="statuesGrid" class="statues-grid"></div>
+      </div>
+
+      <div class="features-legend">
+          <div class="legend-title">Statue Features</div>
+          <div id="legendList" class="legend-list"></div>
+      </div>
+
+    <button id="backToTop" title="Back to top">
+        <img src="img/icons/UI/Arrow_Up_Icon.png" alt="Top" style="width: 20px; height: 20px;">
+    </button>
+
+      <footer>
+        <div class="footer-content">
+            <script type='text/javascript' src='https://storage.ko-fi.com/cdn/widget/Widget_2.js'></script>
+            <script type='text/javascript'>
+                kofiwidget2.init('Support me on Ko-fi', '#d63767', 'T6T117BAZT');kofiwidget2.draw();
+            </script> 
+
+            <div class="footer-links">
+                <a href="index.html">Home</a>
+                <a href="wiki.html">Wiki</a>
+                <a href="download.html">Download</a>
+                <a href="support.html">Support</a>
+                <a href="legal.html">Terms of Service</a>
+            </div>
+
+            <div class="copyright">
+                &copy; 2026 Mob Trophies (by kHorah_) - All rights reserved.
+            </div>
+            <div class="text-xs opacity-30 text-center" style="font-size: 0.7rem; color: var(--text-muted); margin-top: 10px;">
+                This site is a fan project not affiliated with Hypixel Studios or Hytale.
+            </div>
+        </div>
+      </footer>
+
+      <div id="modelModal" class="modal">
+          <div class="modal-content">
+              <div class="modal-header">
+                  <h2 id="modalTitle"></h2>
+                  <span class="close-modal" onclick="closeModel()">&times;</span>
+              </div>
+              
+              <div class="modal-body-wrapper" style="position: relative; width: 100%;">
+                  <div id="modelContainer"></div>
+              </div>
+
+              <div id="disclaimerBlock" class="model-disclaimer">
+                  Note: This is a web preview. In-game textures and lighting may vary.
+              </div>
+          </div>
+      </div>
+
+      <script>
+
+          const btnTop = document.getElementById("backToTop");
+
+          // --- Gestion du bouton Back to Top ---
+          window.addEventListener('scroll', () => {
+              btnTop.style.display = window.pageYOffset > 400 ? "flex" : "none";
+          });
+
+          btnTop.addEventListener('click', () => {
+              window.scrollTo({ top: 0, behavior: 'smooth' });
+          });
+
+          let statueList = [];
+          let featureMap = {};
+          let imageIntervals = [];
+
+          const tooltip = document.createElement('div');
+          tooltip.className = 'hytale-tooltip';
+          document.body.appendChild(tooltip);
+
+          async function loadData() {
+              try {
+                  const [resStatues, resFeatures] = await Promise.all([
+                      fetch('statues.json'),
+                      fetch('features.json')
+                  ]);
+                  
+                  statueList = await resStatues.json();
+                  const featuresData = await resFeatures.json();
+                  
+                  featuresData.forEach(f => { featureMap[f.id] = f; });
+
+                  displayLegend(featuresData);
+                  displayStatues();
+              } catch (e) { console.error("Erreur chargement données:", e); }
+          }
+
+          function displayLegend(features) {
+              const legendList = document.getElementById('legendList');
+              legendList.innerHTML = features.map(f => `
+                  <div class="legend-item">
+                      <div class="feature-icon">
+                          <img src="${f.icon}" alt="${f.name}" onerror="this.src='img/icons/UI/features/default.png'">
+                      </div>
+                      <div class="legend-text">
+                          <span class="label">${f.name}</span>
+                          <span class="desc">${f.description}</span>
+                      </div>
+                  </div>
+              `).join('');
+          }
+
+          function displayStatues() {
+              const grid = document.getElementById('statuesGrid');
+              imageIntervals.forEach(clearInterval);
+              imageIntervals = [];
+
+              grid.innerHTML = statueList.map((s, statueIdx) => `
+                  <div class="statue-card">
+                      <div class="recipe-header">
+                          <span class="tier-badge">Workbench <span class="tier-highlight">Tier ${s.workbench_tier}</span> Required</span>
+                      </div>
+
+                      <div class="statue-main-area">
+                          <div class="feature-icons">
+                              ${s.features.map(fId => {
+                                  const f = featureMap[fId] || { icon: 'img/icons/UI/features/default.png', name: fId };
+                                  return `
+                                      <div class="feature-icon tooltip-trigger" data-name="${f.name}"> 
+                                          <img src="${f.icon}" alt="${f.name}" onerror="this.src='img/icons/UI/features/default.png'">
+                                      </div>
+                                  `;
+                              }).join('')}
+                          </div>
+
+                          <div class="statue-display tooltip-trigger" 
+                               data-name="${s.name}" 
+                               onclick="openModel('${s.name}', '${s.statue_model}')"
+                               style="${s.statue_model ? 'cursor: pointer;' : ''}">
+                              <div class="statue-img-wrapper">
+                                  <img src="${s.statue_img}" alt="${s.name}">
+                              </div>
+                          </div>
+                      </div>
+                      
+                      <h3 class="statue-name">${s.name}</h3>
+                      <div class="recipe-label">Recipe</div>
+
+                      <div class="statue-craft">
+                          ${s.recipe.map((r, recipeIdx) => {
+                              const isCycling = r.cycling_images && r.cycling_images.length > 0;
+                              const uniqueId = `img-${statueIdx}-${recipeIdx}`;
+                              if (isCycling) startImageCycle(uniqueId, r.cycling_images);
+
+                              return `
+                                  <div class="mini-slot tooltip-trigger" data-name="${r.item}">
+                                      <img id="${uniqueId}" src="${isCycling ? r.cycling_images[0] : r.img}" class="pixelated" style="transition: opacity 0.4s ease-in-out;">
+                                      <span class="mini-amount">${r.amount}</span>
+                                  </div>
+                              `;
+                          }).join('')}
+                      </div>
+                  </div>
+              `).join('');
+              initTooltip();
+          }
+
+          // --- FONCTIONS MODALE 3D ---
+          function openModel(name, modelPath) {
+              if (!modelPath || modelPath === "undefined") return;
+              const modal = document.getElementById('modelModal');
+              const container = document.getElementById('modelContainer');
+              document.getElementById('modalTitle').innerText = name;
+
+              container.innerHTML = `
+                  <model-viewer src="${modelPath}" camera-controls auto-rotate shadow-intensity="1" 
+                      environment-image="neutral" exposure="1" touch-action="pan-y"
+                      style="width: 100%; height: 500px; background: #0d1117; outline: none;">
+                  </model-viewer>`;
+              modal.style.display = "flex";
+          }
+
+          function closeModel() {
+              document.getElementById('modelModal').style.display = "none";
+              document.getElementById('modelContainer').innerHTML = "";
+          }
+
+          // --- RECHERCHE ET TOOLS ---
+          function filterStatues() {
+              const query = document.getElementById('statueSearch').value.toLowerCase();
+              document.querySelectorAll('.statue-card').forEach(card => {
+                  const name = card.querySelector('.statue-name').innerText.toLowerCase();
+                  const tier = card.querySelector('.tier-badge').innerText.toLowerCase();
+                  card.style.display = (name.includes(query) || tier.includes(query)) ? "flex" : "none";
+              });
+          }
+
+          function startImageCycle(elementId, images) {
+              let currentImgIdx = 0;
+              const interval = setInterval(() => {
+                  const imgElement = document.getElementById(elementId);
+                  if (imgElement) {
+                      imgElement.style.opacity = 0;
+                      setTimeout(() => {
+                          currentImgIdx = (currentImgIdx + 1) % images.length;
+                          imgElement.src = images[currentImgIdx];
+                          imgElement.style.opacity = 1;
+                      }, 400);
+                  }
+              }, 2500);
+              imageIntervals.push(interval);
+          }
+
+          function initTooltip() {
+              document.querySelectorAll('.tooltip-trigger').forEach(trigger => {
+                  trigger.addEventListener('mouseenter', () => {
+                      tooltip.innerText = trigger.getAttribute('data-name');
+                      tooltip.style.display = 'block';
+                  });
+                  trigger.addEventListener('mousemove', (e) => {
+                      tooltip.style.left = (e.clientX + 15) + 'px';
+                      tooltip.style.top = (e.clientY + 15) + 'px';
+                  });
+                  trigger.addEventListener('mouseleave', () => { tooltip.style.display = 'none'; });
+              });
+          }
+
+          // Ferme la fenêtre si on clique sur le fond noir (en dehors du contenu)
+          window.onclick = function(event) {
+              const modal = document.getElementById('modelModal');
+              if (event.target == modal) {
+                  closeModel();
+              }
+          }
+
+          loadData();
+      </script>
+  </body>
+</html>
