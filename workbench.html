@@ -58,7 +58,7 @@
 
         async function loadWorkbench() {
             try {
-                const res = await fetch('/workbench-tiers.json');
+                const res = await fetch('workbench-tiers.json');
                 workbenchData = await res.json();
                 renderTimeline();
             } catch (e) {
