@@ -2,25 +2,25 @@
   {
     "tier": 1,
     "name": "Trophy Workbench",
-    "image": "/img/icons/Items/Workbench/Bench_Trophy_Tier1_Icon.png",
+    "image": "img/icons/Items/Workbench/Bench_Trophy_Tier1_Icon.png",
     "description": "Base table to start your collection.",
     "unlocks": [
       {
         "name":"Wall Trophies",
-        "icon": "/img/icons/Trophy/Beast/Tiger_Sabertooth/Tiger_Sabertooth_Head_Trophy_Block_Icon.png"
+        "icon": "img/icons/Trophy/Beast/Tiger_Sabertooth/Tiger_Sabertooth_Head_Trophy_Block_Icon.png"
       }
     ],
     "upgrade_cost": [
       {
         "item": "Any Wood Trunk",
         "amount": 4,
-        "img": "/img/icons/Items/ResourceType/Any_Trunk.png",
+        "img": "img/icons/Items/ResourceType/Any_Trunk.png",
         "source": "Trees (Any zone)"
       },
       {
         "item": "Any Fragments",
         "amount": 5,
-        "img": "/img/icons/Items/ResourceType/Any_Fragments_Trophy_Icon.png",
+        "img": "img/icons/Items/ResourceType/Any_Fragments_Trophy_Icon.png",
         "source": "Dropped by some mobs"
       }
     ]
@@ -28,46 +28,46 @@
   {
     "tier": 2,
     "name": "Trophy Workbench - Tier 2",
-    "image": "/img/icons/Items/Workbench/Bench_Trophy_Tier1_Icon.png",
+    "image": "img/icons/Items/Workbench/Bench_Trophy_Tier1_Icon.png",
     "description": "Allows crafting of more complex trophies.",
     "unlocks": [
       {
         "name":"Statue variants (Zone 1)",
         "icon": [
-          "/img/icons/Trophy/Beast/Fox/Fox_Statue_Trophy_Stone_Icon.png",
-          "/img/icons/Trophy/Beast/Fox/Fox_Statue_Trophy_Hardwood_Planks_Icon.png",
-          "/img/icons/Trophy/Beast/Bears/Grizzly/Bear_Grizzly_Statue_Trophy_Stone_Icon.png",
-          "/img/icons/Trophy/Beast/Bears/Grizzly/Bear_Grizzly_Statue_Trophy_Hardwood_Planks_Icon.png",
-          "/img/icons/Trophy/Flying_Wildlife/Duck/Duck_Statue_Trophy_Stone_Icon.png",
-          "/img/icons/Trophy/Flying_Wildlife/Duck/Duck_Statue_Trophy_Classic_Icon.png"
+          "img/icons/Trophy/Beast/Fox/Fox_Statue_Trophy_Stone_Icon.png",
+          "img/icons/Trophy/Beast/Fox/Fox_Statue_Trophy_Hardwood_Planks_Icon.png",
+          "img/icons/Trophy/Beast/Bears/Grizzly/Bear_Grizzly_Statue_Trophy_Stone_Icon.png",
+          "img/icons/Trophy/Beast/Bears/Grizzly/Bear_Grizzly_Statue_Trophy_Hardwood_Planks_Icon.png",
+          "img/icons/Trophy/Flying_Wildlife/Duck/Duck_Statue_Trophy_Stone_Icon.png",
+          "img/icons/Trophy/Flying_Wildlife/Duck/Duck_Statue_Trophy_Classic_Icon.png"
         ]
       },
       {
         "name":"Equipement",
-        "icon": "/img/icons/Trophy/Beast/Scorpion/Scorpion_Skull_Trophy_Block_Icon.png"
+        "icon": "img/icons/Trophy/Beast/Scorpion/Scorpion_Skull_Trophy_Block_Icon.png"
       },
       {
         "name":"New fragment Recycling",
-        "icon": "/img/icons/Trophy/Void/Eye_Void/Eye_Void_Tentacle_Trophy_Icon.png"
+        "icon": "img/icons/Trophy/Void/Eye_Void/Eye_Void_Tentacle_Trophy_Icon.png"
       }
     ],
     "upgrade_cost": [
       {
         "item": "Dark Feathers",
         "amount": 15,
-        "img": "/img/icons/Items/Ingredient/Ingredient_Feathers_Dark.png",
+        "img": "img/icons/Items/Ingredient/Ingredient_Feathers_Dark.png",
         "source": "Dropped by some flying mobs"
       },
       {
         "item": "Heavy Leather",
         "amount": 20,
-        "img": "/img/icons/Items/Ingredient/Ingredient_Leather_Heavy.png",
+        "img": "img/icons/Items/Ingredient/Ingredient_Leather_Heavy.png",
         "source": "Transform Heavy Hide in Heavy Leather\nin Tanning Rack"
       },
       {
         "item": "Eye Void's Tentacle",
         "amount": 1,
-        "img": "/img/icons/Trophy/Void/Eye_Void/Eye_Void_Tentacle_Trophy_Icon.png",
+        "img": "img/icons/Trophy/Void/Eye_Void/Eye_Void_Tentacle_Trophy_Icon.png",
         "source": "Dropped by Eye Void"
       }
     ]
@@ -75,27 +75,27 @@
   {
     "tier": 3,
     "name": "Trophy Workbench - Tier 3",
-    "image": "/img/icons/Items/Workbench/Bench_Trophy_Tier1_Icon.png",
+    "image": "img/icons/Items/Workbench/Bench_Trophy_Tier1_Icon.png",
     "description": "Allows crafting of more complex trophies.",
     "unlocks": [
       {
         "name":"Statue variants (Zone 2)",
         "icon": [
-          "/img/icons/Trophy/Beast/Lizard_Sand/Lizard_Sand_Statue_Trophy_Sandstone_Icon.png",
-          "/img/icons/Trophy/Beast/Lizard_Sand/Lizard_Sand_Statue_Trophy_Sandstone_Red_Icon.png",
-          "/img/icons/Trophy/Livestock/Camel/Camel_Statue_Trophy_Blue_Sandstone_Icon.png",
-          "/img/icons/Trophy/Livestock/Camel/Camel_Statue_Trophy_Green_Sandstone_Icon.png",
-          "/img/icons/Trophy/Livestock/Camel/Camel_Statue_Trophy_Orange_Sandstone_Icon.png",
-          "/img/icons/Trophy/Livestock/Camel/Camel_Statue_Trophy_Purple_Sandstone_Icon.png",
-          "/img/icons/Trophy/Livestock/Camel/Camel_Statue_Trophy_Red_Sandstone_Icon.png",
-          "/img/icons/Trophy/Livestock/Camel/Camel_Statue_Trophy_Yellow_Sandstone_Icon.png"
+          "img/icons/Trophy/Beast/Lizard_Sand/Lizard_Sand_Statue_Trophy_Sandstone_Icon.png",
+          "img/icons/Trophy/Beast/Lizard_Sand/Lizard_Sand_Statue_Trophy_Sandstone_Red_Icon.png",
+          "img/icons/Trophy/Livestock/Camel/Camel_Statue_Trophy_Blue_Sandstone_Icon.png",
+          "img/icons/Trophy/Livestock/Camel/Camel_Statue_Trophy_Green_Sandstone_Icon.png",
+          "img/icons/Trophy/Livestock/Camel/Camel_Statue_Trophy_Orange_Sandstone_Icon.png",
+          "img/icons/Trophy/Livestock/Camel/Camel_Statue_Trophy_Purple_Sandstone_Icon.png",
+          "img/icons/Trophy/Livestock/Camel/Camel_Statue_Trophy_Red_Sandstone_Icon.png",
+          "img/icons/Trophy/Livestock/Camel/Camel_Statue_Trophy_Yellow_Sandstone_Icon.png"
         ]
       },
       {
         "name":"New fragment Recycling",
         "icon": [
-          "/img/icons/Trophy/Beast/Tiger_Sabertooth/Tiger_Sabertooth_Fang_Trophy_Icon.png",
-          "/img/icons/Trophy/Beast/Scorpion/Scorpion_Skull_Trophy_Block_Icon.png"
+          "img/icons/Trophy/Beast/Tiger_Sabertooth/Tiger_Sabertooth_Fang_Trophy_Icon.png",
+          "img/icons/Trophy/Beast/Scorpion/Scorpion_Skull_Trophy_Block_Icon.png"
         ]
       }
     ],
@@ -103,25 +103,25 @@
       {
         "item": "Gold Ingot",
         "amount": 3,
-        "img": "/img/icons/Items/Ingredient/Ingredient_Bar_Gold.png",
+        "img": "img/icons/Items/Ingredient/Ingredient_Bar_Gold.png",
         "source": "Mining (Zone 2)"
       },
       {
         "item": "Storm Sapling",
         "amount": 5,
-        "img": "/img/icons/Items/Ingredient/Plant_Crop_Stamina3.png",
+        "img": "img/icons/Items/Ingredient/Plant_Crop_Stamina3.png",
         "source": "Available in zone 2"
       },
       {
         "item": "Sturdy Chitin",
         "amount": 15,
-        "img": "/img/icons/Items/Ingredient/Ingredient_Chitin_Sturdy.png",
+        "img": "img/icons/Items/Ingredient/Ingredient_Chitin_Sturdy.png",
         "source": "Dropped by Scaraks, Armadilo, and other mobs"
       },
       {
         "item": "Scorpion Skull",
         "amount": 1,
-        "img": "/img/icons/Trophy/Beast/Scorpion/Scorpion_Skull_Trophy_Block_Icon.png",
+        "img": "img/icons/Trophy/Beast/Scorpion/Scorpion_Skull_Trophy_Block_Icon.png",
         "source": "Dropped by Scorpion"
       }
     ]
@@ -129,46 +129,46 @@
   {
     "tier": 4,
     "name": "Trophy Workbench - Tier 4",
-    "image": "/img/icons/Items/Workbench/Bench_Trophy_Tier1_Icon.png",
+    "image": "img/icons/Items/Workbench/Bench_Trophy_Tier1_Icon.png",
     "description": "Allows crafting of more complex trophies.",
     "unlocks": [
       {
         "name":"Statue variants (Zone 3)",
         "icon": [
-          "/img/icons/Trophy/Beast/Bears/Polar/Bear_Polar_Statue_Trophy_Ice_Icon.png",
-          "/img/icons/Trophy/Beast/Bears/Polar/Bear_Polar_Statue_Trophy_Snow_Icon.png",
-          "/img/icons/Trophy/Beast/Leopard_Snow/Leopard_Snow_Statue_Trophy_Ice_Icon.png",
-          "/img/icons/Trophy/Wildlife/Penguin/Penguin_Statue_Trophy_Ice_Icon.png"
+          "img/icons/Trophy/Beast/Bears/Polar/Bear_Polar_Statue_Trophy_Ice_Icon.png",
+          "img/icons/Trophy/Beast/Bears/Polar/Bear_Polar_Statue_Trophy_Snow_Icon.png",
+          "img/icons/Trophy/Beast/Leopard_Snow/Leopard_Snow_Statue_Trophy_Ice_Icon.png",
+          "img/icons/Trophy/Wildlife/Penguin/Penguin_Statue_Trophy_Ice_Icon.png"
         ]
       },
       {
         "name":"New fragment Recycling",
-        "icon": "/img/icons/Trophy/Beast/Leopard_Snow/Leopard_Snow_Fang_Trophy_Icon.png"
+        "icon": "img/icons/Trophy/Beast/Leopard_Snow/Leopard_Snow_Fang_Trophy_Icon.png"
       }
     ],
     "upgrade_cost": [
       {
         "item": "Silver Ingot",
         "amount": 8,
-        "img": "/img/icons/Items/Ingredient/Ingredient_Bar_Silver.png",
+        "img": "img/icons/Items/Ingredient/Ingredient_Bar_Silver.png",
         "source": "Mining (Zone 2 and 3)"
       },
       {
         "item": "Aurora Seaweed",
         "amount": 5,
-        "img": "/img/icons/Items/Ingredient/Plant_Seaweed_Winter_Aurora.png",
+        "img": "img/icons/Items/Ingredient/Plant_Seaweed_Winter_Aurora.png",
         "source": "In the underground lakes\nof the caves in Zone 3"
       },
       {
         "item": "Essence of Ice",
         "amount": 15,
-        "img": "/img/icons/Items/Ingredient/Ingredient_Ice_Essence.png",
+        "img": "img/icons/Items/Ingredient/Ingredient_Ice_Essence.png",
         "source": "Dropped by Hostil mobs of zone 3"
       },
       {
         "item": "Snow Leopard's Fang",
         "amount": 1,
-        "img": "/img/icons/Trophy/Beast/Leopard_Snow/Leopard_Snow_Fang_Trophy_Icon.png",
+        "img": "img/icons/Trophy/Beast/Leopard_Snow/Leopard_Snow_Fang_Trophy_Icon.png",
         "source": "Dropped by Snow Leopard"
       }
     ]
@@ -176,45 +176,45 @@
   {
     "tier": 5,
     "name": "Trophy Workbench - Tier 5",
-    "image": "/img/icons/Items/Workbench/Bench_Trophy_Tier1_Icon.png",
+    "image": "img/icons/Items/Workbench/Bench_Trophy_Tier1_Icon.png",
     "description": "Allows crafting of more complex trophies.",
     "unlocks": [
       {
         "name":"Statue variants (Zone 4)",
         "icon": [
-          "/img/icons/Trophy/Undead/Cow_Undead/Cow_Undead_Statue_Trophy_Volcanic_Rock_Icon.png",
-          "/img/icons/Trophy/Undead/Wraith/Wraith_Statue_Trophy_Volcanic_Rock_Icon.png",
-          "/img/icons/Trophy/Undead/Wraith/Wraith_Statue_Trophy_Burnt_Trunk_Icon.png"
+          "img/icons/Trophy/Undead/Cow_Undead/Cow_Undead_Statue_Trophy_Volcanic_Rock_Icon.png",
+          "img/icons/Trophy/Undead/Wraith/Wraith_Statue_Trophy_Volcanic_Rock_Icon.png",
+          "img/icons/Trophy/Undead/Wraith/Wraith_Statue_Trophy_Burnt_Trunk_Icon.png"
         ]
       },
       {
         "name":"New fragment Recycling",
-        "icon": "/img/icons/Trophy/Beast/Emberwulf/Emberwulf_Crest_Trophy_Icon.png"
+        "icon": "img/icons/Trophy/Beast/Emberwulf/Emberwulf_Crest_Trophy_Icon.png"
       }
     ],
     "upgrade_cost": [
       {
         "item": "Adamantite Ingot",
         "amount": 10,
-        "img": "/img/icons/Items/Ingredient/Ingredient_Bar_Adamantite.png",
+        "img": "img/icons/Items/Ingredient/Ingredient_Bar_Adamantite.png",
         "source": "Mining (Zone 4)"
       },
       {
         "item": "Poisoned Nettle",
         "amount": 10,
-        "img": "/img/icons/Items/Ingredient/Plant_Flower_Bushy_Poisoned.png",
+        "img": "img/icons/Items/Ingredient/Plant_Flower_Bushy_Poisoned.png",
         "source": "Available in zone 4"
       },
       {
         "item": "Fire Log",
         "amount": 75,
-        "img": "/img/icons/Items/Ingredient/Wood_Fire_Trunk.png",
+        "img": "img/icons/Items/Ingredient/Wood_Fire_Trunk.png",
         "source": "Trees (Charred Woodlands)"
       },
       {
         "item": "Emberwulf Crest",
         "amount": 8,
-        "img": "/img/icons/Trophy/Beast/Emberwulf/Emberwulf_Crest_Trophy_Icon.png",
+        "img": "img/icons/Trophy/Beast/Emberwulf/Emberwulf_Crest_Trophy_Icon.png",
         "source": "Dropped by Emberwulf"
       }
     ]
@@ -222,41 +222,41 @@
   {
     "tier": 6,
     "name": "Trophy Workbench - Tier 6",
-    "image": "/img/icons/Items/Workbench/Bench_Trophy_Tier1_Icon.png",
+    "image": "img/icons/Items/Workbench/Bench_Trophy_Tier1_Icon.png",
     "description": "Allows crafting of more complex trophies.",
     "unlocks": [
       {
         "name":"Statue variants (Tropical Jungle)",
-        "icon": "/img/icons/Trophy/Wildlife/Trillodon/Trillodon_Statue_Trophy_Walk_Icon.png"
+        "icon": "img/icons/Trophy/Wildlife/Trillodon/Trillodon_Statue_Trophy_Walk_Icon.png"
       },
       {
         "name":"New fragment Recycling",
-        "icon": "/img/icons/Trophy/Flying_Beast/Archaeopteryx/Archaeopteryx_Feather_Trophy_Icon.png"
+        "icon": "img/icons/Trophy/Flying_Beast/Archaeopteryx/Archaeopteryx_Feather_Trophy_Icon.png"
       }
     ],
     "upgrade_cost": [
       {
         "item": "Tall Red Rafflesia",
         "amount": 5,
-        "img": "/img/icons/Items/Ingredient/Plant_Flower_Tall_Red.png",
+        "img": "img/icons/Items/Ingredient/Plant_Flower_Tall_Red.png",
         "source": "Available in Tropical Jungle"
       },
       {
         "item": "Common Pink Flower",
         "amount": 75,
-        "img": "/img/icons/Items/Ingredient/Plant_Flower_Common_Poisoned2.png",
+        "img": "img/icons/Items/Ingredient/Plant_Flower_Common_Poisoned2.png",
         "source": "Available in Tropical Jungle"
       },
       {
         "item": "Archaeopteryx Feather",
         "amount": 50,
-        "img": "/img/icons/Trophy/Flying_Beast/Archaeopteryx/Archaeopteryx_Feather_Trophy_Icon.png",
+        "img": "img/icons/Trophy/Flying_Beast/Archaeopteryx/Archaeopteryx_Feather_Trophy_Icon.png",
         "source": "Dropped by Archaeopteryx"
       },
       {
         "item": "Snapdragon Bulb",
         "amount": 1,
-        "img": "/img/icons/Trophy/Beast/Snapdragon/Snapdragon_Head_Trophy_Block_Icon.png",
+        "img": "img/icons/Trophy/Beast/Snapdragon/Snapdragon_Head_Trophy_Block_Icon.png",
         "source": "Dropped by Snapdragon"
       }
     ]
@@ -264,41 +264,41 @@
   {
     "tier": "MAX",
     "name": "Trophy Workbench - Tier 7",
-    "image": "/img/icons/Items/Workbench/Bench_Trophy_Tier1_Icon.png",
+    "image": "img/icons/Items/Workbench/Bench_Trophy_Tier1_Icon.png",
     "description": "Allows crafting of more complex trophies.",
     "unlocks": [
       {
         "name":"Statue variants (Void)",
-        "icon": "/img/icons/Trophy/Void/Crawler_Void/Crawler_Void_Statue_Trophy_Stone_Icon.png"
+        "icon": "img/icons/Trophy/Void/Crawler_Void/Crawler_Void_Statue_Trophy_Stone_Icon.png"
       },
       {
         "name":"New fragment Recycling",
-        "icon": "/img/icons/Trophy/Void/Eye_Void/Eye_Void_Eye_Trophy.png"
+        "icon": "img/icons/Trophy/Void/Eye_Void/Eye_Void_Eye_Trophy.png"
       }
     ],
     "upgrade_cost": [
       {
         "item": "Blood Leaf",
         "amount": 45,
-        "img": "/img/icons/Items/Ingredient/Plant_Crop_Health3.png",
+        "img": "img/icons/Items/Ingredient/Plant_Crop_Health3.png",
         "source": "Available in zone 3"
       },
       {
         "item": "End Void's Tentacle",
         "amount": 25,
-        "img": "/img/icons/Trophy/Void/Eye_Void/Eye_Void_Tentacle_Trophy_Icon.png",
+        "img": "img/icons/Trophy/Void/Eye_Void/Eye_Void_Tentacle_Trophy_Icon.png",
         "source": "Dropped by Eye Void"
       },
       {
         "item": "End Void's Eye",
         "amount": 5,
-        "img": "/img/icons/Trophy/Void/Eye_Void/Eye_Void_Eye_Trophy.png",
+        "img": "img/icons/Trophy/Void/Eye_Void/Eye_Void_Eye_Trophy.png",
         "source": "Dropped by Eye Void"
       },
       {
         "item": "Voidheart",
         "amount": 1,
-        "img": "/img/icons/Items/Ingredient/Ingredient_Voidheart.png",
+        "img": "img/icons/Items/Ingredient/Ingredient_Voidheart.png",
         "source": "Dropped Void's mobs"
       }
     ]
