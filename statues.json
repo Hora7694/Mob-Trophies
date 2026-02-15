@@ -191,6 +191,18 @@
     ]
   },
   {
+    "id": "Leopard_Snow_Statue_Ice",
+    "name": "Snow Leopard Statue (Ice)",
+    "workbench_tier": 4,
+    "statue_img": "img/icons/Trophy/Beast/Leopard_Snow/Leopard_Snow_Statue_Trophy_Ice_Icon.png",
+    "statue_model": "models/Place_Hodler.glb",
+    "features": [],
+    "recipe": [
+      { "item": "Any Polar Bear Statue", "amount": 1, "cycling_images": ["img/icons/Trophy/Beast/Leopard_Snow/Leopard_Snow_Statue_Trophy_Icon.png", "img/icons/Trophy/Beast/Leopard_Snow/Leopard_Snow_Statue_Trophy_Ice_Icon.png"] },
+      { "item": "Ice", "amount": 1, "img": "img/icons/Items/Ingredient/Rock_Ice.png" }
+    ]
+  },
+  {
     "id": "cultist_outlander_statue_walk",
     "name": "Outlander Cultist Statue (Walk)",
     "workbench_tier": 4,
