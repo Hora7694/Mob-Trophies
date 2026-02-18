@@ -764,7 +764,7 @@
   {
     "name": "Toad Rhino Magma",
     "id": "Toad_Rhino_Magma ",
-    "image": "img/icons/Trophy/Beast/Toad_Rhino/Magma/Toad_Rhino_Statue_Trophy_Magma_Icon.png",
+    "image": "img/icons/Trophy/Beast/Toad_Rhino/Magma/Toad_Rhino_Magma_Icon.png",
     "zone": [1, 4],
     "drops": {
       "stataue": {

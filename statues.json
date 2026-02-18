@@ -295,5 +295,16 @@
     "recipe": [
       { "item": "Any Trillodon Statue", "amount": 1, "cycling_images": ["img/icons/Trophy/Wildlife/Trillodon/Trillodon_Statue_Trophy_Icon.png", "img/icons/Trophy/Wildlife/Trillodon/Trillodon_Statue_Trophy_Walk_Icon.png"] }
     ]
+  },
+  {
+    "id": "Toad_Rhino_Statue_Trophy_Magma_Legacy",
+    "name": "Toad Rhino Magma Statue (Legacy)",
+    "workbench_tier": 4,
+    "statue_img": "img/icons/Trophy/Beast/Toad_Rhino/Magma/Toad_Rhino_Statue_Trophy_Magma_Legacy_Icon.png",
+    "statue_model": "models/Place_Hodler.glb",
+    "features": [],
+    "recipe": [
+      { "item": "Any Trillodon Statue", "amount": 1, "cycling_images": ["img/icons/Trophy/Beast/Toad_Rhino/Magma/Toad_Rhino_Statue_Trophy_Magma_Icon.png", "img/icons/Trophy/Beast/Toad_Rhino/Magma/Toad_Rhino_Statue_Trophy_Magma_Legacy_Icon.png"] }
+    ]
   }
 ]
