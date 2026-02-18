@@ -764,12 +764,12 @@
   {
     "name": "Toad Rhino Magma",
     "id": "Toad_Rhino_Magma ",
-    "image": "img/icons/Trophy/Beast/Toad_Rhino/Magma/Toad_Rhino_Magma_Icon.png",
+    "image": "img/icons/Trophy/Beast/Toad_Rhino/Magma/Toad_Rhino_Statue_Trophy_Magma_Icon.png",
     "zone": [1, 4],
     "drops": {
       "stataue": {
         "name": "Toad Rhino Magma Statue",
-        "img": "img/icons/Trophy/Beast/Toad_Rhino/Magma/Toad_Rhino_Magma_Statue_Trophy_Icon.png",
+        "img": "img/icons/Trophy/Beast/Toad_Rhino/Magma/Toad_Rhino_Statue_Trophy_Magma_Icon.png",
         "drops": 0.85,
         "rarity": "epic",
         "type":"statue",
@@ -777,7 +777,7 @@
       },
       "head": {
         "name": "Toad Rhino Magma Head",
-        "img": "img/icons/Trophy/Beast/Toad_Rhino/Magma/Toad_Rhino_Magma_Head_Trophy_Icon.png",
+        "img": "img/icons/Trophy/Beast/Toad_Rhino/Magma/Toad_Rhino_Head_Trophy_Magma_Block_Icon.png",
         "drops": 1.55,
         "rarity": "rare",
         "type":"head",
