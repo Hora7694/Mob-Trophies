@@ -1,5 +1,30 @@
 [
   {
+    "hide": true,
+    "name": "Placeholder",
+    "id": "Place_Holder ",
+    "image": "img/icons/Place_Hodler_Icon.png",
+    "zone": 4,
+    "drops": {
+      "stataue": {
+        "name": "Place_Holder Statue",
+        "img": "img/icons/Place_Hodler_Icon.png",
+        "drops": 0.55,
+        "rarity": "epic",
+        "type":"statue",
+        "addedVersion": "v0.4"
+      },
+      "head": {
+        "name": "Place_Holder Head",
+        "img": "img/icons/Place_Hodler_Icon.png",
+        "drops": 1.90,
+        "rarity": "rare",
+        "type":"head",
+        "addedVersion": "v0.4"
+      }
+    }
+  },
+  {
     "name": "Fox",
     "id": "Fox",
     "image": "img/icons/Trophy/Beast/Fox/Fox_Icon.png",
@@ -769,7 +794,7 @@
     "drops": {
       "stataue": {
         "name": "Toad Rhino Magma Statue",
-        "img": "img/icons/Trophy/Beast/Toad_Rhino/Magma/Toad_Rhino_Statue_Trophy_Magma_Icon.png",
+        "img": "img/icons/Trophy/Beast/Toad_Rhino/Magma/Toad_Rhino_Magma_Statue_Trophy_Icon.png",
         "drops": 0.85,
         "rarity": "epic",
         "type":"statue",
@@ -777,7 +802,7 @@
       },
       "head": {
         "name": "Toad Rhino Magma Head",
-        "img": "img/icons/Trophy/Beast/Toad_Rhino/Magma/Toad_Rhino_Head_Trophy_Magma_Block_Icon.png",
+        "img": "img/icons/Trophy/Beast/Toad_Rhino/Magma/Toad_Rhino_Magma_Head_Trophy_Icon.png",
         "drops": 1.55,
         "rarity": "rare",
         "type":"head",
@@ -1000,6 +1025,134 @@
         "rarity": "rare",
         "type":"head",
         "addedVersion": "v0.4"
+      }
+    }
+  },
+  {
+    "name": "Spider",
+    "id": "Spider ",
+    "image": "img/icons/Trophy/Beast/Spider/Spider_Icon.png",
+    "zone": 1,
+    "drops": {
+      "stataue": {
+        "name": "Spider Statue",
+        "img": "img/icons/Trophy/Beast/Spider/Spider_Statue_Trophy_Icon.png",
+        "drops": 0.45,
+        "rarity": "epic",
+        "type":"statue",
+        "addedVersion": "v0.5"
+      },
+      "head": {
+        "name": "Spider Head",
+        "img": "img/icons/Trophy/Beast/Spider/Spider_Head_Trophy_Block_Icon.png",
+        "drops": 1.8,
+        "rarity": "rare",
+        "type":"head",
+        "addedVersion": "v0.5"
+      },
+      "fragment": {
+        "name": "Spider Mandible",
+        "img": "img/icons/Trophy/Beast/Spider/Spider_Mandible_Trophy_Icon.png",
+        "drops": 5,
+        "rarity": "uncommon",
+        "type":"fragment",
+        "addedVersion": "v0.5"
+      }
+    }
+  },
+  {
+    "name": "Cave Spider",
+    "id": "Spider_Cave",
+    "image": "img/icons/Trophy/Beast/Spider_Cave/Spider_Cave_Icon.png",
+    "zone": 1,
+    "drops": {
+      "stataue": {
+        "name": "Cave Spider Statue",
+        "img": "img/icons/Trophy/Beast/Spider_Cave/Spider_Cave_Statue_Trophy_Icon.png",
+        "drops": 0.28,
+        "rarity": "epic",
+        "type":"statue",
+        "addedVersion": "v0.5"
+      },
+      "head": {
+        "name": "Cave Spider Head",
+        "img": "img/icons/Trophy/Beast/Spider_Cave/Spider_Cave_Head_Trophy_Block_Icon.png",
+        "drops": 1.10,
+        "rarity": "rare",
+        "type":"head",
+        "addedVersion": "v0.5"
+      }
+    }
+  },
+  {
+    "name": "Scarak Locust",
+    "id": "Scarak_Seeker",
+    "image": "img/icons/Trophy/Flying_Beast/Scarak_Seeker/Scarak_Seeker_Icon.png",
+    "zone": 2,
+    "drops": {
+      "stataue": {
+        "name": "Scarak Locust Statue",
+        "img": "img/icons/Trophy/Flying_Beast/Scarak_Seeker/Scarak_Seeker_Statue_Trophy_Icon.png",
+        "drops": 0.40,
+        "rarity": "epic",
+        "type":"statue",
+        "addedVersion": "v0.5"
+      },
+      "head": {
+        "name": "Scarak Locust Head",
+        "img": "img/icons/Trophy/Flying_Beast/Scarak_Seeker/Scarak_Seeker_Head_Trophy_Block_Icon.png",
+        "drops": 1.33,
+        "rarity": "rare",
+        "type":"head",
+        "addedVersion": "v0.5"
+      }
+    }
+  },
+  {
+    "name": "Scarak Warrior",
+    "id": "Scarak_Fighter",
+    "image": "img/icons/Trophy/Beast/Scarak_Fighter/Scarak_Fighter_Icon.png",
+    "zone": 2,
+    "drops": {
+      "stataue": {
+        "name": "Scarak Locust Statue",
+        "img": "img/icons/Trophy/Beast/Scarak_Fighter/Scarak_Fighter_Statue_Trophy_Icon.png",
+        "drops": 0.20,
+        "rarity": "epic",
+        "type":"statue",
+        "addedVersion": "v0.5"
+      },
+      "head": {
+        "name": "Scarak Locust Head",
+        "img": "img/icons/Trophy/Beast/Scarak_Fighter/Scarak_Fighter_Head_Trophy_Block_Icon.png",
+        "drops": 0.75,
+        "rarity": "rare",
+        "type":"head",
+        "addedVersion": "v0.5"
+      }
+    }
+  },
+  {
+    "name": "Scarak Larva",
+    "id": "Scarak_Louse",
+    "image": "img/icons/Trophy/Beast/Scarak_Louse/Scarak_Louse_Icon.png",
+    "zone": 2,
+    "drops": {
+      "stataue": {
+        "name": "Scarak Locust Statue",
+        "img": "img/icons/Trophy/Beast/Scarak_Louse/Scarak_Louse_Statue_Trophy_Icon.png",
+        "drops": 0.055,
+        "rarity": "epic",
+        "type":"statue",
+        "addedVersion": "v0.5"
+      },
+      "head": {
+        "name": "Scarak Locust Head",
+        "img": "img/icons/Trophy/Beast/Scarak_Louse/Scarak_Louse_Head_Trophy_Block_Icon.png",
+        "drops": 0.14,
+        "rarity": "rare",
+        "type":"head",
+        "addedVersion": "v0.5"
       }
     }
   }
