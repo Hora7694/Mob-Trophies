@@ -73,7 +73,7 @@
   {
     "id": "lizard_sand_statue_sandstone",
     "name": "Sand Lizard Statue (Sandstone)",
-    "workbench_tier": 3,
+    "workbench_tier": 4,
     "statue_img": "img/icons/Trophy/Beast/Lizard_Sand/Lizard_Sand_Statue_Trophy_Sandstone_Icon.png",
     "statue_model": "models/Trophy/Beast/Lizard_Sand/Lizard_Sand_Statue_Trophy_Sandstone.glb",
     "features": [],
@@ -85,7 +85,7 @@
   {
     "id": "lizard_sand_statue_sandstone_red",
     "name": "Sand Lizard Statue (Sandstone Red)",
-    "workbench_tier": 3,
+    "workbench_tier": 4,
     "statue_img": "img/icons/Trophy/Beast/Lizard_Sand/Lizard_Sand_Statue_Trophy_Sandstone_Red_Icon.png",
     "statue_model": "models/Trophy/Beast/Lizard_Sand/Lizard_Sand_Statue_Trophy_Sandstone_Red.glb",
     "features": [],
@@ -97,7 +97,7 @@
   {
     "id": "camel_blue_statue_sandstone",
     "name": "Camel Statue Blue (Sandstone)",
-    "workbench_tier": 3,
+    "workbench_tier": 4,
     "statue_img": "img/icons/Trophy/Livestock/Camel/Camel_Statue_Trophy_Blue_Sandstone_Icon.png",
     "statue_model": "models/Trophy/Livestock/Camel/Camel_Statue_Trophy_Blue_Sandstone.glb",
     "features": [],
@@ -109,7 +109,7 @@
   {
     "id": "camel_green_statue_sandstone",
     "name": "Camel Statue Green (Sandstone)",
-    "workbench_tier": 3,
+    "workbench_tier": 4,
     "statue_img": "img/icons/Trophy/Livestock/Camel/Camel_Statue_Trophy_Green_Sandstone_Icon.png",
     "statue_model": "models/Trophy/Livestock/Camel/Camel_Statue_Trophy_Green_Sandstone.glb",
     "features": [],
@@ -121,7 +121,7 @@
   {
     "id": "camel_orange_statue_sandstone",
     "name": "Camel Statue Orange (Sandstone)",
-    "workbench_tier": 3,
+    "workbench_tier": 4,
     "statue_img": "img/icons/Trophy/Livestock/Camel/Camel_Statue_Trophy_Orange_Sandstone_Icon.png",
     "statue_model": "models/Trophy/Livestock/Camel/Camel_Statue_Trophy_Orange_Sandstone.glb",
     "features": [],
@@ -133,7 +133,7 @@
   {
     "id": "camel_purple_statue_sandstone",
     "name": "Camel Statue Purple (Sandstone)",
-    "workbench_tier": 3,
+    "workbench_tier": 4,
     "statue_img": "img/icons/Trophy/Livestock/Camel/Camel_Statue_Trophy_Purple_Sandstone_Icon.png",
     "statue_model": "models/Trophy/Livestock/Camel/Camel_Statue_Trophy_Purple_Sandstone.glb",
     "features": [],
@@ -145,7 +145,7 @@
   {
     "id": "camel_red_statue_sandstone",
     "name": "Camel Statue Red (Sandstone)",
-    "workbench_tier": 3,
+    "workbench_tier": 4,
     "statue_img": "img/icons/Trophy/Livestock/Camel/Camel_Statue_Trophy_Red_Sandstone_Icon.png",
     "statue_model": "models/Trophy/Livestock/Camel/Camel_Statue_Trophy_Red_Sandstone.glb",
     "features": [],
@@ -157,7 +157,7 @@
   {
     "id": "camel_yellow_statue_sandstone",
     "name": "Camel Statue Yellow (Sandstone)",
-    "workbench_tier": 3,
+    "workbench_tier": 4,
     "statue_img": "img/icons/Trophy/Livestock/Camel/Camel_Statue_Trophy_Yellow_Sandstone_Icon.png",
     "statue_model": "models/Trophy/Livestock/Camel/Camel_Statue_Trophy_Yellow_Sandstone.glb",
     "features": [],
@@ -169,7 +169,7 @@
   {
     "id": "polar_bear_statue_ice",
     "name": "Polar Bear Statue (Ice)",
-    "workbench_tier": 4,
+    "workbench_tier": 5,
     "statue_img": "img/icons/Trophy/Beast/Bears/Polar/Bear_Polar_Statue_Trophy_Ice_Icon.png",
     "statue_model": "models/Trophy/Beast/Bears/Polar/Bear_Polar_Statue_Trophy_Ice.glb",
     "features": [],
@@ -181,7 +181,7 @@
   {
     "id": "polar_bear_statue_snow",
     "name": "Polar Bear Statue (Snow)",
-    "workbench_tier": 4,
+    "workbench_tier": 5,
     "statue_img": "img/icons/Trophy/Beast/Bears/Polar/Bear_Polar_Statue_Trophy_Snow_Icon.png",
     "statue_model": "models/Trophy/Beast/Bears/Polar/Bear_Polar_Statue_Trophy_Snow.glb",
     "features": [],
@@ -193,7 +193,7 @@
   {
     "id": "Leopard_Snow_Statue_Ice",
     "name": "Snow Leopard Statue (Ice)",
-    "workbench_tier": 4,
+    "workbench_tier": 5,
     "statue_img": "img/icons/Trophy/Beast/Leopard_Snow/Leopard_Snow_Statue_Trophy_Ice_Icon.png",
     "statue_model": "models/Place_Hodler.glb",
     "features": [],
@@ -205,7 +205,7 @@
   {
     "id": "cultist_outlander_statue_walk",
     "name": "Outlander Cultist Statue (Walk)",
-    "workbench_tier": 4,
+    "workbench_tier": 5,
     "statue_img": "img/icons/Trophy/Intelligent/Outlander/Cultist/Outlander_Cultist_Statue_Trophy_Walk_Icon.png",
     "statue_model": "models/Trophy/Intelligent/Outlander/Cultist/Outlander_Cultist_Statue_Trophy_Walk.glb",
     "features": ["glow"],
@@ -216,7 +216,7 @@
   {
     "id": "penguin_statue_ice",
     "name": "Penguin Statue (Ice)",
-    "workbench_tier": 4,
+    "workbench_tier": 5,
     "statue_img": "img/icons/Trophy/Wildlife/Penguin/Penguin_Statue_Trophy_Ice_Icon.png",
     "statue_model": "models/Trophy/Wildlife/Penguin/Penguin_Statue_Trophy_Ice.glb",
     "features": [],
@@ -227,8 +227,8 @@
   },
   {
     "id": "Crawler_Void_statue_stone",
-    "name": "Void Crawler (Stone)",
-    "workbench_tier": 7,
+    "name": "Void Crawler Statue (Stone)",
+    "workbench_tier": 8,
     "statue_img": "img/icons/Trophy/Void/Crawler_Void/Crawler_Void_Statue_Trophy_Stone_Icon.png",
     "statue_model": "models/Trophy/Void/Crawler_Void/Crawler_Void_Statue_Trophy_Stone.glb",
     "features": ["glow"],
@@ -239,8 +239,8 @@
   },
   {
     "id": "Cow_Undead_statue_volcanic_rock",
-    "name": "Undead Cow (Volcanic Rock)",
-    "workbench_tier": 5,
+    "name": "Undead Cow Statue (Volcanic Rock)",
+    "workbench_tier": 6,
     "statue_img": "img/icons/Trophy/Undead/Cow_Undead/Cow_Undead_Statue_Trophy_Volcanic_Rock_Icon.png",
     "statue_model": "models/Trophy/Undead/Cow_Undead/Cow_Undead_Statue_Trophy_Volcanic_Rock.glb",
     "features": [],
@@ -251,8 +251,8 @@
   },
   {
     "id": "Wraith_statue_volcanic_rock",
-    "name": "Wraith (Volcanic Rock)",
-    "workbench_tier": 5,
+    "name": "Wraith Statue (Volcanic Rock)",
+    "workbench_tier": 6,
     "statue_img": "img/icons/Trophy/Undead/Wraith/Wraith_Statue_Trophy_Volcanic_Rock_Icon.png",
     "statue_model": "models/Trophy/Undead/Wraith/Wraith_Statue_Trophy_Volcanic_Rock.glb",
     "features": ["glow"],
@@ -263,8 +263,8 @@
   },
   {
     "id": "wraith_statue_burnt_trunk",
-    "name": "Wraith (Burnt Trunk)",
-    "workbench_tier": 5,
+    "name": "Wraith Statue (Burnt Trunk)",
+    "workbench_tier": 6,
     "statue_img": "img/icons/Trophy/Undead/Wraith/Wraith_Statue_Trophy_Burnt_Trunk_Icon.png",
     "statue_model": "models/Trophy/Undead/Wraith/Wraith_Statue_Trophy_Burnt_Trunk.glb",
     "features": ["glow"],
@@ -275,8 +275,8 @@
   },
   {
     "id": "Golem_Firesteel_Statue_Trophy_Volcanic_Rock",
-    "name": "Firesteel Golem (Volcanic Rock)",
-    "workbench_tier": 5,
+    "name": "Firesteel Golem Statue (Volcanic Rock)",
+    "workbench_tier": 6,
     "statue_img": "img/icons/Trophy/Elemental/Golem_Firesteel/Golem_Firesteel_Statue_Trophy_Volcanic_Rock_Icon.png",
     "statue_model": "models/Trophy/Elemental/Golem_Firesteel/Golem_Firesteel_Statue_Trophy_Volcanic_Rock.glb",
     "features": [],
@@ -287,8 +287,8 @@
   },
   {
     "id": "Trillodon_Statue_Walk",
-    "name": "Trillodon (Walk)",
-    "workbench_tier": 6,
+    "name": "Trillodon Statue (Walk)",
+    "workbench_tier": 7,
     "statue_img": "img/icons/Trophy/Wildlife/Trillodon/Trillodon_Statue_Trophy_Walk_Icon.png",
     "statue_model": "models/Trophy/Wildlife/Trillodon/Trillodon_Statue_Trophy_Walk.glb",
     "features": ["glow"],
@@ -297,14 +297,63 @@
     ]
   },
   {
-    "id": "Toad_Rhino_Statue_Trophy_Magma_Legacy",
-    "name": "Toad Rhino Magma Statue (Legacy)",
+    "id": "Spider_Statue_Stone",
+    "name": "Spider Statue (Stone)",
+    "workbench_tier": 3,
+    "statue_img": "img/icons/Trophy/Beast/Spider/Spider_Statue_Trophy_Stone_Icon.png",
+    "statue_model": "models/Trophy/Beast/Spider/Spider_Statue_Trophy_Stone.glb",
+    "features": [],
+    "recipe": [
+      { "item": "Any Spider Statue", "amount": 1, "cycling_images": ["img/icons/Trophy/Beast/Spider/Spider_Statue_Trophy_Icon.png", "img/icons/Trophy/Beast/Spider/Spider_Statue_Trophy_Stone_Icon.png"] },
+      { "item": "Stone", "amount": 1, "img": "img/icons/Items/Ingredient/Rock_Stone.png" }
+    ]
+  },
+  {
+    "id": "Spider_Cave_Statue_Stone",
+    "name": "Spider Cave Statue (Stone)",
+    "workbench_tier": 3,
+    "statue_img": "img/icons/Trophy/Beast/Spider_Cave/Spider_Cave_Statue_Trophy_Stone_Icon.png",
+    "statue_model": "models/Trophy/Beast/Spider_Cave/Spider_Cave_Statue_Trophy_Stone.glb",
+    "features": [],
+    "recipe": [
+      { "item": "Any Cave Spider Statue", "amount": 1, "cycling_images": ["img/icons/Trophy/Beast/Spider_Cave/Spider_Cave_Statue_Trophy_Icon.png", "img/icons/Trophy/Beast/Spider_Cave/Spider_Cave_Statue_Trophy_Stone_Icon.png"] },
+      { "item": "Stone", "amount": 1, "img": "img/icons/Items/Ingredient/Rock_Stone.png" }
+    ]
+  },
+  {
+    "id": "Scarak_Seeker_Statue_Sandstone",
+    "name": "Scarak Locus Statue (Sandstone)",
     "workbench_tier": 4,
-    "statue_img": "img/icons/Trophy/Beast/Toad_Rhino/Magma/Toad_Rhino_Statue_Trophy_Magma_Legacy_Icon.png",
+    "statue_img": "img/icons/Trophy/Flying_Beast/Scarak_Seeker/Scarak_Seeker_Statue_Trophy_Sandstone_Icon.png",
     "statue_model": "models/Place_Hodler.glb",
     "features": [],
     "recipe": [
-      { "item": "Any Trillodon Statue", "amount": 1, "cycling_images": ["img/icons/Trophy/Beast/Toad_Rhino/Magma/Toad_Rhino_Statue_Trophy_Magma_Icon.png", "img/icons/Trophy/Beast/Toad_Rhino/Magma/Toad_Rhino_Statue_Trophy_Magma_Legacy_Icon.png"] }
+      { "item": "Any Cave Spider Statue", "amount": 1, "cycling_images": ["img/icons/Trophy/Flying_Beast/Scarak_Seeker/Scarak_Seeker_Statue_Trophy_Icon.png", "img/icons/Trophy/Flying_Beast/Scarak_Seeker/Scarak_Seeker_Statue_Trophy_Sandstone_Icon.png"] },
+      { "item": "Sandstone", "amount": 1, "img": "img/icons/Items/Ingredient/Rock_Sandstone.png" }
+    ]
+  },
+  {
+    "id": "Scarak_Fighter_Statue_Sandstone",
+    "name": "Scarak Warrior Statue (Sandstone)",
+    "workbench_tier": 4,
+    "statue_img": "img/icons/Trophy/Beast/Scarak_Fighter/Scarak_Fighter_Statue_Trophy_Sandstone_Icon.png",
+    "statue_model": "models/Place_Hodler.glb",
+    "features": [],
+    "recipe": [
+      { "item": "Any Cave Spider Statue", "amount": 1, "cycling_images": ["img/icons/Trophy/Beast/Scarak_Fighter/Scarak_Fighter_Statue_Trophy_Icon.png", "img/icons/Trophy/Beast/Scarak_Fighter/Scarak_Fighter_Statue_Trophy_Sandstone_Icon.png"] },
+      { "item": "Sandstone", "amount": 1, "img": "img/icons/Items/Ingredient/Rock_Sandstone.png" }
+    ]
+  },
+  {
+    "id": "Scarak_Louse_Statue_Sandstone",
+    "name": "Scarak Warrior Statue (Sandstone)",
+    "workbench_tier": 4,
+    "statue_img": "img/icons/Trophy/Beast/Scarak_Louse/Scarak_Louse_Statue_Trophy_Sandstone_Icon.png",
+    "statue_model": "models/Place_Hodler.glb",
+    "features": [],
+    "recipe": [
+      { "item": "Any Cave Spider Statue", "amount": 1, "cycling_images": ["img/icons/Trophy/Beast/Scarak_Louse/Scarak_Louse_Statue_Trophy_Icon.png", "img/icons/Trophy/Beast/Scarak_Louse/Scarak_Louse_Statue_Trophy_Sandstone_Icon.png"] },
+      { "item": "Sandstone", "amount": 1, "img": "img/icons/Items/Ingredient/Rock_Sandstone.png" }
     ]
   }
 ]
