@@ -5,7 +5,7 @@
     "result_amount": 2,
     "result_img": "img/icons/Items/Ingredient/Ingredient_Life_Essence.png",
     "description": " ",
-    "workbench_tier": 4,
+    "workbench_tier": 5,
     "ingredients": [
       {
         "item": "Archaeopteryx Feather",
@@ -20,7 +20,7 @@
     "result_amount": 5,
     "result_img": "img/icons/Items/Ingredient/Ingredient_Fire_Essence.png",
     "description": " ",
-    "workbench_tier": 5,
+    "workbench_tier": 6,
     "ingredients": [
       {
         "item": "Emberwulf Crest",
@@ -35,7 +35,7 @@
     "result_amount": 50,
     "result_img": "img/icons/Items/Ingredient/Ingredient_Void_Essence.png",
     "description": " ",
-    "workbench_tier": 7,
+    "workbench_tier": 8,
     "ingredients": [
       {
         "item": "Eye Void's Eye",
@@ -65,7 +65,7 @@
     "result_amount": 8,
     "result_img": "img/icons/Items/Ingredient/Ingredient_Bone_Fragment.png",
     "description": " ",
-    "workbench_tier": 4,
+    "workbench_tier": 5,
     "ingredients": [
       {
         "item": "Snow Leopard Fang",
@@ -80,7 +80,7 @@
     "result_amount": 6,
     "result_img": "img/icons/Items/Ingredient/Ingredient_Bone_Fragment.png",
     "description": " ",
-    "workbench_tier": 3,
+    "workbench_tier": 4,
     "ingredients": [
       {
         "item": "Tiger Sabertooth Fang",
@@ -95,12 +95,27 @@
     "result_amount": 2,
     "result_img": "img/icons/Items/Ingredient/Ingredient_Bone_Fragment.png",
     "description": " ",
+    "workbench_tier": 4,
+    "ingredients": [
+      {
+        "item": "Scorpion Skull",
+        "amount": 1,
+        "img": "img/icons/Trophy/Beast/Scorpion/Scorpion_Skull_Trophy_Block_Icon.png"
+      }
+    ]
+  },
+  {
+    "id": "Spider_Mendible_Trophy_To_Sac_Venom",
+    "result": "Venom Sac",
+    "result_amount": 4,
+    "result_img": "img/icons/Items/Ingredient/Ingredient_Sac_Venom.png",
+    "description": " ",
     "workbench_tier": 3,
     "ingredients": [
       {
-        "item": "Tiger Sabertooth Fang",
+        "item": "Spider Mandible",
         "amount": 1,
-        "img": "img/icons/Trophy/Beast/Scorpion/Scorpion_Skull_Trophy_Block_Icon.png"
+        "img": "img/icons/Trophy/Beast/Spider/Spider_Mendible_Icon.png"
       }
     ]
   }
